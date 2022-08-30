@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#wrap {
+	width:1200px;
+	margin:auto;
+}
+
+
+header {
+	height:100px;
+}
+
+
+.main-menu {
+    height: 40px;
+}
+
+.main-link {
+    font-weight: bold;
+}
+
+.main-link:hover {
+    color: #dddddd;
+}
+
+
+.banner {
+	height: 200px;
+}
+
+
+.main-text {
+	color: #2bb3e0;
+	font-weight: bold;
+}
+
+.contents > .btn {
+	    color: #bbc2c4;
+}
+
+
+footer {
+	height:150px;
+}
