@@ -31,19 +31,22 @@
 			
 				<h4 class="text-center text-info font-weight-bold mt-4">로그인</h4>
 				
-				<div>
-					<input type="text" class="form-control mt-5" placeholder="아이디">
-					<input type="password" class="form-control mt-4" placeholder="비밀번호">
-				</div>
+				<form id="loginForm">
+					<input type="text" id="loginIdInput" class="form-control mt-5" placeholder="아이디">
+					<input type="password" id="passwordInput" class="form-control mt-4" placeholder="비밀번호">
 				
-				<div class="mt-4 ml-2 d-flex justify-content-start align-items-center">
-					 <small class="d-flex align-items-center"><input type="checkbox" class="mr-1">자동 로그인</small>
-				</div>
 				
-				<div>
-					<button type="button" class="btn btn-info btn-block mt-5">로그인</button>
-					<button type="button" class="btn btn-block mt-4 mb-5">회원가입</button>
-				</div>
+					<div class="mt-4 ml-2 d-flex justify-content-start align-items-center">
+						 <small class="d-flex align-items-center"><input type="checkbox" class="mr-1">자동 로그인</small>
+					</div>
+					
+					<div>
+						<button type="submit" id="loginBtn" class="btn btn-info btn-block mt-5">로그인</button>
+						<button type="button" class="btn btn-block mt-4 mb-5">회원가입</button>
+					</div>
+				</form>
+				
+				
 				
 				<div class="d-flex justify-content-center">
 					<a href="#"><small class="text-secondary mr-5 d-flex justify-content-center">아이디 찾기</small></a>
@@ -63,30 +66,54 @@
 	</div>
 	
 	
-	<script type="text/javascript">
+	<script>
 	
 		$(document).ready(function() {
 			
 			
-			$("").on("click", function() {
+			$("#loginForm").on("submit", function(e) {
 				
-				alert("");
+				// 해당 이벤트가 가지고 있는 기능을 비활성화
+				e.preventDefault();
+				
+				// 로그인 api 호출 (loginId와 password를 통해서 로그인 진행)
+				let loginId = $("#loginIdInput").val();
+				let password = $("#passwordInput").val();
+				
+				if(loginId == "") {
+					alert("아이디를 입력해주세요");
+					return;
+				}
+				
+				if(password == "") {
+					alert("비밀번호를 입력해주세요");
+					return;
+				}
+				
+				$.ajax({
+					type:"post",
+					url:"/member/signin",
+					data:{"loginId":loginId, "password":password},
+					success:function(data) {
+						if(data.result == "success") {
+							location.href = "/main";
+						} else {
+							alert("아이디와 비밀번호를 확인해주세요");
+						}
+						
+					},
+					error:function() {
+						alert("로그인 에러");
+					}
+					
+				});
+				
 			});
 			
-			
-			
-			
-			
 		});
-	
-	
-	
-	
 	
 	</script>
 	
 	
-	
-
 </body>
 </html>
