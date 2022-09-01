@@ -13,8 +13,8 @@
 		
 		<nav class="sub-menu d-flex align-items-end justify-content-end">
 			<ul class="nav">
-				<li class="nav-item"><a href="#" class="nav-link text-dark">LOGIN</a>
-				<li class="nav-item"><a href="#" class="nav-link text-dark">JOIN</a>
+				<li class="nav-item"><a href="/member/signin" class="nav-link text-dark">LOGIN</a>
+				<li class="nav-item"><a href="/member/signup" class="nav-link text-dark">JOIN</a>
 			</ul>
 		</nav>
 		
@@ -25,7 +25,7 @@
 		 
 	</header>
 	
-	<nav class="main-menu mt-3">
+	<nav class="main-menu mt-4">
 		<ul class="nav nav-fill">
 			<li class="nav-item"><a href="#" class="nav-link main-link text-dark">ABOUT</a></li>
 			<li class="nav-item"><a href="#" class="nav-link main-link text-dark">입양 안내</a></li>
@@ -34,8 +34,6 @@
 		</ul>
 	</nav>
 	
-	<div class="banner bg-success">
-		<img alt="메인배너" src="">
-	</div>
+
 	
 	
