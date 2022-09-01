@@ -6,6 +6,6 @@ spring:
       suffix: .jsp
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/holdmydog
+    url: jdbc:mysql://localhost:3306/holdmypuppy
     username: root
     password: qlalf22
