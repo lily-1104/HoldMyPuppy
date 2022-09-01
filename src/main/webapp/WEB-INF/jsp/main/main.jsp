@@ -27,6 +27,10 @@
 		
 		<section class="contents">
 		
+			<div class="banner bg-warning">
+				<img alt="메인배너" src="">
+			</div>
+		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
 				<img width="25" src="https://cdns.iconmonstr.com/wp-content/releases/preview/2019/240/iconmonstr-cat-7.png">
 				<h4 class="main-text ml-3">새로운 가족을 찾습니다!</h4>
