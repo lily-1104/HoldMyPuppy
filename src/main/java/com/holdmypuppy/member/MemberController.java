@@ -11,5 +11,12 @@ public class MemberController {
 	public String signinView() {
 		return "/member/signin";
 	}
-
+	
+	
+	// 회원가입 페이지 연결
+	@GetMapping("/member/signup")
+	public String signupView() {
+		return "/member/signup";
+	}
+	
 }
