@@ -3,6 +3,9 @@ package com.holdmypuppy.member;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.holdmypuppy.member.bo.MemberBO;
+import com.holdmypuppy.member.model.Member;
 
 @RestController
 public class MemberRestController {
@@ -18,7 +22,7 @@ public class MemberRestController {
 	private MemberBO memberBO;
 	
 	
-	// 회원가입 api
+	// 회원가입 API
 	@PostMapping("/member/signup")
 	public Map<String, String> signUp(
 			@RequestParam("loginId") String loginId
@@ -45,7 +49,7 @@ public class MemberRestController {
 	
 	
 	
-	// 회원 가입 - 아이디 중복 확인 api
+	// 회원 가입 - 아이디 중복 확인 API
 	@GetMapping("/member/duplicate_id")
 	public Map<String, Boolean> idIsDuplicate(String loginId) {
 		
@@ -64,7 +68,7 @@ public class MemberRestController {
 	
 	
 	
-	// 회원 가입 - 닉네임 중복 확인 api
+	// 회원 가입 - 닉네임 중복 확인 API
 	@GetMapping("/member/duplicate_nickname")
 	public Map<String, Boolean> nicknameIsDuplicate(String nickname) {
 		
@@ -83,6 +87,33 @@ public class MemberRestController {
 	
 	
 	
+	// 로그인 API
+	@PostMapping("/member/signin")
+	public Map<String, String> signIn(
+			@RequestParam("loginId") String loginId
+			, @RequestParam("password") String password
+			, HttpServletRequest request) {
+		
+		Member member = memberBO.GetMember(loginId, password);
+		
+		Map<String, String> result = new HashMap<>();
+		
+		if(member != null) {	 // 로그인 성공
+			result.put("result", "success");
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("memberId", member.getId());
+			session.setAttribute("memberLoginId", member.getLoginId());
+			
+		} else {	// 로그인 실패
+			result.put("result", "fail");
+			
+		}
+		
+		return result;
+		
+	}
 	
 	
 	

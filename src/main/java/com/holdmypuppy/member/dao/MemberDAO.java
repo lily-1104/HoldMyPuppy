@@ -3,6 +3,8 @@ package com.holdmypuppy.member.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.holdmypuppy.member.model.Member;
+
 @Repository
 public interface MemberDAO {
 	
@@ -25,6 +27,12 @@ public interface MemberDAO {
 	// 회원 가입 - 닉네임 중복 확인
 	public int selectCountLoginNickname(@Param("nickname") String nickname);
 	
+	
+	
+	// 로그인 API
+	public Member selectMember(
+			@Param("loginId") String loginId
+			, @Param("password") String password);
 	
 	
 	

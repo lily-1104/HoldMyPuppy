@@ -74,4 +74,36 @@
 	
 	
 	
+		<!--  로그인 API  -->
+	
+	<select id="selectMember" parameterType="map"
+		resultType="com.holdmypuppy.member.model.Member">
+		
+		SELECT
+			`id`
+			, `loginId`
+			, `password`
+			, `name`
+			, `phoneNumber`
+			, `nickname`
+			, `memberCode`
+			, `createdAt`
+			, `updatedAt`
+			
+		FROM
+			`member`
+		
+		WHERE
+			`loginId` = #{loginId}
+			`password` = #{password}
+		
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

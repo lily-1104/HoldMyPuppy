@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.holdmypuppy.common.EncryptUtils;
 import com.holdmypuppy.member.dao.MemberDAO;
+import com.holdmypuppy.member.model.Member;
 
 @Service
 public class MemberBO {
@@ -58,5 +59,19 @@ public class MemberBO {
 		}
 		
 	}
+	
+	
+	
+	// 로그인 API
+	public Member GetMember(String loginId, String password) {
+		
+		String encryptPassword = EncryptUtils.md5(password);
+		
+		return memberDAO.selectMember(loginId, encryptPassword);
+	}
+	
+	
+	
+	
 	
 }
