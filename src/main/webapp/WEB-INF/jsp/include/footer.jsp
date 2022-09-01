@@ -5,17 +5,17 @@
 
 	<footer>
 		
+		<div class="mt-5">　</div>
+		
 		<hr class="mt-5">
 	
-		<div class="d-flex align-items-center justify-content-between mt-3">
+		<div class="mt-4 d-flex align-items-center justify-content-between mt-3">
 		
 			<div>
 				보호소 정보
 			</div>
 			
-			<div class="display-4">
-				안아줄개
-			</div>
+			<h1>안아줄개</h1>
 		
 		</div>
 	
