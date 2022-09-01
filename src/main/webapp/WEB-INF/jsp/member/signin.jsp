@@ -25,9 +25,9 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		
-		<section class="w-75 mt-5 d-flex justify-content-center align-items-center">
+		<section class="mt-5 d-flex justify-content-center">
 		
-			<div class="border rounded mt-5 p-2">
+			<div class="login-box w-50 border rounded mt-5 p-5">
 			
 				<h4 class="text-center text-info font-weight-bold mt-4">로그인</h4>
 				
@@ -36,31 +36,57 @@
 					<input type="password" class="form-control mt-4" placeholder="비밀번호">
 				</div>
 				
-				<div class="mt-4 d-flex justify-content-between align-items-center">
-					<select>자동로그인</select>
-					<a href="#"><small class="text-secondary mr-2">아이디 / 비밀번호 찾기</small></a>
+				<div class="mt-4 ml-2 d-flex justify-content-start align-items-center">
+					 <small class="d-flex align-items-center"><input type="checkbox" class="mr-1">자동 로그인</small>
 				</div>
 				
 				<div>
-					<button type="button" class="btn btn-dark btn-block mt-4">로그인</button>
-					<button type="button" class="btn btn-block mt-3 mb-5">회원가입</button>
+					<button type="button" class="btn btn-info btn-block mt-5">로그인</button>
+					<button type="button" class="btn btn-block mt-4 mb-5">회원가입</button>
 				</div>
+				
+				<div class="d-flex justify-content-center">
+					<a href="#"><small class="text-secondary mr-5 d-flex justify-content-center">아이디 찾기</small></a>
+					<small class="text-secondary mr-3 ml-3"> | </small>
+					<a href="#"><small class="text-secondary ml-5 d-flex justify-content-center">비밀번호 찾기</small></a>
+				</div>
+				
+				<div class="mt-5"></div>
 			
 			</div>
-		
-		
-		
-		
-		
-		
-		
+			
 		</section>
 		
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	
-	
 	</div>
+	
+	
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			
+			
+			$("").on("click", function() {
+				
+				alert("");
+			});
+			
+			
+			
+			
+			
+		});
+	
+	
+	
+	
+	
+	</script>
+	
+	
+	
 
 </body>
 </html>
