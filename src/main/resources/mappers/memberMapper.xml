@@ -95,7 +95,7 @@
 		
 		WHERE
 			`loginId` = #{loginId}
-			`password` = #{password}
+			AND `password` = #{password}
 		
 	</select>
 	
