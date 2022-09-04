@@ -1,5 +1,8 @@
 package com.holdmypuppy.member;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +38,20 @@ public class MemberController {
 	@GetMapping("/find_pw")
 	public String findPwView() {
 	    return "/member/findPw";
+	}
+	
+	
+	
+	// 로그아웃
+	@GetMapping("/signout")
+	public String singOut(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("memberId");
+		session.removeAttribute("memberLoginId");
+		
+		return "redirect:/member/signin";
+		
 	}
 	
 	
