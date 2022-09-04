@@ -13,6 +13,8 @@ header {
 
 .main-menu {
     height: 40px;
+    background-color: #e9f7f6;
+    font-color: #1c46d4;
 }
 
 .main-link {
@@ -20,7 +22,7 @@ header {
 }
 
 .main-link:hover {
-    color: #dddddd;
+    color: #4ae4ed;
 }
 
 
