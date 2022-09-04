@@ -13,7 +13,7 @@
 		
 			<div class="ml-4">
 				<small class="text-secondary">
-					(주) 안아줄개  <br>
+					㈜ 안아줄개  <br>
 					서울특별시 송파구 석촌호수로 111  <br>
 					Copyright © 2022 HoldMyPuppy All Rights Reserved.
 				</small>

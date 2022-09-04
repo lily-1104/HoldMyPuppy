@@ -270,10 +270,10 @@
 					data:{"loginId":loginId, "password":password, "name":name, "phoneNumber":phoneNumber, "nickname":nickname, "memberCode":'M'},
 					success:function(data) {
 						if(data.result == "success") {
-							alert("회원가입을 환영합니다")
+							alert("회원 가입을 환영합니다")
 							location.href = "/member/signin";
 						} else {
-							alert("회원가입에 실패하였습니다");
+							alert("회원 가입에 실패하였습니다");
 						}
 						
 					},
