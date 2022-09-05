@@ -12,5 +12,13 @@ public class ReviewController {
 		
 		return "/review/list";
 	}
+	
+	
+	// 입양 후기 작성
+	@GetMapping("/review/post")
+	public String reviewPost() {
+		
+		return "/review/post";
+	}
 
 }
