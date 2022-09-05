@@ -27,8 +27,8 @@
 		
 		<section class="contents">
 		
-			<div class="banner bg-warning">
-				<img alt="메인배너" src="">
+			<div class="banner">
+				<img width="1203" alt="메인배너" src="/static/css/image/banner.png">
 			</div>
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
