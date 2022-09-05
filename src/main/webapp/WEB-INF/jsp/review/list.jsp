@@ -25,7 +25,7 @@
 	    <c:import url="/WEB-INF/jsp/include/header.jsp" />
 	    
 	    
-	    <section class="mt-5 ">
+	    <section class="mt-5">
 	    
 	    	<div class="mt-5 d-flex align-items-center justify-content-center">
 		    	<div class="intro">
@@ -90,7 +90,7 @@
 			</div>
 			
 			<div class="d-flex justify-content-end mr-3 mt-5">
-				<button type="button" class="btn btn-light border rounded">글쓰기</button>
+				<a href="/review/post" class="btn btn-light border rounded">글쓰기</a>
 			</div>
 	    
 	    </section>
