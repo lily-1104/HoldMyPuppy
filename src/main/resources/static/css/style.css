@@ -27,7 +27,7 @@ header {
 
 
 .banner {
-	height: 200px;
+	height: 300px;
 }
 
 
@@ -41,6 +41,9 @@ header {
 }
 
 
+.post-box {
+	width: 800px;
+}
 
 
 
