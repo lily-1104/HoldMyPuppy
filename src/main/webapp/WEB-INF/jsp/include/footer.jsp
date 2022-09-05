@@ -11,7 +11,7 @@
 	
 		<div class="mt-5 d-flex align-items-center justify-content-between mt-3">
 		
-			<div class="ml-4">
+			<div class="ml-5">
 				<small class="text-secondary">
 					㈜ 안아줄개  <br>
 					서울특별시 송파구 석촌호수로 111  <br>
@@ -19,8 +19,10 @@
 				</small>
 			</div>
 			
-			<h1>안아줄개</h1>
-		
+			<div class="logo d-flex align-items-center justify-content-end mr-5">  
+				<img width="300" alt="메인 로고" src="/static/css/image/main_logo.jpg">
+			</div>
+			
 		</div>
 	
 	
