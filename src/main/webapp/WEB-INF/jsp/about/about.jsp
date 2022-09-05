@@ -42,7 +42,7 @@
 			    	<h4 class="ml-4 mt-3 text-secondary"><b>시설 안내</b></h4>
 			    	
 					<div class="mt-4 d-flex">
-						<img width="300" alt="루프탑" src="https://static.wixstatic.com/media/596b6d_e702f16809204f61ba8c0af178477b8f~mv2.jpg/v1/fill/w_610,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Image-empty-state.jpg">  
+						<img width="300" alt="루프탑" src="/static/css/image/rooftop.png">  
 						
 						<div class="d-flex align-items-center">
 							<div>
@@ -74,14 +74,14 @@
 							</div>
 						</div>
 					</div>
-					<img width="300" alt="코지룸" src="http://com2petcare.com/theme/daontheme_ver2_02/html/business/image/02_2.jpg">  
+					<img width="300" alt="코지룸" src="/static/css/image/cozyroom.jpg">  
 				</div>	 
 		    </div>
 	    	
 	    	<div class="d-flex justify-content-center">
 			    	
 				<div class="mt-5 d-flex">
-					<img width="300" alt="로얄캐닌" src="http://com2petcare.com/theme/daontheme_ver2_02/html/business/image/02_3.jpg">  
+					<img width="300" alt="로얄캐닌" src="/static/css/image/royalCanin.jpg">  
 						
 					<div class="d-flex align-items-center">
 						<div>
