@@ -28,13 +28,15 @@
 		<section class="contents">
 		
 			<div class="banner">
-				<img width="1203" alt="메인배너" src="/static/css/image/banner.png">
+				<img width="1203" alt="메인배너" src="/static/css/image/main/banner.png">
 			</div>
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
-				<img width="25" src="https://cdns.iconmonstr.com/wp-content/releases/preview/2019/240/iconmonstr-cat-7.png">
+				<img width="90" height="70" src="/static/css/image/main/family.jpg">
 				<h4 class="main-text ml-3">새로운 가족을 찾습니다!</h4>
 			</div>
+			
+			<br>
 			
 			<div class="dogs mt-5">
 			
