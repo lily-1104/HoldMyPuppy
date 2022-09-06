@@ -7,4 +7,68 @@
 <mapper namespace="com.holdmypuppy.review.dao.ReviewDAO">
 
 
+		<!-- 입양 후기 작성 게시글 업로드 API -->
+	
+	<insert id="addPost" parameterType="map">
+	
+		INSERT INTO
+			`review`
+		(
+			`memberId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		)
+		
+		VALUES
+		(
+			#{memberId}
+			, #{title}
+			, #{dogName}
+			, #{breed}
+			, #{imagePath}
+			, #{content}
+			, now()
+			, now()
+		)
+			
+	</insert>
+	
+	
+	
+		<!-- 입양 후기 리스트 -->
+	
+	<select id="selectReviewList" parameterType="int"
+		resultType="com.holdmypuppy.review.model.Review">
+	
+		SELECT
+			`memberId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`review`
+		
+		WHERE
+			`memberId` = #{memberId}
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
+	
+	
+	
+	
+	
+
 </mapper>
