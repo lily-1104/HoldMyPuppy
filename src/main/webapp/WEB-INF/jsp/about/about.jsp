@@ -29,9 +29,14 @@
 	    
 		    <div class="mt-5 d-flex align-items-center justify-content-center">
 		    	<div class="intro">
-		    		<h3 class="text-center text-info font-weight-bold mt-3">보호소 안내</h3>
+		    		<div class="d-flex align-items-center">
+		    			<div class="d-flex align-items-center">
+			    		<img width="27" height="27" alt="강아지 발바닥" src="/static/css/image/footprint2.jpg">
+			    		<h3 class="text-center text-info font-weight-bold mt-3 ml-3 mr-3">보호소 안내</h3>
+			    		</div>
+			    	</div>
 			    	
-			    	<div class="mt-4">
+			    	<div class="mt-4 ml-4">
 			    		<small>주요 시설과 위치를 안내합니다.</small>
 			    	</div>
 		    	</div>
@@ -42,7 +47,7 @@
 			    	<h4 class="ml-4 mt-3 text-secondary"><b>시설 안내</b></h4>
 			    	
 					<div class="mt-4 d-flex">
-						<img width="300" alt="루프탑" src="/static/css/image/rooftop.png">  
+						<img width="300" alt="루프탑" src="/static/css/image/about/rooftop.png">  
 						
 						<div class="d-flex align-items-center">
 							<div>
@@ -74,14 +79,14 @@
 							</div>
 						</div>
 					</div>
-					<img width="300" alt="코지룸" src="/static/css/image/cozyroom.jpg">  
+					<img width="300" alt="코지룸" src="/static/css/image/about/cozyroom.jpg">  
 				</div>	 
 		    </div>
 	    	
 	    	<div class="d-flex justify-content-center">
 			    	
 				<div class="mt-5 d-flex">
-					<img width="300" alt="로얄캐닌" src="/static/css/image/royalCanin.jpg">  
+					<img width="300" alt="로얄캐닌" src="/static/css/image/about/royalCanin.jpg">  
 						
 					<div class="d-flex align-items-center">
 						<div>
