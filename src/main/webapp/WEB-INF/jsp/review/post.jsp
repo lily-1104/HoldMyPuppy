@@ -37,6 +37,7 @@
 			    	</div>
 		    	</div>
 		    	
+		    	<br> 
 		    	
 		    	<div class="post-box border rounded mt-5 p-5">
 			
@@ -46,7 +47,7 @@
 						<input type="text" id="titleInput" class="form-control mt-2" placeholder="제목을 입력해주세요">
 						
 						<label class="mt-5"><b>아이 이름</b></label>
-						<input type="text" id="puppyNameInput" class="form-control mt-2" placeholder="강아지의 이름을 입력해주세요">
+						<input type="text" id="dogNameInput" class="form-control mt-2" placeholder="강아지의 이름을 입력해주세요">
 						
 						<label class="mt-5"><b>견종</b></label>
 						<input type="text" id="breedInput" class="form-control mt-2" placeholder="견종을 입력해주세요">
@@ -95,7 +96,7 @@
 			$("#saveBtn").on("click", function() {
 				
 				let title = $("#titleInput").val();
-				let puppyName = $("#puppyNameInput").val();
+				let dogName = $("#dogNameInput").val();
 				let breed = $("#breedInput").val();
 				let image = $("#fileInput").val();
 				let content = $("#contentInput").val();
@@ -105,7 +106,7 @@
 					return;
 				}
 				
-				if(puppyName == "") {
+				if(dogName == "") {
 					alert("강아지의 이름을 입력해주세요");
 					return;
 				}
@@ -123,7 +124,7 @@
 				// 파일
 				var formData = new FormData();
 				formData.append("title", title);
-				formData.append("puppyName", puppyName);
+				formData.append("dogName", dogName);
 				formData.append("breed", breed);
 				formData.append("file", $("#fileInput")[0].files[0]);
 				formData.append("content", content);
@@ -153,7 +154,7 @@
 						
 					},
 					error:function() {
-						alert("후기 작성 에러");
+						alert("로그인 해주세요");
 					}
 					
 				});
