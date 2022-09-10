@@ -50,7 +50,7 @@ public class MemberController {
 		session.removeAttribute("memberId");
 		session.removeAttribute("memberLoginId");
 		
-		return "redirect:/member/login/signin";
+		return "redirect:/member/signin";
 		
 	}
 	
