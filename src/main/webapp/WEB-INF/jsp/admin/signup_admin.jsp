@@ -29,15 +29,15 @@
 		
 			<div class="login-box w-50 border rounded mt-5 p-5">
 				
-				<div class="d-flex align-items-center justify-content-center">
-					<h4 class="text-danger text-info font-weight-bold mt-4 mb-3 mr-3">관리자</h4>
-					<h4 class="text-center text-info font-weight-bold mt-4 mb-3">가입</h4>
+				<div class="text-center d-flex align-items-center justify-content-center">
+					<h4 class="text-warning font-weight-bold mt-4 mb-3 mr-3">관리자</h4>
+					<h4 class="text-info font-weight-bold mt-4 mb-3">계정 생성</h4>
 				</div>
 				
 				<div class="mt-3">
 					
 					<div class="mt-5 d-flex">
-						<input type="text" id="loginIdInput" class="form-control" placeholder="관리자 아이디를 입력해주세요">
+						<input type="text" id="loginIdInput" class="form-control" placeholder="아이디를 입력해주세요">
 						<button type="button" id="idIsDuplicateBtn" class="btn btn-sm ml-3">중복확인</button>
 					</div>
 					
@@ -45,7 +45,7 @@
 					<div id="possibleIdText" class="d-none"><small class="text-success">사용 가능한 ID입니다</small></div>
 					
 					
-					<input type="password" id="passwordInput" class="form-control mt-4" placeholder="관리자 비밀번호를 입력해주세요 (영문 소문자 / 숫자 4~16자)">
+					<input type="password" id="passwordInput" class="form-control mt-4" placeholder="비밀번호를 입력해주세요 (영문 소문자 / 숫자 4~16자)">
 					<input type="password" id="passwordConfirmInput" class="form-control mt-4" placeholder="비밀번호를 한번 더 입력해주세요">
 					
 					<input type="text" id="nameInput" class="form-control mt-4" placeholder="이름을 입력해주세요">
@@ -105,7 +105,7 @@
 				var loginId = $("#loginIdInput").val();
 				
 				if(loginId == "") {
-					alert("관리자 아이디를 입력해주세요");
+					alert("아이디를 입력해주세요");
 					return;
 				}
 				
@@ -205,7 +205,7 @@
 				var nickname = $("#nicknameInput").val();
 				
 				if(loginId == "") {
-					alert("관리자 아이디를 입력해주세요");
+					alert("아이디를 입력해주세요");
 					return;
 				}
 				
@@ -223,7 +223,7 @@
 				
 				
 				if(password == "") {
-					alert("관리자 비밀번호를 입력해주세요");
+					alert("비밀번호를 입력해주세요");
 					return;
 				}
 				
