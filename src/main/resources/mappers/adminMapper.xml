@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.holdmypuppy.admin.dao.AdminDAO">
+<mapper namespace="com.holdmypuppy.admin.login.dao.AdminDAO">
 
 
 		<!-- 관리자 회원가입 API -->
@@ -77,7 +77,7 @@
 		<!--  로그인 API  -->
 	
 	<select id="selectAdmin" parameterType="map"
-		resultType="com.holdmypuppy.admin.model.Admin">
+		resultType="com.holdmypuppy.admin.login.model.Admin">
 		
 		SELECT
 			`id`
@@ -98,10 +98,6 @@
 			AND `password` = #{password}
 	
 	</select>
-
-
-
-
 
 
 </mapper>
