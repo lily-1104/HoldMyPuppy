@@ -10,7 +10,7 @@
         <div>
             <div class="logo d-flex justify-content-center">
             	<div class="mt-2  d-flex align-items-center justify-content-center mr-5">  
-                	<a href="/main">
+                	<a href="/admin/main">
                     	<img width="400" alt="메인 로고" src="/static/css/image/main_logo_blue.png">
                		</a>
             	</div>
@@ -19,8 +19,8 @@
          	<div class="login d-flex justify-content-end">
             	<c:if test="${empty adminId }">
                 	<ul class="nav d-flex align-items-end justify-content-end">
-                    	<li class="nav-item"><a href="/member/signin" class="nav-link text-dark">LOGIN</a>
-                  		<li class="nav-item"><a href="/member/signup" class="nav-link text-dark">JOIN</a>
+                    	<li class="nav-item"><a href="/admin/signin" class="nav-link text-dark">LOGIN</a>
+                  		<li class="nav-item"><a href="/admin/signup" class="nav-link text-dark">JOIN</a>
                		</ul>
             	</c:if>
             
@@ -29,7 +29,7 @@
                     	<div class="d-flex align-items-center">
                      		<b><div class="mr-1">${adminNickname }</b></div>님 
 		                    	<li class="nav-item"><a href="#" class="nav-link ml-3 text-dark">MY PAGE</a></li>
-		                     	<li class="nav-item"><a href="/member/signout" class="nav-link text-dark">LOGOUT</a></li>
+		                     	<li class="nav-item"><a href="/admin/signout" class="nav-link text-dark">LOGOUT</a></li>
                   		</div>
                		</ul>
             	</c:if>
@@ -47,7 +47,7 @@
     	
         <ul class="border rounded">
         	
-            <li><a href="/shelter">ABOUT</a></li>
+            <li><a href="/admin/shelter">ABOUT</a></li>
           
             <li><a href="#">입양 안내</a>
              	<ul>
