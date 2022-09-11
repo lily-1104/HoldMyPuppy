@@ -1,4 +1,4 @@
-package com.holdmypuppy.admin.model;
+package com.holdmypuppy.admin.login.model;
 
 import java.util.Date;
 
@@ -68,5 +68,5 @@ public class Admin {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 }

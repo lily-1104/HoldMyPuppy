@@ -1,10 +1,10 @@
-package com.holdmypuppy.admin.bo;
+package com.holdmypuppy.admin.login.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.holdmypuppy.admin.dao.AdminDAO;
-import com.holdmypuppy.admin.model.Admin;
+import com.holdmypuppy.admin.login.dao.AdminDAO;
+import com.holdmypuppy.admin.login.model.Admin;
 import com.holdmypuppy.common.EncryptUtils;
 
 @Service
@@ -71,9 +71,6 @@ public class AdminBO {
 		
 		return adminDAO.selectAdmin(loginId, encryptPassword);
 	}
-	
-	
-	
 	
 
 }

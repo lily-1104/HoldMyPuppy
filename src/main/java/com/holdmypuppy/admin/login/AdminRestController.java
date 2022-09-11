@@ -1,4 +1,4 @@
-package com.holdmypuppy.admin;
+package com.holdmypuppy.admin.login;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.holdmypuppy.admin.bo.AdminBO;
-import com.holdmypuppy.admin.model.Admin;
+import com.holdmypuppy.admin.login.bo.AdminBO;
+import com.holdmypuppy.admin.login.model.Admin;
+
 
 @RestController
 public class AdminRestController {
@@ -115,7 +116,5 @@ public class AdminRestController {
 		return result;
 		
 	}
-	
-	
 	
 }

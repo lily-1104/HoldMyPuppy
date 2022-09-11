@@ -1,9 +1,10 @@
-package com.holdmypuppy.admin.dao;
+package com.holdmypuppy.admin.login.dao;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.holdmypuppy.admin.model.Admin;
+import com.holdmypuppy.admin.login.model.Admin;
+
 
 @Repository
 public interface AdminDAO {
@@ -36,3 +37,4 @@ public interface AdminDAO {
 			, @Param("password") String password);
 
 }
+
