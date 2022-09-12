@@ -25,11 +25,80 @@
 	    <c:import url="/WEB-INF/jsp/member/include/header.jsp" />
 	    
 	    
-	    <section class="mt-5 d-flex justify-content-center">
+	    <section class="mt-5">
 	    
-	    
-	    
-	    
+	    	<div class="text-center d-flex align-items-center justify-content-center">
+		    	<div class="intro">
+		    		<h3 class="text-info font-weight-bold mt-4">입양 후기</h3>
+		    	</div>
+		    </div>
+		    
+		    	
+		    <div class="mt-5 ml-5 mr-5">
+		    	<b>말티즈 흰둥이 입양 후기</b>
+		    	
+		    		<div class="mt-3 d-flex justify-content-between">
+				    	<small class="ml-3 text-secondary">입양 후기   2022-08-20 15:22</small>
+				    	<div class="d-flex mr-3">
+					    	<b class="mr-4"><a href="#">수정</a></b>
+					    	<b><a href="#">삭제</a></b>
+				    	</div>
+		    		</div>
+		    		
+		    	<hr>
+		    </div>
+		    
+		    <div class="mt-5 d-flex justify-content-center">
+		    	<img width="500" alt="강아지 입양 후기 사진" src="/static/css/image/main/family.jpg">
+		    </div>
+		    
+		    <div class="mt-5 d-flex justify-content-center">
+		    	후기 내용 작성
+		    </div>
+		    
+		    <hr class="mt-5 ml-5 mr-5">
+		    
+		    <div class="mt-4 ml-5 mr-5">
+		    	<div class="ml-5 mr-5">
+		    		<b class="ml-5">앙꼬</b>
+		    		<small class="ml-4 text-secondary">2022-08-25  09:11</small>
+		    		
+		    		<div class="mt-3 ml-5">( 댓글 )</div>
+		    		
+		    		<div class="d-flex mr-3 mt-3 justify-content-end">
+		    			<b class="mr-4"><a href="#">수정</a></b>
+					    <b><a href="#">삭제</a></b>
+		    		</div>
+		    		
+		    		<hr class="ml-4s mr-2">
+		    	</div>
+		    </div>
+		    
+		    <div class="mt-4 ml-5 mr-5">
+		    	<div class="ml-5 mr-5">
+		    		<b class="ml-5">춘식이</b>
+		    		<small class="ml-4 text-secondary">2022-08-25  09:11</small>
+		    		
+		    		<div class="mt-3 ml-5">( 댓글 )</div>
+		    		
+		    		<div class="d-flex mr-3 mt-3 justify-content-end">
+		    			<b class="mr-4"><a href="#">수정</a></b>
+					    <b><a href="#">삭제</a></b>
+		    		</div>
+		    	</div>
+		    </div>
+		    
+		    <div class="d-flex justify-content-center">
+		    	<textarea rows="5" class="form-control col-10 mt-5" placeholder="댓글을 남겨주세요 / 로그인이 필요합니다."></textarea>
+	    	</div>
+		    
+		    <div class="mr-5 mt-2 d-flex justify-content-end">
+		    	<button type="button" class="btn mr-5">작성</button>
+	    	</div>
+	    	
+	    	<div class="ml-5 mt-4 d-flex justify-content-start">
+		    	<button type="button" class="btn btn-light border-dark ml-5">목록</button>
+	    	</div>
 	    
 	    
 	    </section>
