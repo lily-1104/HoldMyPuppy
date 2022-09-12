@@ -1,18 +1,11 @@
 package com.holdmypuppy.member.review;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.holdmypuppy.member.review.bo.ReviewBO;
-import com.holdmypuppy.member.review.model.Review;
-
 
 @Controller
 public class ReviewController {
@@ -24,14 +17,19 @@ public class ReviewController {
 	
 	// 입양 후기 리스트
 	@GetMapping("/review")
-	public String reviewList(HttpServletRequest request, Model model) {
+	public String reviewList() {
 		
-		HttpSession session = request.getSession();
 		
-		int memberId = (Integer)session.getAttribute("memberId");
+//	public String reviewList(HttpServletRequest request, Model model) {
 		
-		List<Review> reviewList = reviewBO.getReviewList(memberId);
-		model.addAttribute("reviewPostList", reviewList);
+//		HttpSession session = request.getSession();
+//		
+//		int memberId = (Integer)session.getAttribute("memberId");
+//		
+//		List<Review> reviewList = reviewBO.getReviewList(memberId);
+//		model.addAttribute("reviewPostList", reviewList);
+		
+//		model.addAttribute("reviewPostList");
 		
 		return "/member/review/list";
 	}
