@@ -109,6 +109,24 @@
 			    <br> <br> <br> <br> <br>
 			    	        지도 첨부
 			    
+			    
+			    
+			    
+			    <div id="map" style="width:500px;height:400px;"></div>
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
 			     <br> <br> <br> <br> <br>
 			     
 			    <div class="ml-5 mt-4">
@@ -143,6 +161,17 @@
       	
 	</div>
 	
+	
+	 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ef3e317d797f708d8a44bdf9a3715b4"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667),
+            level: 3
+        };
+ 
+        var map = new kakao.maps.Map(container, options);
+    </script>	
 
 </body>
 </html>
