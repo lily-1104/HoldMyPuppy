@@ -1,4 +1,4 @@
-package com.holdmypuppy.admin.inrorm.puppies;
+package com.holdmypuppy.admin.inform.puppies;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
