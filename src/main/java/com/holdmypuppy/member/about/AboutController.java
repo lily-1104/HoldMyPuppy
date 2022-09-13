@@ -12,4 +12,13 @@ public class AboutController {
 		return "/member/about/about";
 	}
 	
+	
+	
+	// 카카오 지도 연결
+//	@GetMapping("/address")
+//	public String address) {
+//		
+//		return "/member/about/about";
+//	}
+	
 }
