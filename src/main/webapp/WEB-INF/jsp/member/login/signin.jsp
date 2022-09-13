@@ -49,9 +49,9 @@
 				
 				
 				<div class="d-flex justify-content-center">
-					<a href="#"><small class="text-secondary mr-5 d-flex justify-content-center">아이디 찾기</small></a>
+					<a href="/member/find_id"><small class="text-secondary mr-5 d-flex justify-content-center">아이디 찾기</small></a>
 					<small class="text-secondary mr-3 ml-3"> | </small>
-					<a href="#"><small class="text-secondary ml-5 d-flex justify-content-center">비밀번호 찾기</small></a>
+					<a href="/member/find_pw"><small class="text-secondary ml-5 d-flex justify-content-center">비밀번호 찾기</small></a>
 				</div>
 				
 				<div class="mt-5"></div>
