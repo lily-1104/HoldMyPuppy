@@ -22,7 +22,7 @@
 
 	<div id="wrap">
 	
-        <c:import url="/WEB-INF/jsp/include/header.jsp" />
+        <c:import url="/WEB-INF/jsp/member/include/header.jsp" />
       
       
       	<section class="mt-5 d-flex justify-content-center">
@@ -49,7 +49,7 @@
       </section>
       
       
-      <c:import url="/WEB-INF/jsp/include/footer.jsp" />
+      <c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
 	
 	</div>
 	
