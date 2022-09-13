@@ -56,4 +56,52 @@ public class FileManagerService {
 	}
 	
 	
+	
+	// 이미지 파일 삭제 
+	public static boolean removeFile(String filePath) {	// /images/3_1241241/text.png
+		
+		if(filePath == null) {
+			
+			return false;
+		}
+		
+		String realFilePath = FILE_UPLOAD_PATH + filePath.replace("/images/", "");
+		
+		Path path = Paths.get(realFilePath);
+		
+		// 파일이 있는지 확인 (파일이 있을 경우에만 삭제)
+		if(Files.exists(path)) {
+			
+			try {
+				Files.delete(path);
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				
+				return false;
+			}
+			
+		}
+		
+			// 파일 => C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/3_48551451742/asdf.jpg
+			// 폴더 지우려면 => C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/3_48551451742
+		
+		path = path.getParent();
+		
+		// 디렉토리가 존재하는지 확인
+		if(Files.exists(path)) {
+			try {
+				Files.delete(path);
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				return false;	// 문제가 됐으면 false로 return
+			}
+			
+		}
+		
+		return true;	// 문제가 없으면 true로 return
+		
+	}
+	
 }
