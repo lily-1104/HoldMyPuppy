@@ -1,13 +1,18 @@
 package com.holdmypuppy.member.review;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.holdmypuppy.member.review.bo.ReviewBO;
+import com.holdmypuppy.member.review.model.Review;
 
 @Controller
+@RequestMapping("/review")
 public class ReviewController {
 	
 	
@@ -16,40 +21,31 @@ public class ReviewController {
 	
 	
 	// 입양 후기 리스트
-	@GetMapping("/review")
-	public String reviewList() {
+	@GetMapping("")
+	public String reviewList(Model model) {
 		
+		List<Review> reviewList = reviewBO.getReviewList();
+		model.addAttribute("reviewList", reviewList);
 		
-//	public String reviewList(HttpServletRequest request, Model model) {
-		
-//		HttpSession session = request.getSession();
-//		
-//		int memberId = (Integer)session.getAttribute("memberId");
-//		
-//		List<Review> reviewList = reviewBO.getReviewList(memberId);
-//		model.addAttribute("reviewPostList", reviewList);
-		
-//		model.addAttribute("reviewPostList");
-		
-		return "/member/review/list";
+		return "/member/review/reviewList";
 	}
 	
 	
 	
 	// 입양 후기 작성
-	@GetMapping("/review/post")
+	@GetMapping("/post")
 	public String reviewPost() {
 		
-		return "/member/review/post";
+		return "/member/review/reviewPost";
 	}
 	
 	
 	
 	// 입양 후기 조회 (detail)
-	@GetMapping("/review/detail_view")
+	@GetMapping("/detail_view")
 	public String reviewDetail() {
 		
-		return "/member/review/detail";
+		return "/member/review/reviewDetail";
 	}
 	
 
