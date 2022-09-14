@@ -14,7 +14,10 @@ public class FileManagerService {
 	
 	
 	// 멤버 변수로 밖으로 빼기
-	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/";  
+//	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/";  
+	public static final String FILE_UPLOAD_PATH = System.getenv("USERPROFILE")
+			+ File.separator + "Desktop"
+			+ File.separator + "개발/Spring/Project/image_file/HoldMyPuppy/upload/";
 	
 	// 파일을 저장하고 외부에서 접근 가능한 경로로 리턴하는 기능
 	public static String saveFile(int memberId, MultipartFile file) {	
@@ -27,11 +30,21 @@ public class FileManagerService {
 		String filePath = FILE_UPLOAD_PATH + directoryName;
 		File directory = new File(filePath);	// java.io.File 로 임포트
 				
-		if (directory.mkdir() == false) {
+		
+//		if (directory.mkdir() == false) {
+//					
+//			// 디렉토리 생성 실패했을 경우
+//			return null;
+//		}
+		
+		
+		// 디렉토리가 존재하지 않는 경우
+		if(directory.exists() == false) {
 					
-			// 디렉토리 생성 실패했을 경우
-			return null;
+			// 하위 디렉토리 포함 생성한다.
+			directory.mkdirs();
 		}
+				
 		
 		
 		// 파일 저장
