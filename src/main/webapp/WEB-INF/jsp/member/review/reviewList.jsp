@@ -43,8 +43,6 @@
 	    	<div class="puppies mt-5">
 			
 				<div class="d-flex justify-content-between">
-					
-						
 					<c:forEach var="review" items="${reviewList }">	   <%-- reviewList : ReviewController의 '입양 후기 리스트' 메소드 --%>
 						<div class="border rounded">
 							<img width="250" alt="강아지 입양 후기 사진" src="${review.file }">
@@ -52,9 +50,8 @@
 							<a href="/review/detail_view?id=${review.id }"></a>
 						</div>
 					</c:forEach>
-						
-						
 				</div>
+				
 				
 				
 				
