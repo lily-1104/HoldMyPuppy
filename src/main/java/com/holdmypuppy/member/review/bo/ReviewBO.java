@@ -36,9 +36,9 @@ public class ReviewBO {
 	
 	
 	// 입양 후기 리스트
-	public List<Review> getReviewList(int memberId) {
+	public List<Review> getReviewList() {
 		
-		return reviewDAO.selectReviewList(memberId);
+		return reviewDAO.selectReviewList();
 	}
 	
 	

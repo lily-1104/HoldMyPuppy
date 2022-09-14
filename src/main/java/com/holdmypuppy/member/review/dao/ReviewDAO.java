@@ -23,7 +23,7 @@ public interface ReviewDAO {
 	
 	
 	// 입양 후기 리스트
-	public List<Review> selectReviewList(@Param("memberId") int memberId);
+	public List<Review> selectReviewList();
 	
 
 }

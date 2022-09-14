@@ -58,9 +58,6 @@
 		FROM
 			`review`
 		
-		WHERE
-			`memberId` = #{memberId}
-		
 		ORDER BY
 			`id` DESC
 	
