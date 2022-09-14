@@ -13,7 +13,7 @@ public class NoticeControllerAdmin {
 	@GetMapping("")
 	public String noticeList() {
 		
-		return "/admin/cs/notice/noticeAdmin";
+		return "/admin/cs/notice/noticeListAdmin";
 	}
 	
 	
