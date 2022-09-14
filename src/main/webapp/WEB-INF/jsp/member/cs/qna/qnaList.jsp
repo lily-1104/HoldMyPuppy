@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -42,7 +43,7 @@
 	    	
 	    	<div class="d-flex justify-content-center">
 	    	
-		    	<table class="table mt-5 ml-4 col-11">
+		    	<table class="table table-hover mt-5 ml-4 col-11">
 		    	
 		    		<thead>
 		    			<tr>
@@ -56,18 +57,18 @@
 		    		<tbody>
 		    			<c:forEach var="qna" items="qnaList">
 		    			<tr>
-		    				<td class="text-center">1</td>
-		    				<td class="text-center">문의드립니다.</td>
-		    				<td class="text-right">이우주</td>
-		    				<td class="text-center">2022.08.09</td>
+		    				<td class="text-center">${qna.id }</td>
+		    				
+		    				<td class="text-center">
+		    					<a href="/qna/detail_view?id=${qna.id }">${qna.title }</a>
+		    				</td>
+		    				
+		    				<td class="text-right">${qna.nickname }</td>
+		    				
+		    				<td class="text-center"><fmt:formatDate value="${qna.createdAt }" pattern="yyyy-MM-dd HH:mm" /></td>
+		    				
 		    			</tr>
 		    			
-		    			<tr>
-		    				<td>1</td>
-		    				<td>문의드립니다.</td>
-		    				<td>유대성</td>
-		    				<td>2022.08.22</td>
-		    			</tr>
 		    			</c:forEach>
 		    		</tbody>
 		    	
