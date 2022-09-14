@@ -42,7 +42,7 @@
 	    	
 	    	<div class="d-flex justify-content-center">
 	    	
-		    	<table class="table text-center mt-5 col-11">
+		    	<table class="table table-hover text-center mt-5 col-11">
 		    	
 		    		<thead>
 		    			<tr>
@@ -72,13 +72,17 @@
 	    	</div>
 	    	
 	    	
-	    	<%-- 관리자에게만 글쓰기 버튼 노출--%>
+	    	<%-- 관리자에게만 글쓰기 버튼 노출
 			<c:if test="${not empty memberId }">
 				<div class="d-flex justify-content-end mr-5 mt-5">
 					<a href="/admin/notice/post" class="btn btn-light border rounded">글쓰기</a>
 				</div>
-            </c:if>
-	    	
+            </c:if>--%>
+            
+            <div class="d-flex justify-content-end mr-5 mt-5">
+					<a href="/admin/notice/post" class="btn btn-light border rounded">글쓰기</a>
+				</div>
+            
 	    </section>
 	    
 	    
