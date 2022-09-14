@@ -50,8 +50,7 @@
         	
             <li><a href="/shelter">ABOUT</a></li>
           
-            <li><a href="#">입양 안내</a>
-            	
+            <li><a>입양 안내</a>
              	<ul>
 	                <li><a href="#">보호 중인 아이들</a></li>
 	                <li><a href="#">입양 혜택</a></li>
@@ -60,11 +59,10 @@
        
             <li><a href="/review">입양 후기</a></li>
        
-            <li><a href="#">고객센터</a>
-            	
+            <li><a>고객센터</a>
              	<ul>
 	                <li><a href="#">공지사항</a></li>
-	                <li><a href="#">1:1 문의</a></li>
+	                <li><a href="/qna">1:1 문의</a></li>
              	</ul>
           	</li>
         </ul>
