@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.holdmypuppy.member.cs.qna.dao.QnaDAO">
+
+
+		<!-- 1:1 문의 업로드 -->
+	
+	<insert id="insertPost" parameterType="map">
+	
+		INSERT INTO
+			`qna`
+		(
+			`memberId`
+			, `title`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		)
+		
+		VALUES
+		(
+			#{memberId}
+			, #{title}
+			, #{content}
+			, now()
+			, now()
+		)
+	
+	</insert>
+
+	
+	
+		<!-- 문의 리스트 -->
+	
+	<select id="selectQnaList" parameterType="int"
+		resultType="com.holdmypuppy.member.cs.qna.model.Qna">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+			
+		FROM
+			`qna`
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
+
+
+
+
+</mapper>
