@@ -40,19 +40,40 @@
 	    	
 	    	<br> <br>
 	    	
-	    	<div class="puppies mt-5">
 			
-				<div class="d-flex justify-content-between">
-					<c:forEach var="review" items="${reviewList }">	   <%-- reviewList : ReviewController의 '입양 후기 리스트' 메소드 --%>
-						<div class="border rounded">
-							<img width="250" alt="강아지 입양 후기 사진" src="${review.file }">
-							<div class="mt-4 mb-5 text-center">${review.title }</div>
-							<a href="/review/detail_view?id=${review.id }"></a>
-						</div>
-					</c:forEach>
-				</div>
+			<div class="mt-5 d-flex justify-content-between">
+				<c:forEach var="review" items="${reviewList }">	   <%-- reviewList : ReviewController의 '입양 후기 리스트' 메소드 --%>
+					<div class="puppy border rounded">
+						<a href="/review/detail_view?id=${review.id }">
+							<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
+						</a>
+							
+						<a href="/review/detail_view?id=${review.id }">
+							<div class="mt-4 mb-5 text-center text-dark">
+								<b class="reviewTitle">${review.title }</b>
+							</div>
+						</a>
+					</div>
+				</c:forEach>
+			</div>
 				
-				
+			<br>
+			
+			<div class="mt-5 d-flex justify-content-between">
+				<c:forEach var="review" items="${reviewList }">	 
+					<div class="puppy border rounded">
+						<a href="/review/detail_view?id=${review.id }">
+							<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
+						</a>
+							
+						<a href="/review/detail_view?id=${review.id }">
+							<div class="mt-4 mb-5 text-center text-dark">
+								<b class="reviewTitle">${review.title }</b>
+							</div>
+						</a>
+					</div>
+				</c:forEach>
+			</div>
 				
 				
 				
@@ -82,14 +103,15 @@
 				</div>
 				--%>
 				
-			</div>
 			
 			
+			<div class="mt-5">　</div>
+			<br>
 			
 			<%-- 회원에게만 글쓰기 버튼 노출--%>
 			<c:if test="${not empty memberId }">
 				<div class="d-flex justify-content-end mr-3 mt-5">
-					<a href="/review/post" class="btn btn-light border rounded">글쓰기</a>
+					<a href="/review/post" class="btt btn border rounded">글쓰기</a>
 				</div>
             </c:if>
             	
