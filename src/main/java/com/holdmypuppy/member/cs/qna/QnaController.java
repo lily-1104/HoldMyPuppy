@@ -41,7 +41,7 @@ public class QnaController {
 	
 	
 	// 1:1 문의 조회
-	@GetMapping("/detail_view")
+	@GetMapping("/detail")
 	public String qnaDetail() {
 		
 	    return "/member/cs/qna/qnaDetail";
