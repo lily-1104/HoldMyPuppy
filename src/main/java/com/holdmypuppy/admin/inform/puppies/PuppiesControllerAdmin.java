@@ -5,33 +5,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/adoption")
 public class PuppiesControllerAdmin {
 	
 	
 	// 보호 중인 아이들 리스트
-	@GetMapping("/adoption")
+	@GetMapping("")
 	public String adminPuppies() {
 		
-		return "/admin/inform/puppies";
+		return "/admin/inform/puppiesListA";
 	}
 	
 	
 	
-	// 반려견 등록
-	@GetMapping("/puppies/post")
+	// 유기견 등록
+	@GetMapping("/puppyPost")
 	public String puppiesPost() {
 		
-		return "/admin/inform/post";
+		return "/admin/inform/puppyPostA";
 	}
 	
 	
 	
-	// 반려견 정보
-	@GetMapping("/puppy/detail")
+	// 유기견 정보
+	@GetMapping("/puppyDetail")
 	public String puppyDetail() {
 		
-		return "/admin/inform/puppyDetail";
+		return "/admin/inform/puppyDetailA";
 	}
+	
 
 }
