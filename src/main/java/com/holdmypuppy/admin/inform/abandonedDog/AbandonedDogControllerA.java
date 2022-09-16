@@ -1,4 +1,4 @@
-package com.holdmypuppy.admin.inform.puppies;
+package com.holdmypuppy.admin.inform.abandonedDog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/admin/adoption")
-public class PuppiesControllerAdmin {
+public class AbandonedDogControllerA {
 	
 	
 	// 보호 중인 아이들 리스트
 	@GetMapping("")
 	public String adminPuppies() {
 		
-		return "/admin/inform/puppiesListA";
+		return "/admin/inform/abandonedDog/puppiesListA";
 	}
 	
 	
@@ -22,7 +22,7 @@ public class PuppiesControllerAdmin {
 	@GetMapping("/puppyPost")
 	public String puppiesPost() {
 		
-		return "/admin/inform/puppyPostA";
+		return "/admin/inform/abandonedDog/puppyPostA";
 	}
 	
 	
@@ -31,7 +31,7 @@ public class PuppiesControllerAdmin {
 	@GetMapping("/puppyDetail")
 	public String puppyDetail() {
 		
-		return "/admin/inform/puppyDetailA";
+		return "/admin/inform/abandonedDog/puppyDetailA";
 	}
 	
 

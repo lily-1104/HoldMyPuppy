@@ -1,9 +1,9 @@
-package com.holdmypuppy.admin.inform.puppies;
+package com.holdmypuppy.admin.inform.abandonedDog;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PuppiesRestControllerAdmin {
+public class AbandonedDogRestControllerA {
 	
 	
 	// 유기견 등록 API
