@@ -42,7 +42,7 @@ public class ReviewController {
 	
 	
 	// 입양 후기 조회 (detail)
-	@GetMapping("/detail_view")
+	@GetMapping("/detail")
 	public String reviewDetail() {
 		
 		return "/member/review/reviewDetail";
