@@ -53,11 +53,11 @@
 		    		</thead>
 		    		
 		    		<tbody>
-		    			<c:forEach var="notice" items="noticeList">
+		    			<c:forEach var="notice" items="${noticeList }">
 		    			<tr>
-		    				<td>1</td>
-		    				<td>공지사항입니다.</td>
-		    				<td>관리자</td>
+		    				<td>${notice.id }</td>
+		    				<td><a href="/admin/notice/detail?id=${notice.id }">${notice.title }</a></td>
+		    				<td>${member.nickname }</td>
 		    			</tr>
 		    			
 		    			<tr>

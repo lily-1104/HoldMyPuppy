@@ -47,8 +47,10 @@
 							<input type="file" id="fileInput" class="d-none">
 						</div>
 						
+						
 						<label class="mt-5"><b>내용</b></label>
 						<textarea rows="15" id="contentInput" class="form-control mt-2"></textarea>
+						
 						
 						<div>
 							<button type="button" id="saveBtn" class="btn btn-info btn-block mt-5">작성하기</button>
@@ -72,11 +74,20 @@
 		
 		$(document).ready(function() {
 			
+			// 파일 업로드
+			$("#imageIcon").on("click", function(e) {
+				// fileInput을 클릭한 효과를 만들어야 한다.
+				e.preventDefault();
+				$("#fileInput").click();
+			});
+			
+			
+			
 			// 게시글 저장
 		    $("#saveBtn").on("click", function() {
 		    	
 		    	let title = $("#titleInput").val();
-		    	let content = $("#contentInput").val();
+		    	let content = $("#contentInput").val().trim();
 		    	
 		    	if(title == "") {
 					alert("제목을 입력해주세요");
@@ -115,7 +126,7 @@
 						
 					},
 					error:function() {
-						alert("관리자만 작성 가능합니다. 로그인 해주세요");
+						alert("작성 에러");
 					}
 					
 				});
