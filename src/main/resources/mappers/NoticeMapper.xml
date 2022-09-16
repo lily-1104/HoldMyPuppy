@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.holdmypuppy.admin.notice.dao.NoticeDAO">
+<mapper namespace="com.holdmypuppy.admin.cs.notice.dao.NoticeDAO">
 
 
 		<!-- 공지사항 작성 (관리자) -->
@@ -33,8 +33,30 @@
 			)
 	
 	</insert>
+	
+	
+	
+		<!-- 공지사항 리스트 -->
 
-
+	<select id="selectNoticeList" parameterType="map"
+		resultType="com.holdmypuppy.admin.cs.notice.model.Notice">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`notice`
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
 
 
 
