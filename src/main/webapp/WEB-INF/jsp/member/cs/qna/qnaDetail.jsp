@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -35,10 +36,14 @@
           
           
           	<div class="mt-5 ml-5 mr-5">
-             	<b>문의드립니다.</b>
+             	<b>${qna.title }</b>
              
                 <div class="mt-3 d-flex justify-content-between">
-                   	<small class="ml-3 text-secondary">1:1 문의   2022-08-21 15:26</small>
+                   	<small class="ml-3 text-secondary">
+                   		1:1 문의   
+                   		<fmt:formatDate value="${qna.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+                   	</small>
+                   	
                    	<div class="d-flex mr-3">
                       	<b class="mr-4"><a href="#">수정</a></b>
                       	<b><a href="#">삭제</a></b>
@@ -48,8 +53,8 @@
              	<hr>
          	</div>
           
-          	<div class="mt-5 d-flex justify-content-center">
-             	문의 내용 작성
+          	<div class="mt-5 ml-5 p-4 d-flex justify-content-start">
+             	${qna.content }
           	</div>
           
           	<hr class="mt-5 ml-5 mr-5">
@@ -73,12 +78,14 @@
              	<textarea rows="5" class="form-control col-10 mt-5" placeholder="(관리자만) 답변을 남겨주세요. / 로그인이 필요합니다."></textarea>
           	</div>
           
-          	<div class="mr-5 mt-2 d-flex justify-content-end">
-             	<button type="button" class="btn mr-5">작성</button>
+          	<div class="mr-5 mt-3 d-flex justify-content-end">
+             	<button type="button" class="btn mb-5 mr-5">작성</button>
           	</div>
-          
+          	
+          	<hr class="mt-5 ml-5 mr-5">
+          	
           	<div class="ml-5 mt-4 d-flex justify-content-start">
-             	<button type="button" class="btn btn-light border-dark ml-5">목록</button>
+             	<button type="button" class="btn btn-info ml-5">목록</button>
           	</div>
        
         </section>

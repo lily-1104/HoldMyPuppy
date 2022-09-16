@@ -46,26 +46,26 @@
 		    	<table class="table table-hover mt-5 ml-4 col-11">
 		    	
 		    		<thead>
-		    			<tr>
-		    				<th class="text-center">NO</th>
-		    				<th class="text-center">제목</th>
-		    				<th class="text-right">작성자</th>
-		    				<th class="text-center">작성일</th>
+		    			<tr class="text-center">
+		    				<th class="col-1">NO</th>
+		    				<th class="col-7">제목</th>
+		    				<th class="col-2">작성자</th>
+		    				<th class="col-2">작성일</th>
 		    			</tr>
 		    		</thead>
 		    		
 		    		<tbody>
-		    			<c:forEach var="qna" items="qnaList">
+		    			<c:forEach var="qna" items="${qnaList }">
 		    			<tr>
 		    				<td class="text-center">${qna.id }</td>
 		    				
-		    				<td class="text-center">
-		    					<a href="/qna/detail_view?id=${qna.id }">${qna.title }</a>
+		    				<td class="noticeTitle text-center text-dark">
+		    					<a href="/qna/detail?id=${qna.id }" class="text-dark">${qna.title }</a>
 		    				</td>
 		    				
-		    				<td class="text-right">${qna.nickname }</td>
+		    				<td class="text-right">${member.nickname }</td>
 		    				
-		    				<td class="text-center"><fmt:formatDate value="${qna.createdAt }" pattern="yyyy-MM-dd HH:mm" /></td>
+		    				<td class="text-center"><fmt:formatDate value="${qna.createdAt }" pattern="yyyy-MM-dd" /></td>
 		    				
 		    			</tr>
 		    			
@@ -79,7 +79,7 @@
 	    	<%-- 회원에게만 글쓰기 버튼 노출--%>
 			<c:if test="${not empty memberId }">
 				<div class="d-flex justify-content-end mr-5 mt-5">
-					<a href="/qna/post" class="btn btn-light border rounded">문의하기</a>
+					<a href="/qna/post" class="btn btn-info">문의하기</a>
 				</div>
             </c:if>
 	    	
