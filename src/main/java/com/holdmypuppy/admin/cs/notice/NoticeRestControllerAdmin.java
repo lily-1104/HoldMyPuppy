@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.holdmypuppy.admin.cs.notice.bo.NoticeBO;
 
 @RestController
-public class NoticeRestController {
+public class NoticeRestControllerAdmin {
 	
 	@Autowired
 	private NoticeBO noticeBO;
