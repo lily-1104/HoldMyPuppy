@@ -44,7 +44,7 @@
     <%-- <div class="mt-3">　</div> --%>
     
     
-    <div id="menu" class="mt-5">
+    <nav id="menu" class="mt-5">
     	
         <ul class="border rounded">
         	
@@ -67,7 +67,7 @@
           	</li>
         </ul>
        
-    </div>
+    </nav>
 
     
     

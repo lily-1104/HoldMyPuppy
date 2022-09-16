@@ -43,7 +43,7 @@
     <br>  <br>  
     
     
-    <div id="menu" class="mt-5">
+    <nav id="menu" class="mt-5">
     	
         <ul class="border rounded">
         	
@@ -52,7 +52,7 @@
             <li><a>입양 안내</a>
              	<ul>
 	                <li><a href="/admin/adoption">보호 중인 아이들</a></li>
-	                <li><a href="#">입양 혜택</a></li>
+	                <li><a href="/admin/adoption/benefit">입양 혜택</a></li>
              	</ul>
           	</li>
        
@@ -66,4 +66,4 @@
           	</li>
         </ul>
        
-    </div>
+    </nav>
