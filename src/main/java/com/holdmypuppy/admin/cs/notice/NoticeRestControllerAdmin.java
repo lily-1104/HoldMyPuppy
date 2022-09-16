@@ -24,15 +24,15 @@ public class NoticeRestControllerAdmin {
 	// 공지사항 작성 (관리자)
 	@PostMapping("/notice/post")
 	public Map<String, String> noticeCreate(
-			@RequestParam("title") String title
+			@RequestParam("memberId") int memberId
+			, @RequestParam("title") String title
 			, @RequestParam(value="file", required=false) MultipartFile file
 			, @RequestParam("content") String content
-			, HttpServletRequest request) {
+			/*, HttpServletRequest request*/) {
 		
-		HttpSession session = request.getSession();
+//		HttpSession session = request.getSession();
 		
-		int memberId = (Integer) session.getAttribute("memberId");
-//		char memberCode = session.getAttribute('A');
+//		int memberId = (Integer) session.getAttribute("memberId");
 		
 		int count = noticeBO.addNotice(memberId, title, file, content);
 		
