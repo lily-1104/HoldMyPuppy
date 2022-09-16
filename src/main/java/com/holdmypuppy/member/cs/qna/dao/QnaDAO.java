@@ -19,7 +19,12 @@ public interface QnaDAO {
 	
 	
 	
-	// 1:1 문의 리스트
-	public List<Qna> selectQnaList();
+	// 1:1 문의 리스트 (작성자 본인 것만 조회 가능)
+	public List<Qna> selectQnaList(@Param("memberId") int memberId);
+	
+	
+	
+	// 1:1 문의 상세 조회
+	public Qna selectQna(@Param("id") int id);
 
 }

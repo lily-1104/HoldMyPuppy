@@ -20,14 +20,24 @@ public class QnaBO {
 	public int addQna(int memberId, String title, String content) {
 		
 		return qnaDAO.insertPost(memberId, title, content);
+		
 	}
 	
 	
 	
-	// 1:1 문의 리스트
-	public List<Qna> getQnaList() {
+	// 1:1 문의 리스트 (작성자 본인 것만 조회 가능)
+	public List<Qna> getQnaList(int memberId) {
 		
-		return qnaDAO.selectQnaList();
+		return qnaDAO.selectQnaList(memberId);
+	}
+	
+	
+	
+	// 1:1 문의 상세 조회
+	public Qna getQna(int id) {
+		
+		return qnaDAO.selectQna(id);
+		
 	}
 	
 }

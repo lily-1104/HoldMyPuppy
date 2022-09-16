@@ -31,10 +31,10 @@
 		)
 	
 	</insert>
-
 	
 	
-		<!-- 문의 리스트 -->
+	
+		<!-- 1:1 문의 리스트 (작성자 본인 것만 조회 가능) -->
 	
 	<select id="selectQnaList" parameterType="int"
 		resultType="com.holdmypuppy.member.cs.qna.model.Qna">
@@ -49,13 +49,37 @@
 			
 		FROM
 			`qna`
+			
+		WHERE
+			`memberId` = #{memberId}
 		
 		ORDER BY
 			`id` DESC
 	
 	</select>
+	
+	
+	
+		<!-- 1:1 문의 상세 조회 -->
 
-
+	<select id="selectQna" parameterType="int"
+		resultType="com.holdmypuppy.member.cs.qna.model.Qna">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+	
+		FROM
+			`qna`
+		
+		WHERE
+			`id` = #{id}
+	
+	</select>
 
 
 </mapper>
