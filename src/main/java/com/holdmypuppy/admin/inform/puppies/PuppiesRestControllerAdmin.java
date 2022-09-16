@@ -3,7 +3,7 @@ package com.holdmypuppy.admin.inform.puppies;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PuppiesRestController {
+public class PuppiesRestControllerAdmin {
 	
 	
 	// 유기견 등록 API
