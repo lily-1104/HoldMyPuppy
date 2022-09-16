@@ -13,7 +13,7 @@ public class NoticeControllerAdmin {
 	@GetMapping("")
 	public String noticeList() {
 		
-		return "/admin/cs/notice/noticeListAdmin";
+		return "/admin/cs/notice/noticeListA";
 	}
 	
 	
@@ -22,7 +22,7 @@ public class NoticeControllerAdmin {
 	@GetMapping("/post")
 	public String noticePost() {
 		
-		return "/admin/cs/notice/noticePost";
+		return "/admin/cs/notice/noticePostA";
 	}
 	
 	
@@ -31,7 +31,7 @@ public class NoticeControllerAdmin {
 	@GetMapping("/detail")
 	public String noticeDetail() {
 		
-		return "/admin/cs/notice/noticeDetail";
+		return "/admin/cs/notice/noticeDetailA";
 	}
 
 }
