@@ -3,22 +3,19 @@ package com.holdmypuppy.admin.cs.notice;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.holdmypuppy.admin.cs.notice.bo.NoticeBO;
+import com.holdmypuppy.admin.cs.notice.bo.AdNoticeBO;
 
 @RestController
 public class NoticeRestControllerAdmin {
 	
 	@Autowired
-	private NoticeBO noticeBO;
+	private AdNoticeBO noticeBO;
 	
 	
 	// 공지사항 작성 (관리자)

@@ -5,10 +5,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.holdmypuppy.admin.cs.notice.model.Notice;
+import com.holdmypuppy.admin.cs.notice.model.AdNotice;
 
 @Repository
-public interface NoticeDAO {
+public interface AdNoticeDAO {
 	
 	
 	// 공지사항 작성 (관리자)
@@ -21,7 +21,7 @@ public interface NoticeDAO {
 	
 	
 	// 공지사항 리스트
-	public List<Notice> selectNoticeList();
+	public List<AdNotice> selectNoticeList();
 	
 	
 }

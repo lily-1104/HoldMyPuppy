@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.holdmypuppy.admin.cs.notice.dao.AdNoticeDAO">
+
+
+		<!-- 공지사항 작성 (관리자) -->
+	
+	<insert id="insertNotice" parameterType="map">
+	
+		INSERT INTO
+			`notice`
+		(
+			`memberId`
+			, `title`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		)
+		
+		VALUES
+			(
+				#{memberId}
+				, #{title}
+				, #{imagePath}
+				, #{content}
+				, now()
+				, now()
+			)
+	
+	</insert>
+	
+	
+	
+		<!-- 공지사항 리스트 -->
+
+	<select id="selectNoticeList" parameterType="map"
+		resultType="com.holdmypuppy.admin.cs.notice.model.AdNotice">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`notice`
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
+
+
+
+
+
+
+</mapper>

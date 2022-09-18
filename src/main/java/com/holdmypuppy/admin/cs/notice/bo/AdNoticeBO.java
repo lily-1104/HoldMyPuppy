@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.holdmypuppy.admin.cs.notice.dao.NoticeDAO;
-import com.holdmypuppy.admin.cs.notice.model.Notice;
+import com.holdmypuppy.admin.cs.notice.dao.AdNoticeDAO;
+import com.holdmypuppy.admin.cs.notice.model.AdNotice;
 import com.holdmypuppy.common.FileManagerService;
 
 @Service
-public class NoticeBO {
+public class AdNoticeBO {
 	
 	@Autowired
-	private NoticeDAO noticeDAO;
+	private AdNoticeDAO noticeDAO;
 	
 	
 	// 공지사항 작성 (관리자)
@@ -34,7 +34,7 @@ public class NoticeBO {
 	
 	
 	// 공지사항 리스트
-	public List<Notice> getNoticeList() {
+	public List<AdNotice> getNoticeList() {
 		
 		return noticeDAO.selectNoticeList();
 	}

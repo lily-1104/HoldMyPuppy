@@ -2,7 +2,7 @@ package com.holdmypuppy.admin.cs.notice.model;
 
 import java.util.Date;
 
-public class Notice {
+public class AdNotice {
 	
 	private int id;
 	private int memberId;
