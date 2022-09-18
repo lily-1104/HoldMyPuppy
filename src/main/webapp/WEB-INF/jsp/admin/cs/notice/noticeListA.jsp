@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -46,9 +47,10 @@
 		    	
 		    		<thead>
 		    			<tr>
-		    				<th>NO</th>
-		    				<th>제목</th>
-		    				<th>작성자</th>
+		    				<th class="col-1">NO</th>
+		    				<th class="col-7">제목</th>
+		    				<th class="col-2">작성자</th>
+		    				<th class="col-2">작성일</th>
 		    			</tr>
 		    		</thead>
 		    		
@@ -56,14 +58,9 @@
 		    			<c:forEach var="notice" items="${noticeList }">
 		    			<tr>
 		    				<td>${notice.id }</td>
-		    				<td><a href="/admin/notice/detail?id=${notice.id }">${notice.title }</a></td>
-		    				<td>${member.nickname }</td>
-		    			</tr>
-		    			
-		    			<tr>
-		    				<td>1</td>
-		    				<td>공지사항입니다.</td>
-		    				<td>관리자</td>
+		    				<td><a href="/admin/notice/detail?id=${notice.id }" class="text-dark">${notice.title }</a></td>
+		    				<td>${AdNoticeDetail.nickname }</td>
+		    				<td><fmt:formatDate value="${notice.createdAt }" pattern="yyyy-MM-dd" /></td>
 		    			</tr>
 		    			</c:forEach>
 		    		</tbody>
@@ -72,16 +69,16 @@
 	    	</div>
 	    	
 	    	
-	    	<%-- 관리자에게만 글쓰기 버튼 노출
-			<c:if test="${not empty memberId }">
+			<c:if test="${not empty memberId && memberCode eq 'A' }">
 				<div class="d-flex justify-content-end mr-5 mt-5">
 					<a href="/admin/notice/post" class="btn btn-light border rounded">글쓰기</a>
 				</div>
-            </c:if>--%>
+            </c:if>
+            
             
             <div class="d-flex justify-content-end mr-5 mt-5">
-					<a href="/admin/notice/post" class="btn btn-light border rounded">글쓰기</a>
-				</div>
+				<a href="/admin/notice/post" class="btn btn-light border rounded">글쓰기</a>
+			</div>
             
 	    </section>
 	    
