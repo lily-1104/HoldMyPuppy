@@ -53,9 +53,9 @@ public class QnaController {
 	
 	// 1:1 문의 상세 조회
 	@GetMapping("/detail")
-	public String qnaDetail(@RequestParam("id") int id, Model model) {
+	public String qnaDetail(Model model) {
 		
-		Qna qna = qnaBO.getQna(id);
+		Qna qna = qnaBO.getQna();
 		
 		model.addAttribute("qna", qna);
 		
