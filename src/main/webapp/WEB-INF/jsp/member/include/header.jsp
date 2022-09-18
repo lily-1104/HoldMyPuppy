@@ -61,7 +61,7 @@
        
             <li><a>고객센터</a>
              	<ul>
-	                <li><a href="#">공지사항</a></li>
+	                <li><a href="/notice">공지사항</a></li>
 	                <li><a href="/qna">1:1 문의</a></li>
              	</ul>
           	</li>
