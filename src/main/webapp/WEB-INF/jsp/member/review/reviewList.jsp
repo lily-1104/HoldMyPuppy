@@ -44,11 +44,11 @@
 			<div class="mt-5 d-flex justify-content-between">
 				<c:forEach var="review" items="${reviewList }">	   <%-- reviewList : ReviewController의 '입양 후기 리스트' 메소드 --%>
 					<div class="puppy border rounded">
-						<a href="/review/detail_view?id=${review.id }">
+						<a href="/review/detail?id=${review.id }">
 							<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
 						</a>
 							
-						<a href="/review/detail_view?id=${review.id }">
+						<a href="/review/detail?id=${review.id }">
 							<div class="mt-4 mb-5 text-center text-dark">
 								<b class="reviewTitle">${review.title }</b>
 							</div>
@@ -59,21 +59,6 @@
 				
 			<br>
 			
-			<div class="mt-5 d-flex justify-content-between">
-				<c:forEach var="review" items="${reviewList }">	 
-					<div class="puppy border rounded">
-						<a href="/review/detail_view?id=${review.id }">
-							<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
-						</a>
-							
-						<a href="/review/detail_view?id=${review.id }">
-							<div class="mt-4 mb-5 text-center text-dark">
-								<b class="reviewTitle">${review.title }</b>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
 				
 				
 				

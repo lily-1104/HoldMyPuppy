@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%@ page isELIgnored="false" contentType = "text/html; charset=UTF-8" %>
+    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
 <!DOCTYPE html>
 <html>
@@ -35,10 +38,13 @@
 		    
 		    	
 		    <div class="mt-5 ml-5 mr-5">
-		    	<b>말티즈 흰둥이 입양 후기</b>
+		    	<b>${review.title }</b>
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
-				    	<small class="ml-3 text-secondary">입양 후기   2022-08-20 15:22</small>
+				    	<small class="ml-3 text-secondary">
+				    		입양 후기   
+				    		<fmt:formatDate value="${review.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+				    	</small>
 				    	<div class="d-flex mr-3">
 					    	<b class="mr-4"><a href="#">수정</a></b>
 					    	<b><a href="#">삭제</a></b>
@@ -49,11 +55,11 @@
 		    </div>
 		    
 		    <div class="mt-5 d-flex justify-content-center">
-		    	<img width="500" alt="강아지 입양 후기 사진" src="/static/css/image/main/family.jpg">
+		    	<img width="500" alt="강아지 입양 후기 사진" src="${review.file }">
 		    </div>
 		    
 		    <div class="mt-5 d-flex justify-content-center">
-		    	후기 내용 작성
+		    	${review.content }
 		    </div>
 		    
 		    <hr class="mt-5 ml-5 mr-5">
@@ -99,7 +105,6 @@
 	    	<div class="ml-5 mt-4 d-flex justify-content-start">
 		    	<button type="button" class="btn btn-light border-dark ml-5">목록</button>
 	    	</div>
-	    
 	    
 	    </section>
       

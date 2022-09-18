@@ -147,7 +147,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("후기가 등록되었습니다.");
-							location.href= "/review/detail_view";
+							location.href= "/review/detail";
 						} else {
 							alert("후기 작성을 실패하였습니다.");
 						}
