@@ -28,7 +28,7 @@ public class ReviewRestController {
 			@RequestParam("title") String title
 			, @RequestParam("dogName") String dogName
 			, @RequestParam("breed") String breed
-			, @RequestParam(value="file", required=false) MultipartFile file
+			, @RequestParam("file") MultipartFile file
 			, @RequestParam("content") String content
 			, HttpServletRequest request) {
 		
