@@ -65,11 +65,11 @@ public class AdminBO {
 	
 	
 	// 로그인 API
-	public Admin getAdmin(String loginId, String password) {
+	public Admin getAdmin(String loginId, String password/*, String memberCode*/) {
 		
 		String encryptPassword = EncryptUtils.md5(password);
 		
-		return adminDAO.selectAdmin(loginId, encryptPassword);
+		return adminDAO.selectAdmin(loginId, encryptPassword/*, memberCode*/);
 	}
 	
 

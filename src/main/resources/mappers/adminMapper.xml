@@ -96,6 +96,7 @@
 		WHERE
 			`loginId` = #{loginId}
 			AND `password` = #{password}
+			<!--  AND `memberCode` = #{memberCode}-->
 	
 	</select>
 

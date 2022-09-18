@@ -75,6 +75,7 @@
 				// 로그인 api 호출 (loginId와 password를 통해서 로그인 진행)
 				let loginId = $("#loginIdInput").val();
 				let password = $("#passwordInput").val();
+				<%--let memberCode = --%>
 				
 				if(loginId == "") {
 					alert("아이디를 입력해주세요");
@@ -89,10 +90,10 @@
 				$.ajax({
 					type:"post",
 					url:"/admin/signin",
-					data:{"loginId":loginId, "password":password},
+					data:{"loginId":loginId, "password":password<%--, "memberCode":memberCode --%>}
 					success:function(data) {
 						if(data.result == "success") {
-							location.href = "/admin/main";
+							location.href = "/main/admin";
 						} else {
 							alert("아이디와 비밀번호를 확인해주세요");
 						}
