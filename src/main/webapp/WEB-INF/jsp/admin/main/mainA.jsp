@@ -91,7 +91,7 @@
 				</div>
 				
 				<div class="d-flex justify-content-center mt-4 mb-5">
-					<button type="button" class="btn col-4 mt-5 mb-5">더보기</button>
+					<button type="button" onclick="location.href='/admin/adoption'" class="btn col-4 mt-5 mb-5">더보기</button>
 				</div>
 			
 			</div>
@@ -102,9 +102,7 @@
 		
 		<c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
 	
-	
 	</div>
-	
 	
 </body>
 </html>

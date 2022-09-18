@@ -8,9 +8,9 @@ public class MainControllerAdmin {
 	
 	
 	// 메인 페이지 연결
-	@GetMapping("/admin/main")
+	@GetMapping("/main/admin")
 	public String mainViewAdmin() {
-		return "admin/main/main_admin";
+		return "admin/main/mainA";
 	}
 
 }

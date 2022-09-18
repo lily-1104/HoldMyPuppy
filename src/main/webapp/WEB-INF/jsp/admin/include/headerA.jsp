@@ -10,7 +10,7 @@
         <div>
             <div class="logo d-flex justify-content-center">
             	<div class="mt-2  d-flex align-items-center justify-content-center mr-5">  
-                	<a href="/admin/main">
+                	<a href="/main/admin">
                     	<img width="400" alt="메인 로고" src="/static/css/image/main_logo_blue.png">
                		</a>
             	</div>
