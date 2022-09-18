@@ -34,10 +34,22 @@ public class QnaBO {
 	
 	
 	// 1:1 문의 상세 조회
-	public Qna getQna(int id) {
+	public Qna getQna() {
 		
-		return qnaDAO.selectQna(id);
+		return qnaDAO.selectQna();
 		
 	}
+	
+	
+	
+	// 글 수정
+	public int updatePost(int qnaId, String title, String content) {
+		
+		return qnaDAO.updateQna(qnaId, title, content);
+	}
+	
+	
+	
+	
 	
 }

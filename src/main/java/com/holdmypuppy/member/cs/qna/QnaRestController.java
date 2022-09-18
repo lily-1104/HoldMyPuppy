@@ -31,7 +31,6 @@ public class QnaRestController {
 		HttpSession session = request.getSession();
 			
 		int memberId = (Integer)session.getAttribute("memberId");
-//		String memberId = "123";
 		
 		int count = qnaBO.addQna(memberId, title, content);
 		
@@ -45,5 +44,37 @@ public class QnaRestController {
 		
 		return result;
 	}
+	
+	
+	
+	// 글 수정
+	@PostMapping("/qna/post/update")
+	public Map<String, String> updateQna(
+			@RequestParam("qnaId") int qnaId
+			, @RequestParam("title") String title
+			, @RequestParam("content") String content) {
+		
+		int count = qnaBO.updatePost(qnaId, title, content);
+		
+		Map<String, String> map = new HashMap<>();
+		
+		if (count == 1) {
+			map.put("result", "success");
+			
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

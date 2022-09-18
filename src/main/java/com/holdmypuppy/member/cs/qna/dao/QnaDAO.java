@@ -25,6 +25,16 @@ public interface QnaDAO {
 	
 	
 	// 1:1 문의 상세 조회
-	public Qna selectQna(@Param("id") int id);
+	public Qna selectQna();
+	
+	
+	
+	// 글 수정 
+	public int updateQna(
+			@Param("qnaId") int qnaId
+			, @Param("title") String title
+			, @Param("content") String content);
+	
+	
 
 }

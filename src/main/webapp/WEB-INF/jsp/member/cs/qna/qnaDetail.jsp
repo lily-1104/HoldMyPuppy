@@ -45,13 +45,14 @@
                    	</small>
                    	
                    	<div class="d-flex mr-3">
-                      	<b class="mr-4"><a href="#">수정</a></b>
-                      	<b><a href="#">삭제</a></b>
-                   	</div>
+                      	<b class="mr-4"><a id="saveBtn" data-post-id="${qna.id }">수정</a></b>
+                      	<%-- <button type="button" class="btt btn" id="deleteBtn" data-post-id="${qna.id }"><b>삭제</b></button>--%>
+                      	<b><a href="#" class="text-dark" id="deleteBtn" data-post-id="${qna.id }">삭제</a></b>
+					</div>
                 </div>
+            </div>
                 
-             	<hr>
-         	</div>
+            <hr class="ml-5 mr-5">
           
           	<div class="mt-5 ml-5 p-4 d-flex justify-content-start">
              	${qna.content }
@@ -61,26 +62,30 @@
           
           	<div class="mt-4 ml-5 mr-5">
              	<div class="ml-5 mr-5">
-                	<b class="ml-5">관리자</b>
+                	<b class="ml-3">관리자</b>
                 	<small class="ml-4 text-secondary">2022-08-23  11:27</small>
                 
-                	<div class="mt-3 ml-5">( 댓글 )</div>
-                
+                	<div class="mt-3 ml-2">( 댓글 )</div>
+                	
+                	<%-- 관리자 페이지 옮기고 이거 삭제하기
                 	<div class="d-flex mr-3 mt-3 justify-content-end">
 	                   	<b class="mr-4"><a href="#">수정</a></b>
 	                  	<b><a href="#">삭제</a></b>
                 	</div>
-                
+                	--%>
+                	
             	</div>
           	</div>
           
+          <%-- 관리자 페이지 옮기고 이거 삭제하기
           	<div class="d-flex justify-content-center">
-             	<textarea rows="5" class="form-control col-10 mt-5" placeholder="(관리자만) 답변을 남겨주세요. / 로그인이 필요합니다."></textarea>
+             	<textarea rows="5" class="form-control col-10 mt-5" placeholder="답변을 남겨주세요."></textarea>
           	</div>
           
           	<div class="mr-5 mt-3 d-flex justify-content-end">
              	<button type="button" class="btn mb-5 mr-5">작성</button>
           	</div>
+          	--%>
           	
           	<hr class="mt-5 ml-5 mr-5">
           	
@@ -94,7 +99,59 @@
         <c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
       	
 	</div>
-
+	
+	
+	<script>
+	
+		$(document).ready(function() {
+			
+			// 게시글 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				let qnaId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/qna/post/delete",
+					data:{"qnaId":qnaId},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("삭제되었습니다.")
+							location.href="/qna"
+						} else {
+							alert("삭제 실패")
+						}
+					},
+					error:function() {
+						alert("삭제 에러");
+					}
+					
+				});
+			});
+			
+			
+			// 게시글 수정
+			$("#saveBtn").on("click", function() {
+				
+				let title = $("#titleInput")
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		});
+	
+	
+	
+	
+	</script>
 
 </body>
 </html>

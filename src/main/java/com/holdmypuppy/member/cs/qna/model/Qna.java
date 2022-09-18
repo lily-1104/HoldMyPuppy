@@ -5,7 +5,7 @@ import java.util.Date;
 public class Qna {
 	
 	private int id;
-	private int memberid;
+	private int memberId;
 	private String title;
 	private String content;
 	private Date createdAt;
@@ -18,10 +18,10 @@ public class Qna {
 		this.id = id;
 	}
 	public int getMemberid() {
-		return memberid;
+		return memberId;
 	}
 	public void setMemberid(int memberid) {
-		this.memberid = memberid;
+		this.memberId = memberid;
 	}
 	public String getTitle() {
 		return title;

@@ -80,6 +80,29 @@
 			`id` = #{id}
 	
 	</select>
-
+	
+	
+	
+		<!-- 글 수정 -->
+	
+	<update id="updateQna" parameterType="map">
+	
+		UPDATE
+			`qna`
+		
+		SET
+			`title` = #{title}
+			, `content` = #{content}
+			, `updatedAt` = now()
+		
+		WHERE
+			`id` = #{qnaId}
+	
+	</update>
+	
+	
+	
+	
+	
 
 </mapper>
