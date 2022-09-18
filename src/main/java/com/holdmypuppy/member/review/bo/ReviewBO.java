@@ -42,4 +42,12 @@ public class ReviewBO {
 	}
 	
 	
+	
+	// 입양 후기 조회 (detail)
+	public Review getReview() {
+		
+		return reviewDAO.selectReview();
+	}
+	
+	
 }

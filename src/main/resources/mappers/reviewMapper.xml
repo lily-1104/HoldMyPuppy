@@ -65,6 +65,32 @@
 	
 	
 	
+		<!-- 입양 후기 조회 (detail) -->
+	
+	<select id="selectReview" parameterType="int"
+		resultType="com.holdmypuppy.member.review.model.Review">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+			
+		FROM
+			`review`
+		
+		WHERE
+			`id` = #{id}
+	
+	</select>
+	
+	
+	
 	
 	
 

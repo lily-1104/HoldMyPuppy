@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.member.review.bo.ReviewBO;
 import com.holdmypuppy.member.review.model.Review;
@@ -43,7 +44,11 @@ public class ReviewController {
 	
 	// 입양 후기 조회 (detail)
 	@GetMapping("/detail")
-	public String reviewDetail() {
+	public String reviewDetail(Model model) {
+		
+		Review review = reviewBO.getReview();
+		
+		model.addAttribute("review", review);
 		
 		return "/member/review/reviewDetail";
 	}

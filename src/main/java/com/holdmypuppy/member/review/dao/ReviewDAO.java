@@ -25,5 +25,11 @@ public interface ReviewDAO {
 	// 입양 후기 리스트
 	public List<Review> selectReviewList();
 	
+	
+	
+	// 입양 후기 조회 (detail)
+	public Review selectReview();
+	
+	
 
 }
