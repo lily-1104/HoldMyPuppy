@@ -15,7 +15,7 @@ public class AdminController {
 	// 관리자 회원가입 페이지 연결
 	@GetMapping("/signup")
 	public String adminSignup() {
-		return "/admin/login/signup_admin";
+		return "/admin/login/signupA";
 	}
 	
 	
@@ -23,7 +23,7 @@ public class AdminController {
 	// 관리자 로그인 페이지 연결
 	@GetMapping("/signin")
 	public String adminSignin() {
-		return "/admin/login/signin_admin";
+		return "/admin/login/signinA";
 	}
 	
 	
