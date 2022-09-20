@@ -34,8 +34,7 @@ public interface AdminDAO {
 	// 로그인 API
 	public Admin selectAdmin(
 			@Param("loginId") String loginId
-			, @Param("password") String password
-			/*, @Param("memberCode") String memberCode*/);
+			, @Param("password") String password);
 
 }
 

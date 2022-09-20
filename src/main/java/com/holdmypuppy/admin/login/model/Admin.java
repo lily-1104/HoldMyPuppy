@@ -10,7 +10,7 @@ public class Admin {
 	private String name;
 	private String phoneNumber;
 	private String nickname;
-	private char memberCode;
+	private String memberCode;
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -50,10 +50,10 @@ public class Admin {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public char getMemberCode() {
+	public String getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(char memberCode) {
+	public void setMemberCode(String memberCode) {
 		this.memberCode = memberCode;
 	}
 	public Date getCreatedAt() {

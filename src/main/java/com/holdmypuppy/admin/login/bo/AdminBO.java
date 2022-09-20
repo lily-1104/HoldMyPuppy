@@ -27,7 +27,6 @@ public class AdminBO {
 		
 		return adminDAO.insertAdmin(loginId, encryptPassword, name, phoneNumber, nickname, 'A');
 		
-		
 	}
 	
 	
@@ -43,7 +42,6 @@ public class AdminBO {
 		} else {
 			return true;
 		}
-		
 	}
 	
 	
@@ -59,17 +57,16 @@ public class AdminBO {
 		} else {
 			return true;
 		}
-		
 	}
 	
 	
 	
 	// 로그인 API
-	public Admin getAdmin(String loginId, String password/*, String memberCode*/) {
+	public Admin getAdmin(String loginId, String password) {
 		
 		String encryptPassword = EncryptUtils.md5(password);
 		
-		return adminDAO.selectAdmin(loginId, encryptPassword/*, memberCode*/);
+		return adminDAO.selectAdmin(loginId, encryptPassword);
 	}
 	
 

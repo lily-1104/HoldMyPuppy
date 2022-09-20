@@ -93,21 +93,21 @@ public class AdminRestController {
 	public Map<String, String> signIn(
 			@RequestParam("loginId") String loginId
 			, @RequestParam("password") String password
-			/*, @RequestParam("memberCode") String memberCode*/
 			, HttpServletRequest request) {
 		
-		Admin admin = adminBO.getAdmin(loginId, password/*, memberCode*/);
+		Admin admin = adminBO.getAdmin(loginId, password);
 		
 		Map<String, String> result = new HashMap<>();
 		
-		if(admin != null /*&& memberCode == "A"*/) {		// 로그인 성공
+		if(admin != null) {		// 로그인 성공
 			result.put("result", "success");
 			
 			HttpSession session = request.getSession();
 			
-			session.setAttribute("adminId", admin.getId());
-			session.setAttribute("adminLoginId", admin.getLoginId());
-			/*session.setAttribute("adminNickname", admin.getNickname());*/
+			session.setAttribute("memberId", admin.getId());
+			session.setAttribute("memberLoginId", admin.getLoginId());
+			session.setAttribute("memberNickname", admin.getNickname());
+			session.setAttribute("memberCode", admin.getMemberCode());
 		
 		} else {	// 로그인 실패
 			result.put("result", "fail");
@@ -115,7 +115,6 @@ public class AdminRestController {
 		}
 		
 		return result;
-		
 	}
 	
 }
