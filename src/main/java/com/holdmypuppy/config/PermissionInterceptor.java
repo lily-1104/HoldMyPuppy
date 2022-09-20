@@ -14,44 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class PermissionInterceptor implements HandlerInterceptor {
 	
 	
-	// 1:1 문의 내역 (회원)
 	// 요청이 들어올 때 
+		// 1:1 문의 내역 접근시 로그인 (회원)
+		// 관리자 페이지 (main 페이지 제외 전부 로그인 필요)
 	@Override
 	public boolean preHandle(
-			HttpServletRequest request
-			, HttpServletResponse response
-			, Object handler) throws IOException {
-			
-		HttpSession session = request.getSession();
-		Integer memberId = (Integer) session.getAttribute("memberId");
-		
-		String url = request.getRequestURI();
-			
-		
-		// 로그인이 되어 있을 경우  => 로그인, 회원가입 페이지 이동 못하도록
-		if (memberId != null) {
-				
-			if (url.startsWith("/member")) {
-				response.sendRedirect("");
-				// response.sendRedirect("/post/list/view");
-				return false;
-			}
-			
-		} else {	// 로그인이 되어있지 않을 경우  
-				
-			if(url.startsWith("/qna")) {
-				response.sendRedirect("/member/signin");
-				return false;
-			}
-		}
-		
-		return true;
-	}
-	
-	
-	
-	// 관리자 페이지 (main 페이지 제외 전부 로그인 필요)
-	public boolean preHandleAdmin(
 			HttpServletRequest request
 			, HttpServletResponse response
 			, Object handler) throws IOException {
@@ -63,24 +30,28 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		String url = request.getRequestURI();
 			
 		
-		// 로그인이 되어 있을 경우  => 로그인, 회원가입 페이지 이동 못하도록
-		if (memberId != null ) {
-			
-			// 이게 맞는지..?
-			if (url.startsWith("/main")) {
-				response.sendRedirect("/main/admin");
-				return false;
-			}
-			
-		} else if (memberCode != "A") {		// 로그인이 되어있지 않거나 멤버 코드가 A가 아닐 경우    
+		// 로그인이 되어 있지 않을 경우
+		if (memberId == null) {
 				
-			if(url.startsWith("/admin")) {
-				response.sendRedirect("/admin/signin");
+			// 1:1 문의 들어가면 로그인 페이지 이동
+			if(url.startsWith("/qna")) {
+				response.sendRedirect("/member/signin");
 				return false;
 			}
+			// 로그인 되어 있을 경우
+		} else if(memberId != null) {
 			
+			// 멤버 코드가 A가 아닐 경우
+			if(memberCode != "A") {
+				
+				// 관리자 페이지 사이트 접속시 관리자 로그인 필요
+				if(url.startsWith("/admin")) {
+					response.sendRedirect("/admin/signin");
+					return false;
+				}
+			}	
 		}
-						
+		
 		return true;
 	}
 	
