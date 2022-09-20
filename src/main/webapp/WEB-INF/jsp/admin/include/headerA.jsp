@@ -56,12 +56,12 @@
              	</ul>
           	</li>
        
-            <li><a href="#">입양 후기</a></li>
+            <li><a href="/admin/review">입양 후기</a></li>
        
             <li><a>고객센터</a>
              	<ul>
 	                <li><a href="/admin/notice">공지사항</a></li>
-	                <li><a href="#">1:1 문의</a></li>
+	                <li><a href="/admin/qna">1:1 문의</a></li>
              	</ul>
           	</li>
         </ul>
