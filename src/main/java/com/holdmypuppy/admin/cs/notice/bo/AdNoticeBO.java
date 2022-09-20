@@ -19,16 +19,19 @@ public class AdNoticeBO {
 	
 	// 공지사항 작성 (관리자)
 	public int addNotice(
-			int memberId
-			, String title
+			String title
 			, MultipartFile file
 			, String content) {
 		
 		// 파일 저장 경로 만들어서 DAO로 전달
-		String imagePath = FileManagerService.saveFile(memberId, file);
+		// 이미지 파일 유무에 따라 많이 쓰임 ★
+		String imagePath = null;
+		if (file != null) {		// 이미지 파일이 있으면 파일을 저장 
+			
+			imagePath = FileManagerService.saveFile(0, file);
+		}
 		
-		return noticeDAO.insertNotice(memberId, title, imagePath, content);
-		
+		return noticeDAO.insertNotice(title, imagePath, content);
 	}
 	
 	
@@ -38,8 +41,6 @@ public class AdNoticeBO {
 		
 		return noticeDAO.selectNoticeList();
 	}
-	
-	
 	
 	
 

@@ -5,7 +5,6 @@ import java.util.Date;
 public class AdNotice {
 	
 	private int id;
-	private int memberId;
 	private String title;
 	private String file;
 	private String content;
@@ -17,12 +16,6 @@ public class AdNotice {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(int memberId) {
-		this.memberId = memberId;
 	}
 	public String getTitle() {
 		return title;
