@@ -28,13 +28,15 @@ public class AdminController {
 	
 	
 	
-	// 로그아웃
+	// 로그아웃 => 내가 사용하는 세션 전부 로그아웃 시켜야해서 memberId, memberLoginId, memberCode, memberNickname 전부 필요
 	@GetMapping("/signout")
 	public String signOut(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		session.removeAttribute("adminId");
-		session.removeAttribute("admminLoginId");
+		session.removeAttribute("memberId");
+		session.removeAttribute("memberLoginId");
+		session.removeAttribute("memberCode");
+		session.removeAttribute("memberNickname");
 		
 		return "redirect:/admin/signin";
 		
