@@ -27,82 +27,50 @@
 	    
 	    
 	    <section class="mt-5">
-	    
-	    	<div class="mt-5 text-center d-flex align-items-center justify-content-center">
-		    	<div class="intro">
-		    		<h3 class="text-info font-weight-bold mt-4">입양 후기</h3>
-			    	
-			    	<div class="mt-4">
-			    		<small>새로운 가족과의 행복한 입양 후기를 남겨주세요.</small>
-			    	</div>
-		    	</div>
-		    </div>
-	    	
-	    	<br> <br>
-	    	
-			
-			<div class="mt-5 d-flex justify-content-between">
-				<c:forEach var="review" items="${reviewList }">	   <%-- reviewList : ReviewController의 '입양 후기 리스트' 메소드 --%>
-					<div class="puppy border rounded">
-						<a href="/review/detail?id=${review.id }">
-							<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
-						</a>
-							
-						<a href="/review/detail?id=${review.id }">
-							<div class="mt-4 mb-5 text-center text-dark">
-								<b class="reviewTitle">${review.title }</b>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
-				
-			<br>
-			
-				
-				
-				
-				<%-- 
-				<div class="mt-4 d-flex justify-content-between">
-				
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-				
-				</div>
-				--%>
-				
-			
-			
-			<div class="mt-5">　</div>
-			<br>
-			
-			<%-- 회원에게만 글쓰기 버튼 노출--%>
-			<c:if test="${not empty memberId }">
-				<div class="d-flex justify-content-end mr-3 mt-5">
-					<a href="/review/post" class="btt btn border rounded">글쓰기</a>
-				</div>
+       
+          	<div class="mt-5 text-center d-flex align-items-center justify-content-center">
+             	<div class="intro">
+                	<h3 class="text-info font-weight-bold mt-4">입양 후기</h3>
+                
+                	<div class="mt-4">
+                   		<small>새로운 가족과의 행복한 입양 후기를 남겨주세요.</small>
+                	</div>
+             	</div>
+          	</div>
+          
+          	<br> <br>
+          
+          
+           	<div class="grid mt-5">
+              	<c:forEach var="review" items="${reviewList }">    
+                <div class="puppy border rounded">
+                   	<a href="/review/detail?id=${review.id }">
+                      	<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
+                   	</a>
+                   
+                   	<a href="/review/detail?id=${review.id }">
+                     	<div class="mt-4 mb-5 text-center text-dark">
+                        	<b class="reviewTitle">${review.title }</b>
+                     	</div>
+                  	</a>
+                </div>
+             	</c:forEach>
+          	</div>
+          
+         
+         	<div class="mt-5">　</div>
+         	<br>
+         	
+         	
+         	<%-- 회원에게만 글쓰기 버튼 노출--%>
+         	<c:if test="${not empty memberId }">
+            	<div class="d-flex justify-content-end mr-3 mt-5">
+               		<a href="/review/post" class="btt btn border rounded">글쓰기</a>
+            	</div>
             </c:if>
-            	
-	    
-	    </section>
-      
+               
+       	</section>
+
       
       	<c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
       	
