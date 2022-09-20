@@ -47,7 +47,7 @@
                    	<div class="d-flex mr-3">
                       	<b class="mr-4"><a id="saveBtn" data-post-id="${qna.id }">수정</a></b>
                       	<%-- <button type="button" class="btt btn" id="deleteBtn" data-post-id="${qna.id }"><b>삭제</b></button>--%>
-                      	<b><a href="#" class="text-dark" id="deleteBtn" data-post-id="${qna.id }">삭제</a></b>
+                      	<b><a class="text-dark" id="deleteBtn" data-post-id="${qna.id }">삭제</a></b>
 					</div>
                 </div>
             </div>
