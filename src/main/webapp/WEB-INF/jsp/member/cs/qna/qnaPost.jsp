@@ -91,7 +91,7 @@
                		success:function(data) {
                   		if(data.result == "success") {
                      		alert("문의가 등록되었습니다.");
-                     		location.href= "/qna/detail";
+                     		location.href= "/qna";
                   		} else {
                      		alert("문의 작성을 실패하였습니다.");
                   		}

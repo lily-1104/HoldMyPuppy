@@ -56,8 +56,8 @@
           	<div class="mt-5 ml-5 p-4 d-flex justify-content-start">
              	${qna.content }
           	</div>
-          
-          
+          	
+          	
           	<hr class="mt-5 ml-5 mr-5">
           	
           	
@@ -67,11 +67,25 @@
                 	<b class="ml-3">관리자</b>
                 	<small class="ml-4 text-secondary">2022-08-23  11:27</small>
                 
-                	<div class="mt-3 ml-2">( 댓글 )</div>
+                	<div class="mt-3 ml-3">( 댓글 )</div>
                 	
+                	<div class="d-flex mr-3 mt-3 justify-content-end">
+	                   	<b class="mr-4"><a href="#" class="text-dark">수정</a></b>
+	                  	<b><a href="#" class="text-dark">삭제</a></b>
+                	</div>
             	</div>
           	</div>
+          	
+          	
+          	<%-- 관리자 댓글 작성 --%>
+          	<div class="d-flex justify-content-center">
+             	<textarea rows="5" class="form-control col-10 mt-5" placeholder="답변을 남겨주세요."></textarea>
+          	</div>
           
+          	<div class="mr-5 mt-3 d-flex justify-content-end">
+             	<button type="button" class="btn mb-5 mr-5">작성</button>
+          	</div>
+          	
           	
           	<hr class="mt-5 ml-5 mr-5">
           	
@@ -86,59 +100,6 @@
         <c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
       	
 	</div>
-	
-	
-	<script>
-	
-		$(document).ready(function() {
-			
-			// 게시글 삭제
-			$("#deleteBtn").on("click", function() {
-				
-				let qnaId = $(this).data("post-id");
-				
-				$.ajax({
-					type:"get",
-					url:"/qna/post/delete",
-					data:{"qnaId":qnaId},
-					success:function(data) {
-						
-						if(data.result == "success") {
-							alert("삭제되었습니다.")
-							location.href="/qna"
-						} else {
-							alert("삭제 실패")
-						}
-					},
-					error:function() {
-						alert("삭제 에러");
-					}
-					
-				});
-			});
-			
-			
-			// 게시글 수정
-			$("#saveBtn").on("click", function() {
-				
-				let title = $("#titleInput")
-			});
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		});
-	
-	
-	
-	
-	</script>
 
 </body>
 </html>
