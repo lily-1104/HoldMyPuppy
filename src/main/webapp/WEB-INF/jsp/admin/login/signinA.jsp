@@ -66,7 +66,6 @@
 	
 		$(document).ready(function() {
 			
-			
 			$("#loginForm").on("submit", function(e) {
 				
 				// 해당 이벤트가 가지고 있는 기능을 비활성화
@@ -90,7 +89,7 @@
 				$.ajax({
 					type:"post",
 					url:"/admin/signin",
-					data:{"loginId":loginId, "password":password<%--, "memberCode":memberCode --%>}
+					data:{"loginId":loginId, "password":password},
 					success:function(data) {
 						if(data.result == "success") {
 							location.href = "/main/admin";
@@ -104,9 +103,7 @@
 					}
 					
 				});
-				
 			});
-			
 		});
 	
 	</script>
