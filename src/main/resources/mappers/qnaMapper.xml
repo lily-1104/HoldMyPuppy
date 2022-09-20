@@ -102,6 +102,17 @@
 	
 	
 	
+		<!-- 게시글 삭제 -->
+	
+	<delete id="deleteQna" parameterType="int">
+	
+		DELETE FROM
+			`qna`
+		
+		WHERE
+			`id` = #{qnaId}
+			
+	</delete>
 	
 	
 

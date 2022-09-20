@@ -34,9 +34,9 @@ public class QnaBO {
 	
 	
 	// 1:1 문의 상세 조회
-	public Qna getQna() {
+	public Qna getQna(int id) {
 		
-		return qnaDAO.selectQna();
+		return qnaDAO.selectQna(id);
 		
 	}
 	
@@ -49,6 +49,14 @@ public class QnaBO {
 	}
 	
 	
+	
+	// 게시글 삭제
+	public int deleteQna(int qnaId) {
+		
+		Qna qna = qnaDAO.selectQna(qnaId);
+		
+		return qnaDAO.deleteQna(qnaId);
+	}
 	
 	
 	

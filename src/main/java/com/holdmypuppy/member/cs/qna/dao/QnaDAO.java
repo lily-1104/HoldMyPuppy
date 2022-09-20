@@ -25,7 +25,7 @@ public interface QnaDAO {
 	
 	
 	// 1:1 문의 상세 조회
-	public Qna selectQna();
+	public Qna selectQna(@Param("id") int id);
 	
 	
 	
@@ -36,5 +36,9 @@ public interface QnaDAO {
 			, @Param("content") String content);
 	
 	
-
+	
+	// 게시글 삭제
+	public int deleteQna(@Param("qnaId") int qnaId);
+	
+	
 }
