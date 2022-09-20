@@ -28,7 +28,7 @@
 		<section class="contents">
 		
 			<div class="banner">
-				<img width="1203" alt="메인배너" src="/static/css/image/main/banner.png">
+				<img width="1203" height="250" alt="메인배너" src="/static/css/image/main/main banner.png">
 			</div>
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
@@ -91,7 +91,7 @@
 				</div>
 				
 				<div class="d-flex justify-content-center mt-4 mb-5">
-					<button type="button" onclick="location.href='/admin/adoption'" class="btn col-4 mt-5 mb-5">더보기</button>
+					<button type="button" onclick="location.href='/member/adoption'" class="btn col-4 mt-5 mb-5">더보기</button>
 				</div>
 			
 			</div>

@@ -28,7 +28,7 @@
 		<section class="contents">
 		
 			<div class="banner">
-				<img width="1203" alt="메인배너" src="/static/css/image/main/banner.png">
+				<img width="1203" height="250" alt="메인배너" src="/static/css/image/main/main banner.png">
 			</div>
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
