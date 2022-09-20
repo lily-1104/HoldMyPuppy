@@ -42,7 +42,7 @@
 					
 					<div>
 						<button type="submit" id="loginBtn" class="btn btn-info btn-block mt-5">로그인</button>
-						<button type="button" class="btn btn-block mt-4 mb-5">회원가입</button>
+						<button type="button" onclick="location.href='/member/signup'" class="btn btn-block mt-4 mb-5">회원가입</button>
 					</div>
 				</form>
 				
@@ -71,6 +71,7 @@
 		$(document).ready(function() {
 			
 			
+			// 엔터로 로그인
 			$("#loginForm").on("submit", function(e) {
 				
 				// 해당 이벤트가 가지고 있는 기능을 비활성화
