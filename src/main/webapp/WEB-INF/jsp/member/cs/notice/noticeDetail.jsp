@@ -35,14 +35,10 @@
 		    
 		    
 		    <div class="mt-5 ml-5 mr-5">
-		    	<b>공지사항입니다.</b>
+		    	<b class="ml-2">공지사항입니다.</b>
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
 				    	<small class="ml-3 text-secondary">공지사항   2022-08-26 15:22</small>
-				    	<div class="d-flex mr-3">
-					    	<b class="mr-4"><a href="#">수정</a></b>
-					    	<b><a href="#">삭제</a></b>
-				    	</div>
 		    		</div>
 		    		
 		    	<hr>
@@ -57,7 +53,7 @@
 		    </div>
 		    
 	    	<div class="ml-5 mt-5 d-flex justify-content-start">
-		    	<button type="button" class="btn btn-info ml-5">목록</button>
+		    	<button type="button" onclick="location.href='/notice'" class="btn btn-info ml-5">목록</button>
 	    	</div>
 	    
 	    </section>
