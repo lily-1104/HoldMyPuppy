@@ -22,7 +22,7 @@
 
    	<div id="wrap">
    
-       	<c:import url="/WEB-INF/jsp/member/include/header.jsp" />
+       	<c:import url="/WEB-INF/jsp/admin/include/headerA.jsp" />
        
        
        	<section>
@@ -156,7 +156,7 @@
       	</section>
        
        
-       	<c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
+       	<c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
          
    	</div>
    
