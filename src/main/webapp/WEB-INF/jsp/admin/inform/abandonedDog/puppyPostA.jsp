@@ -29,7 +29,7 @@
 	    <section class="mt-5 d-flex justify-content-center">
 			
 			<div class="mt-5">
-		    	<h3 class="text-center text-info font-weight-bold mt-3">반려견 등록</h3>
+		    	<h3 class="text-center text-info font-weight-bold mt-3">유기견 등록</h3>
 			    	
 		    	<br>
 		    	
@@ -49,14 +49,42 @@
 						<label class="mt-5"><b>강아지 나이</b></label>
 						<input type="text" id="ageInput" class="form-control mt-2">
 						
+						
 						<label class="mt-5"><b>강아지 성별</b></label>
-						<input type="text" id="genderInput" class="form-control mt-2">
+                  		<div class="d-flex align-items-center mt-3 ml-2">
+	                     	<div>
+	                        	<input type="checkbox" name="gender" id="male" onclick='checkOnlyOne(this)'><label class="ml-3">남아</label>
+	                     	</div>
+	                     
+	                     	<div class="ml-5">
+	                        	<input type="checkbox" name="gender" id="female" onclick='checkOnlyOne(this)'><label class="ml-3">여아</label>
+	                     	</div>
+	                  	</div>
+                  
+                  
+                  		<label class="mt-5"><b>예방 접종 유무</b></label>
+                  		<div class="d-flex align-items-center mt-3 ml-2">
+                     		<div>
+                        		<input type="checkbox" name="vaccination" id="y" onclick='checkOnlyOne(this)'><label class="ml-3">접종 완료</label>
+                     		</div>
+                     
+                     		<div class="ml-5">
+                        		<input type="checkbox" name="vaccination" id="n" onclick='checkOnlyOne(this)'><label class="ml-3">미접종</label>
+                     		</div>
+                  		</div>
+                  
+                  
+                  		<label class="mt-5"><b>중성화 유무</b></label>
+                  		<div class="d-flex align-items-center mt-3 ml-2">
+                     		<div>
+                        		<input type="checkbox" name="neutering" id="yes" onclick='checkOnlyOne(this)'><label class="ml-3">완료</label>
+                     		</div>
+                     
+                     		<div class="ml-5">
+                        		<input type="checkbox" name="neutering" id="no" onclick='checkOnlyOne(this)'><label class="ml-3">미완료</label>
+                     		</div>
+                  		</div>
 						
-						<label class="mt-5"><b>예방 접종 유무</b></label>
-						<input type="text" id="vaccinationInput" class="form-control mt-2">
-						
-						<label class="mt-5"><b>중성화 유무</b></label>
-						<input type="text" id="neuteringInput" class="form-control mt-2">
 						
 						<div class="d-flex mt-5"> 
 							<b class="mr-5">사진 업로드</b>
@@ -88,6 +116,22 @@
 	<script>
 		
 		$(document).ready(function() {
+			
+			// 체크박스 한개만 선택 가능하도록 설정
+	        $(document).on('click', "input[type='checkbox']", function(){
+	        	
+	            if(this.checked) {
+	                const checkboxes = $("input[type='checkbox']");
+	                for(let ind = 0; ind < checkboxes.length; ind++){
+	                    checkboxes[ind].checked = false;
+	                }
+	                this.checked = true;
+	            } else {
+	               this.checked = false;
+	            }
+	        });
+			
+			
 			
 			// 파일 업로드
 			$("#imageIcon").on("click", function(e) {
