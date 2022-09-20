@@ -33,7 +33,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
 		registry.addInterceptor(interceptor)
 			
 		.addPathPatterns("/**") 	
-		.excludePathPatterns("static/**", "/images/**", "/member/signout", "/admin/signout"); 	// 뺄 주소 패턴
+		.excludePathPatterns("static/**", "/images/**", "/member/signout", "/admin/signout", "/admin/signin"); 	// 인터셉터 제외할 주소 패턴  
 	}
 
 }

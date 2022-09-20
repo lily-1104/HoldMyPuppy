@@ -37,12 +37,17 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			if(url.startsWith("/qna")) {
 				response.sendRedirect("/member/signin");
 				return false;
+			
+			// 로그인이 되어있지 않은 상태에서 관리자 페이지 접속 시 관리자 로그인 페이지 이동 
+			} else if(url.startsWith("/admin")) {
+				response.sendRedirect("/admin/signin");
+				return false;
 			}
-			// 로그인 되어 있을 경우
-		} else if(memberId != null) {
+		
+		} else {	// 로그인 되어 있을 경우 (memberId != null)
 			
 			// 멤버 코드가 A가 아닐 경우
-			if(memberCode != "A") {
+			if(!memberCode.equals("A")) {
 				
 				// 관리자 페이지 사이트 접속시 관리자 로그인 필요
 				if(url.startsWith("/admin")) {
