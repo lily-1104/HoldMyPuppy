@@ -106,7 +106,6 @@
 				formData.append("content", content);
 				
 				
-				
 				// api 호출
 		    	$.ajax({
 		    		type:"post",
