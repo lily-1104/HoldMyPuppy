@@ -48,16 +48,16 @@
     	
         <ul class="border rounded">
         	
-            <li><a href="/shelter">ABOUT</a></li>
+            <li><a href="/shelter" class="text-dark">ABOUT</a></li>
           
             <li><a>입양 안내</a>
              	<ul>
-	                <li><a href="#">보호 중인 아이들</a></li>
-	                <li><a href="#">입양 혜택</a></li>
+	                <li><a href="/adoption">보호 중인 아이들</a></li>
+	                <li><a href="/adoption/benefit">입양 혜택</a></li>
              	</ul>
           	</li>
        
-            <li><a href="/review">입양 후기</a></li>
+            <li><a href="/review" class="text-dark">입양 후기</a></li>
        
             <li><a>고객센터</a>
              	<ul>
@@ -70,21 +70,6 @@
     </nav>
 
     
+    <div class="border rounded"></div>
     
-    
-    
-    
-    <%-- 
-    <nav class="main-menu mt-5">
-        <ul class="nav nav-fill">
-        	<li class="nav-item"><a href="/shelter" class="nav-link main-link">ABOUT</a></li>
-	        <li class="nav-item"><a href="#" class="nav-link main-link">입양 안내</a></li>
-	        <li class="nav-item"><a href="/review" class="nav-link main-link">입양 후기</a></li>
-	        <li class="nav-item"><a href="#" class="nav-link main-link">고객센터</a></li>
-      	</ul>
-    </nav>
-	--%>
-	
-
-	
 	

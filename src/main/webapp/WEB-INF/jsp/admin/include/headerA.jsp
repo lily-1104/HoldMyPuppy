@@ -17,24 +17,23 @@
          	</div>
       
          	<div class="login d-flex justify-content-end">
-            	<c:if test="${empty adminId }">
+            	<c:if test="${empty memberId }">
                 	<ul class="nav d-flex align-items-end justify-content-end">
                     	<li class="nav-item"><a href="/admin/signin" class="nav-link text-dark">LOGIN</a>
                   		<li class="nav-item"><a href="/admin/signup" class="nav-link text-dark">JOIN</a>
                		</ul>
             	</c:if>
             
-            	<c:if test="${not empty adminId }">
+            	<c:if test="${not empty memberId }">
                 	<ul class="nav">
                     	<div class="d-flex align-items-center">
-                     		<b><div class="mr-1">${adminNickname }</b></div>님 
+                     		<b><div class="mr-1">${memberNickname }</b></div>님 
 		                    	<li class="nav-item"><a href="#" class="nav-link ml-3 text-dark">MY PAGE</a></li>
 		                     	<li class="nav-item"><a href="/admin/signout" class="nav-link text-dark">LOGOUT</a></li>
                   		</div>
                		</ul>
             	</c:if>
          	</div>
-         	
         </div>
       
     </header>
@@ -43,11 +42,12 @@
     <br>  <br>  
     
     
+    <%-- 메뉴바 --%>
     <nav id="menu" class="mt-5">
     	
         <ul class="border rounded">
         	
-            <li><a href="/admin/shelter">ABOUT</a></li>
+            <li><a href="/admin/shelter" class="text-dark">ABOUT</a></li>
           
             <li><a>입양 안내</a>
              	<ul>
@@ -56,7 +56,7 @@
              	</ul>
           	</li>
        
-            <li><a href="/admin/review">입양 후기</a></li>
+            <li><a href="/admin/review" class="text-dark">입양 후기</a></li>
        
             <li><a>고객센터</a>
              	<ul>
@@ -65,5 +65,9 @@
              	</ul>
           	</li>
         </ul>
-       
     </nav>
+    
+    
+    <div class="border rounded"></div>
+    
+    
