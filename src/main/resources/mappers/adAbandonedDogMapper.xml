@@ -1,0 +1,53 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.holdmypuppy.admin.inform.abandonedDog.dao.AbandonedDogDAO">
+
+
+      	<!-- 유기견 등록 -->
+   
+   	<insert id="postDog" parameterType="map">
+   	
+      	INSERT INTO
+      		`abandonedDog`
+      	
+      	(
+      		`title`
+      		, `dogName`
+      		, `breed`
+      		, `age`
+      		, `gender`
+      		, `vaccination`
+      		, `neutering`
+      		, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+      	)
+      	
+      	VALUES
+      	(
+      		#{title}
+      		, #{dogName}
+      		, #{breed}
+      		, #{age}
+      		, #{gender}
+      		, #{vaccination}
+      		, #{neutering}
+      		, #{imagePath}
+      		, now()
+      		, now()
+      	)
+   
+   	</insert>
+
+
+
+
+
+
+
+
+
+</mapper>
