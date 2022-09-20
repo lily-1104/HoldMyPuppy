@@ -103,7 +103,7 @@
 	    	</div>
 	    	
 	    	<div class="ml-5 mt-4 d-flex justify-content-start">
-		    	<button type="button" class="btn btn-light border-dark ml-5">목록</button>
+		    	<button type="button" onclick="location.href='/review'" class="btn btn-info ml-5">목록</button>
 	    	</div>
 	    
 	    </section>
