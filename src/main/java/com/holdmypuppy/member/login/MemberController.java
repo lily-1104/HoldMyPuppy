@@ -49,6 +49,8 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		session.removeAttribute("memberId");
 		session.removeAttribute("memberLoginId");
+		session.removeAttribute("memberCode");
+		session.removeAttribute("memberNickname");
 		
 		return "redirect:/member/signin";
 		

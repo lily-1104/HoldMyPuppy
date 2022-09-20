@@ -106,6 +106,7 @@ public class MemberRestController {
 			session.setAttribute("memberId", member.getId());
 			session.setAttribute("memberLoginId", member.getLoginId());
 			session.setAttribute("memberNickname", member.getNickname());
+			session.setAttribute("memberCode", member.getMemberCode());
 			
 		} else {	// 로그인 실패
 			result.put("result", "fail");
