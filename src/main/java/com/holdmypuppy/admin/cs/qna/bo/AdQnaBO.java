@@ -1,0 +1,25 @@
+package com.holdmypuppy.admin.cs.qna.bo;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.holdmypuppy.admin.cs.qna.dao.AdQnaDAO;
+import com.holdmypuppy.admin.cs.qna.model.AdQna;
+
+
+@Service
+public class AdQnaBO {
+	
+	
+	// Autowired
+	private AdQnaDAO qnaDAO;
+	
+	
+	// 1:1 문의 내역
+	public List<AdQna> getQnaList() {
+		
+		return qnaDAO.selectQnaList();
+	}
+
+}

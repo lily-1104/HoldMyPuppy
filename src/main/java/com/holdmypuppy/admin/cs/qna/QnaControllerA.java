@@ -1,19 +1,33 @@
 package com.holdmypuppy.admin.cs.qna;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.holdmypuppy.admin.cs.qna.bo.AdQnaBO;
+import com.holdmypuppy.admin.cs.qna.model.AdQna;
 
 @Controller
 @RequestMapping("/admin/qna")
 public class QnaControllerA {
 	
 	
-	// 1:1 문의
+	@Autowired
+	private AdQnaBO qnaBO;
+	
+	
+	// 1:1 문의 내역
 	@GetMapping("")
-	public String qnaList() {
+	public String qnaList(Model model) {
+		
+		List<AdQna> qnaList = qnaBO.getQnaList();
 		
 		return "/admin/cs/qna/qnaListA";
+		
 	}
 	
 	

@@ -88,14 +88,6 @@ public class QnaRestController {
 		
 		return map;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
+	
 }
