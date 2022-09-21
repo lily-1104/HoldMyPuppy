@@ -68,12 +68,9 @@
 			</div>
 			
 			
-			<%-- 관리자에게만 글쓰기 버튼 노출-
-			<c:if test="${not empty adminId }"> --%>
-				<div class="d-flex justify-content-end mr-3 mt-5">
-					<a href="/admin/adoption/puppyPost" class="btn btn-light border rounded">글쓰기</a>
-				</div>
-            <%-- </c:if> --%>
+			<div class="d-flex justify-content-end mr-3 mt-5">
+				<a href="/admin/adoption/puppyPost" class="btn btn-info mt-5">글쓰기</a>
+			</div>
 			
 		
 		</section>
