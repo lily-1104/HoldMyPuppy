@@ -43,5 +43,13 @@ public class AdNoticeBO {
 	}
 	
 	
+	
+	// 공지사항 보기
+	public AdNotice getNotice(int id) {
+		
+		return noticeDAO.selectNotice(id);
+	}
+	
+	
 
 }

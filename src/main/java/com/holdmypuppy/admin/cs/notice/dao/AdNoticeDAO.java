@@ -23,4 +23,8 @@ public interface AdNoticeDAO {
 	public List<AdNotice> selectNoticeList();
 	
 	
+	
+	// 공지사항 보기
+	public AdNotice selectNotice(@Param("id") int id);
+	
 }

@@ -55,8 +55,28 @@
 	
 	</select>
 
-
-
+	
+	
+		<!-- 공지사항 보기 -->
+	
+	<select id="selectNotice" parameterType="int"
+		resultType="com.holdmypuppy.admin.cs.notice.model.AdNotice">
+	
+		SELECT
+			`id`
+			, `title`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`notice`
+		
+		WHERE
+			`id` = #{id}
+	
+	</select>
 
 
 

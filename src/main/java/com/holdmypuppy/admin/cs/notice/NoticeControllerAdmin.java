@@ -2,18 +2,16 @@ package com.holdmypuppy.admin.cs.notice;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.admin.cs.notice.bo.AdNoticeBO;
 import com.holdmypuppy.admin.cs.notice.model.AdNotice;
-import com.holdmypuppy.admin.login.bo.AdminBO;
+import com.holdmypuppy.member.cs.notice.model.Notice;
 
 @Controller
 @RequestMapping("/admin/notice")
@@ -47,7 +45,11 @@ public class NoticeControllerAdmin {
 	
 	// 공지사항 보기
 	@GetMapping("/detail")
-	public String noticeDetail() {
+	public String noticeDetail(@RequestParam("id") int id, Model model) {
+		
+		AdNotice post = noticeBO.getNotice(id);	
+		
+		model.addAttribute("notice", post);
 		
 		return "/admin/cs/notice/noticeDetailA";
 	}
