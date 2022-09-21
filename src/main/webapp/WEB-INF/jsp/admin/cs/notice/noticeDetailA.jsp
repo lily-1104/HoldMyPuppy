@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -38,7 +39,12 @@
 		    	<b class="ml-2">${notice.title }</b>
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
-				    	<small class="ml-3 text-secondary">공지사항   ${notice.createdAt }</small>
+				    	<small class="ml-3 text-secondary">
+				    		공지사항   
+				    		<fmt:formatDate value="${notice.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+				    	</small>
+				    	
+				    	
 				    	<div class="d-flex mr-3">
 					    	<b class="mr-4"><a href="#" class="text-dark">수정</a></b>
 					    	<b><a href="#" class="text-dark">삭제</a></b>
@@ -48,16 +54,26 @@
 		    	<hr>
 		    </div>
 		    
-		    <div class="mt-5 d-flex justify-content-center">
-		    	<img width="500" alt="강아지 입양 후기 사진" src="${notice.file }">
+		    
+		    <%-- image file이 있을 경우에만 보이도록 설정 --%>
+		    <c:if test="${not empty notice.file}">
+				<div class="mt-5 ml-5">
+		    		<img width="300" alt="강아지 입양 후기 사진" src="${notice.file }" class="mt-5 ml-5 mb-5">
+				</div>
+            </c:if>
+            
+            
+            <%-- contentText로 내용 높이 지정 --%>
+		    <div class="contentText mt-5 ml-5">
+		    	<div class="ml-3">${notice.content }</div>
 		    </div>
 		    
-		    <div class="mt-5 d-flex justify-content-center">
-		    	${notice.content }
-		    </div>
+		    
+		    <hr class="ml-5 mr-5">
+		    
 		    
 	    	<div class="ml-5 mt-5 d-flex justify-content-start">
-		    	<button type="button" onclick="location.href='/admin/notice'" class="btn btn-info ml-5">목록</button>
+		    	<button type="button" onclick="location.href='/admin/notice'" class="btn btn-info ml-2">목록</button>
 	    	</div>
 	    
 	    </section>
