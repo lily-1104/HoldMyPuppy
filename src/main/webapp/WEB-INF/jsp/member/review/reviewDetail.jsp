@@ -38,7 +38,7 @@
 		    
 		    	
 		    <div class="mt-5 ml-5 mr-5">
-		    	<b>${review.title }</b>
+		    	<b class="ml-2">${review.title }</b>
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
 				    	<small class="ml-3 text-secondary">
@@ -46,7 +46,7 @@
 				    		<fmt:formatDate value="${review.createdAt }" pattern="yyyy-MM-dd HH:mm" />
 				    	</small>
 				    	<div class="d-flex mr-3">
-					    	<b class="mr-4"><a href="#">수정</a></b>
+					    	<b class="mr-4"><a href="/review/modify">수정</a></b>
 					    	<b><a href="#">삭제</a></b>
 				    	</div>
 		    		</div>
