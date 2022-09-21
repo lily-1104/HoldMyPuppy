@@ -22,13 +22,23 @@ public interface ReviewDAO {
 	
 	
 	
+	// 입양 후기 수정
+	public int updateReview(
+			@Param("reviewId") int reviewId
+			, @Param("title") String title
+			, @Param("dogName") String dogName
+			, @Param("breed") String breed
+			, @Param("content") String content);
+	
+	
+	
 	// 입양 후기 리스트
 	public List<Review> selectReviewList();
 	
 	
 	
 	// 입양 후기 조회 (detail)
-	public Review selectReview();
+	public Review selectReview(@Param("id") int id);
 	
 	
 

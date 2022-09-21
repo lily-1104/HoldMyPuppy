@@ -35,6 +35,20 @@ public class ReviewBO {
 	
 	
 	
+	// 입양 후기 수정
+	public int updateReview(
+			int reviewId
+			, String title
+			, String dogName
+			, String breed
+			, String content ) {
+		
+		return reviewDAO.updateReview(reviewId, title, dogName, breed, content);
+		
+	}
+	
+	
+	
 	// 입양 후기 리스트
 	public List<Review> getReviewList() {
 		
@@ -44,9 +58,9 @@ public class ReviewBO {
 	
 	
 	// 입양 후기 조회 (detail)
-	public Review getReview() {
+	public Review getReview(int id) {
 		
-		return reviewDAO.selectReview();
+		return reviewDAO.selectReview(id);
 	}
 	
 	

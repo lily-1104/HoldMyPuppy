@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +17,7 @@ import com.holdmypuppy.member.review.bo.ReviewBO;
 
 	
 @RestController
+@RequestMapping("/review/post")
 public class ReviewRestController {
 	
 	@Autowired
@@ -23,7 +25,7 @@ public class ReviewRestController {
 	
 	
 	// 입양 후기 작성 게시글 업로드 API
-	@PostMapping("/review/post")
+	@PostMapping("")
 	public Map<String, String> reviewCreate(
 			@RequestParam("title") String title
 			, @RequestParam("dogName") String dogName
@@ -49,6 +51,36 @@ public class ReviewRestController {
 		return result;
 		
 	}
+	
+	
+	
+	// 입양 후기 수정
+	@PostMapping("/update")
+	public Map<String, String> updateReview(
+			@RequestParam("reviewId") int reviewId
+			, @RequestParam("title") String title
+			, @RequestParam("dogName") String dogName
+			, @RequestParam("breed") String breed
+			, @RequestParam("content") String content
+			, HttpServletRequest request ) {
+		
+		int count = reviewBO.updateReview(reviewId, title, dogName, breed, content);
+		
+		Map<String, String> map = new HashMap<>();
+		
+		if(count == 1) {
+			map.put("result", "success");
+			
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
+	
+	
+	
 	
 
 }

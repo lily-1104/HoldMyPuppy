@@ -42,11 +42,20 @@ public class ReviewController {
 	
 	
 	
+	// 입양 후기 수정 
+	@GetMapping("/modify")
+	public String reviewModify() {
+		
+		return "/member/review/reviewModify";
+	}
+	
+	
+	
 	// 입양 후기 조회 (detail)
 	@GetMapping("/detail")
-	public String reviewDetail(Model model) {
+	public String reviewDetail(@RequestParam("id") int id, Model model) {
 		
-		Review review = reviewBO.getReview();
+		Review review = reviewBO.getReview(id);
 		
 		model.addAttribute("review", review);
 		

@@ -40,13 +40,36 @@
 	
 	
 	
+		<!-- 입양 후기 수정 -->
+	
+	<update id="updateReview" parameterType="map">
+	
+		UPDATE
+			`review`
+		
+		SET
+			`id` = #{id}
+			, `title` = #{title}
+			, `dogName` = #{dogName}
+			, `breed` = #{breed}
+			, `content` = #{content}
+			, `updatedAt` = now()
+	
+		WHERE
+			`id` = #{reviewId}
+	
+	</update>
+	
+	
+	
 		<!-- 입양 후기 리스트 -->
 	
 	<select id="selectReviewList" parameterType="int"
 		resultType="com.holdmypuppy.member.review.model.Review">
 	
 		SELECT
-			`memberId`
+			`id`
+			, `memberId`
 			, `title`
 			, `dogName`
 			, `breed`
@@ -88,10 +111,6 @@
 			`id` = #{id}
 	
 	</select>
-	
-	
-	
-	
 	
 
 </mapper>
