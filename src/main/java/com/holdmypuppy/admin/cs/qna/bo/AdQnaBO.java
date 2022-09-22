@@ -2,6 +2,7 @@ package com.holdmypuppy.admin.cs.qna.bo;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.holdmypuppy.admin.cs.qna.dao.AdQnaDAO;
@@ -12,7 +13,7 @@ import com.holdmypuppy.admin.cs.qna.model.AdQna;
 public class AdQnaBO {
 	
 	
-	// Autowired
+	@Autowired
 	private AdQnaDAO qnaDAO;
 	
 	
