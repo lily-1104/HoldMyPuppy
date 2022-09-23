@@ -29,7 +29,7 @@ public interface QnaDAO {
 	
 	
 	
-	// 글 수정 
+	// 문의 수정 
 	public int updateQna(
 			@Param("qnaId") int qnaId
 			, @Param("title") String title
@@ -37,7 +37,7 @@ public interface QnaDAO {
 	
 	
 	
-	// 게시글 삭제
+	// 문의 삭제
 	public int deleteQna(@Param("qnaId") int qnaId);
 	
 	

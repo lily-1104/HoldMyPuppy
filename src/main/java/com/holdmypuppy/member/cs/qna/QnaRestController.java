@@ -48,12 +48,13 @@ public class QnaRestController {
 	
 	
 	
-	// 글 수정
+	// 문의 수정
 	@PostMapping("/qna/post/update")
 	public Map<String, String> updateQna(
 			@RequestParam("qnaId") int qnaId
 			, @RequestParam("title") String title
-			, @RequestParam("content") String content) {
+			, @RequestParam("content") String content
+			, HttpServletRequest request) {
 		
 		int count = qnaBO.updatePost(qnaId, title, content);
 		
@@ -72,7 +73,7 @@ public class QnaRestController {
 	
 	
 	
-	// 게시글 삭제
+	// 문의 삭제
 	@GetMapping("/qna/post/delete")
 	public Map<String, String> deleteQna(@RequestParam("qnaId") int qnaId) {
 		

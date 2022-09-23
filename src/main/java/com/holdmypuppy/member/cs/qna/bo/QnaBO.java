@@ -42,7 +42,7 @@ public class QnaBO {
 	
 	
 	
-	// 글 수정
+	// 문의 수정
 	public int updatePost(int qnaId, String title, String content) {
 		
 		return qnaDAO.updateQna(qnaId, title, content);
@@ -50,14 +50,13 @@ public class QnaBO {
 	
 	
 	
-	// 게시글 삭제
+	// 문의 삭제
 	public int deleteQna(int qnaId) {
 		
 		Qna qna = qnaDAO.selectQna(qnaId);
 		
 		return qnaDAO.deleteQna(qnaId);
 	}
-	
 	
 	
 }
