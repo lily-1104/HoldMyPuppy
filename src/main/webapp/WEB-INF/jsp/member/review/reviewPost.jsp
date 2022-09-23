@@ -56,7 +56,6 @@
 							<b class="mr-5">사진 업로드</b>
 							<a href="#" id="imageIcon"> <i class="bi bi-image text-secondary"></i> </a> 
 							<input type="file" id="fileInput" class="d-none">
-							<!--  <button type="button" class="btn" id="uploadBtn">d</button>-->
 						</div>
 						
 						<label class="mt-5"><b>내용</b></label>
@@ -154,7 +153,7 @@
 						
 					},
 					error:function() {
-						alert("로그인 해주세요");
+						alert("후기 등록 에러");
 					}
 					
 				});

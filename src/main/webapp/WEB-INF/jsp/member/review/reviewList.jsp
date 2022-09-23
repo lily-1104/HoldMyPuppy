@@ -41,9 +41,9 @@
           	<br> <br>
           
           
-           	<div class="grid mt-5">
+           	<div class="grid mt-3">
               	<c:forEach var="review" items="${reviewList }">    
-                <div class="puppy border rounded">
+                <div class="puppy border rounded mt-5">
                    	<a href="/review/detail?id=${review.id }">
                       	<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
                    	</a>
