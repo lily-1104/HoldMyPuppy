@@ -48,8 +48,7 @@
 			`review`
 		
 		SET
-			`id` = #{id}
-			, `title` = #{title}
+			`title` = #{title}
 			, `dogName` = #{dogName}
 			, `breed` = #{breed}
 			, `content` = #{content}
@@ -59,6 +58,20 @@
 			`id` = #{reviewId}
 	
 	</update>
+	
+	
+	
+		<!-- 입양 후기 삭제 -->
+	
+	<delete id="deleteReview" parameterType="int">
+	
+		DELETE FROM
+			`review`
+		
+		WHERE
+			`id` = #{reviewId}
+	
+	</delete>
 	
 	
 	

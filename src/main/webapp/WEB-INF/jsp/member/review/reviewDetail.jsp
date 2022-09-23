@@ -45,10 +45,11 @@
 				    		입양 후기   
 				    		<fmt:formatDate value="${review.createdAt }" pattern="yyyy-MM-dd HH:mm" />
 				    	</small>
-				    	<div class="d-flex mr-3">
-					    	<b class="mr-4"><a href="/review/modify">수정</a></b>
-					    	<b><a href="#">삭제</a></b>
-				    	</div>
+				    	
+					    <div class="d-flex mr-3">
+						    <b class="mr-4"><a class="text-dark" href="/review/modify?id=${review.id }">수정</a></b>
+						    <b><a href="#" class="text-dark" id="deleteBtn" data-post-id="${review.id }">삭제</a></b>
+					    </div>
 		    		</div>
 		    		
 		    	<hr>
@@ -113,6 +114,41 @@
       	
 	</div>
 	
+	
+	<script>
+	
+		$(document).ready(function() {
+			
+			// 입양 후기 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				let reviewId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/review/post/delete",
+					data:{"reviewId":reviewId},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("삭제되었습니다")
+							location.href="/review"
+							
+						} else {
+							alert("삭제를 실패했습니다")
+						}
+						
+					},
+					error:function() {
+						alert("삭제 에러");
+					}
+					
+				});
+			});
+			
+		});
+	
+	</script>
 
 </body>
 </html>

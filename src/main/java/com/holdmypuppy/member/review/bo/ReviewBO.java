@@ -41,10 +41,23 @@ public class ReviewBO {
 			, String title
 			, String dogName
 			, String breed
-			, String content ) {
+			, String content) {
 		
 		return reviewDAO.updateReview(reviewId, title, dogName, breed, content);
 		
+	}
+	
+	
+	
+	// 입양 후기 삭제
+	public int deleteReview(int reviewId) {
+		
+		Review review = reviewDAO.selectReview(reviewId);
+		
+		String imagePath = review.getFile();
+		FileManagerService.removeFile(imagePath);
+		
+		return reviewDAO.deleteReview(reviewId);
 	}
 	
 	

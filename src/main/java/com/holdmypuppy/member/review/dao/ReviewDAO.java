@@ -32,6 +32,11 @@ public interface ReviewDAO {
 	
 	
 	
+	// 입양 후기 삭제
+	public int deleteReview(@Param("reviewId") int reviewId);
+	
+	
+	
 	// 입양 후기 리스트
 	public List<Review> selectReviewList();
 	

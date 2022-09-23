@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,7 +63,7 @@ public class ReviewRestController {
 			, @RequestParam("dogName") String dogName
 			, @RequestParam("breed") String breed
 			, @RequestParam("content") String content
-			, HttpServletRequest request ) {
+			, HttpServletRequest request) {
 		
 		int count = reviewBO.updateReview(reviewId, title, dogName, breed, content);
 		
@@ -81,6 +82,24 @@ public class ReviewRestController {
 	
 	
 	
+	// 입양 후기 삭제
+	@GetMapping("/delete")
+	public Map<String, String> deleteReview(@RequestParam("reviewId") int reviewId) {
+		
+		Map<String, String> map = new HashMap<>();
+		
+		int count = reviewBO.deleteReview(reviewId);
+		
+		if(count == 1) {
+			map.put("result", "success");
+			
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
 	
 
 }
