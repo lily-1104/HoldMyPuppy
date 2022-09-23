@@ -44,7 +44,11 @@ public class ReviewController {
 	
 	// 입양 후기 수정 
 	@GetMapping("/modify")
-	public String reviewModify() {
+	public String reviewModify(@RequestParam("id") int id, Model model) {
+		
+		Review review = reviewBO.getReview(id);
+		
+		model.addAttribute("review", review);
 		
 		return "/member/review/reviewModify";
 	}

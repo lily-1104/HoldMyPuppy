@@ -43,17 +43,17 @@
          
 	               	<div class="mt-3">
 	                  
-	                  	<label class="mt-2"><b>제목</b></label>
-	                  	<input type="text" id="titleInput" class="form-control mt-2" placeholder="제목을 입력해주세요">
+	                  	<label class="mt-2"><b>제목</b></label>					<%-- 기존에 작성된 데이터를 불러오려면 value 안에 넣기 --%>
+	                  	<input type="text" id="titleInput" class="form-control mt-2" value="${review.title }">
 	                  
 	                  	<label class="mt-5"><b>아이 이름</b></label>
-	                  	<input type="text" id="dogNameInput" class="form-control mt-2" placeholder="강아지의 이름을 입력해주세요">
+	                  	<input type="text" id="dogNameInput" class="form-control mt-2" value="${review.dogName }">
 	                  
 	                  	<label class="mt-5"><b>견종</b></label>
-	                  	<input type="text" id="breedInput" class="form-control mt-2" placeholder="견종을 입력해주세요">
+	                  	<input type="text" id="breedInput" class="form-control mt-2" value="${review.breed }">
 	                  
 	                  	<label class="mt-5"><b>내용</b></label>
-	                  	<textarea rows="15" id="contentInput" class="form-control mt-2" placeholder="후기를 작성해주세요"></textarea>
+	                  	<textarea rows="15" id="contentInput" class="form-control mt-2">${review.content }</textarea>
 	                  
 	                  	<div>
 	                     	<button type="button" id="saveBtn" data-post-id="${review.id }" class="btn btn-info btn-block mt-5">수정하기</button>
@@ -79,7 +79,7 @@
          
          	// 게시글 수정
          	$("#saveBtn").on("click", function() {
-            
+            	
             	let title = $("#titleInput").val();
             	let dogName = $("#dogNameInput").val();
             	let breed = $("#breedInput").val();
@@ -119,6 +119,7 @@
                   		if(data.result == "success") {
                      		alert("후기가 수정되었습니다.");
                      		location.href= "/review";
+                     		
                   		} else {
                      		alert("후기 수정을 실패하였습니다.");
                   		}
