@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.member.cs.notice.bo.NoticeBO;
 import com.holdmypuppy.member.cs.notice.model.Notice;
@@ -35,7 +36,11 @@ public class NoticeController {
 	
 	// 공지사항 조회
 	@GetMapping("/detail")
-	public String noticeDetail() {
+	public String noticeDetail(@RequestParam("id") int id, Model model) {
+		
+		Notice Post = noticeBO.getNotice(id);
+		
+		model.addAttribute("notice", Post);
 		
 		return "/member/cs/notice/noticeDetail";
 	}

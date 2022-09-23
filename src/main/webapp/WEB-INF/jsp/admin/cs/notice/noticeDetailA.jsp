@@ -58,7 +58,7 @@
 		    <%-- image file이 있을 경우에만 보이도록 설정 --%>
 		    <c:if test="${not empty notice.file}">
 				<div class="mt-5 ml-5">
-		    		<img width="300" alt="강아지 입양 후기 사진" src="${notice.file }" class="mt-5 ml-5 mb-5">
+		    		<img width="300" alt="공지사항 사진" src="${notice.file }" class="mt-5 ml-5 mb-5">
 				</div>
             </c:if>
             

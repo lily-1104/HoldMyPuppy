@@ -71,7 +71,7 @@
 	    	
 			<c:if test="${not empty memberId}">
 				<div class="d-flex justify-content-end mr-5 mt-5">
-					<a href="/admin/notice/post" class="btn btn-info border rounded">글쓰기</a>
+					<a href="/admin/notice/post" class="btn btn-info">글쓰기</a>
 				</div>
             </c:if>
             

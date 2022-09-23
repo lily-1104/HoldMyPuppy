@@ -28,4 +28,27 @@
 	
 	</select>
 	
+	
+	
+		<!-- 공지사항 조회 -->
+	
+	<select id="selectNotice" parameterType="int"
+		resultType="com.holdmypuppy.member.cs.notice.model.Notice">
+	
+		SELECT
+			`id`
+			, `title`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`notice`
+		
+		WHERE
+			`id` = #{id}
+			
+	</select>
+	
 </mapper>

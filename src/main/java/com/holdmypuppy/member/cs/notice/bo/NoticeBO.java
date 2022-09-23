@@ -22,4 +22,12 @@ public class NoticeBO {
 		
 	}
 	
+	
+	
+	// 공지사항 조회
+	public Notice getNotice(int id) {
+		
+		return noticeDAO.selectNotice(id);
+	}
+	
 }
