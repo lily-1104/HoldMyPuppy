@@ -25,6 +25,8 @@ public class QnaControllerA {
 	public String qnaList(Model model) {
 		
 		List<AdQna> qnaList = qnaBO.getQnaList();
+
+		model.addAttribute("qnaList", qnaList);
 		
 		return "/admin/cs/qna/qnaListA";
 		
