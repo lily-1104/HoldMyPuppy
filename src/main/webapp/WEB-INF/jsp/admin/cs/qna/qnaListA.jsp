@@ -60,7 +60,7 @@
 		    				<td class="text-center">${qna.id }</td>
 		    				
 		    				<td class="noticeTitle text-center text-dark">
-		    					<a href="/qna/detail?id=${qna.id }" class="text-dark">${qna.title }</a>
+		    					<a href="/admin/qna/detail?id=${qna.id }" class="text-dark">${qna.title }</a>
 		    				</td>
 		    				
 		    				<td class="text-right">${member.nickname }</td>

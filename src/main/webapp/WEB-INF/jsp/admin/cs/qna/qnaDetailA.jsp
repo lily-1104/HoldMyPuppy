@@ -36,7 +36,7 @@
           
           
           	<div class="mt-5 ml-5 mr-5">
-             	<b>${qna.title }</b>
+             	<b class="ml-2">${qna.title }</b>
              
                 <div class="mt-3 d-flex justify-content-between">
                    	<small class="ml-3 text-secondary">

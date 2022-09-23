@@ -62,5 +62,18 @@ public class QnaController {
 	    return "/member/cs/qna/qnaDetail";
 	}
 	
+	
+	
+	// 1:1 문의 수정
+	@GetMapping("/modify")
+	public String qnaModify(@RequestParam("id") int id, Model model) {
+		
+		Qna qna = qnaBO.getQna(id);
+		
+		model.addAttribute("qna", qna);
+		
+		return "/member/cs/qna/qnaModify";
+	}
+	
 
 }
