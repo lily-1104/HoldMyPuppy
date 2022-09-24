@@ -7,9 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.admin.cs.qna.bo.AdQnaBO;
 import com.holdmypuppy.admin.cs.qna.model.AdQna;
+import com.holdmypuppy.member.cs.qna.model.Qna;
 
 @Controller
 @RequestMapping("/admin/qna")
@@ -36,7 +38,11 @@ public class QnaControllerA {
 	
 	// 1:1 문의 상세 조회
 	@GetMapping("/detail")
-	public String qnaDetail() {
+	public String qnaDetail(@RequestParam("id") int id, Model model) {
+		
+		AdQna qna = qnaBO.getQna(id);
+		
+		model.addAttribute("qna", qna);
 		
 		return "/admin/cs/qna/qnaDetailA";
 	}

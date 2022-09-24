@@ -96,7 +96,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("문의가 수정되었습니다.");
-							location.href= "/qna";
+							location.href= "/qna/detail?id=${qna.id}";
 							
 						} else {
 							alert("문의 수정을 실패하였습니다.");

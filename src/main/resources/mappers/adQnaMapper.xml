@@ -30,5 +30,26 @@
 	
 	
 	
+		<!-- 1:1 문의 상세 조회 -->
+	
+	<select id="selectQna" parameterType="int"
+		resultType="com.holdmypuppy.admin.cs.qna.model.AdQna">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+	
+		FROM
+			`qna`
+			
+		WHERE
+			`id` = #{id}
+	
+	</select>
+	
 	
 </mapper>

@@ -23,7 +23,7 @@
 
 	<div id="wrap">
    
-	    <c:import url="/WEB-INF/jsp/member/include/header.jsp" />
+	    <c:import url="/WEB-INF/jsp/admin/include/headerA.jsp" />
 	    
 	    
 	    <section class="mt-5">
@@ -45,7 +45,6 @@
                    	</small>
                    	
                    	<div class="d-flex mr-3">
-                      	<b href="#" class="mr-4"><a id="saveBtn" data-post-id="${qna.id }" class="text-dark">수정</a></b>
                       	<b><a href="#" class="text-dark" id="deleteBtn" data-post-id="${qna.id }">삭제</a></b>
 					</div>
                 </div>
@@ -97,7 +96,7 @@
         </section>
         
         
-        <c:import url="/WEB-INF/jsp/member/include/footer.jsp" />
+        <c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
       	
 	</div>
 
