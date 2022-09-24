@@ -46,8 +46,8 @@
 				    	
 				    	
 				    	<div class="d-flex mr-3">
-					    	<b class="mr-4"><a href="#" class="text-dark">수정</a></b>
-					    	<b><a href="#" class="text-dark">삭제</a></b>
+					    	<b class="mr-4"><a href="/admin/notice/modify?id=${notice.id }" class="text-dark">수정</a></b>
+					    	<b><a href="#" class="text-dark" id="deleteBtn" data-post-id="${notice.id }">삭제</a></b>
 				    	</div>
 		    		</div>
 		    		
@@ -82,6 +82,12 @@
       	<c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
       	
 	</div>
+	
+	
+	<script>
+	
+	
+	</script>
 	    
 
 </body>

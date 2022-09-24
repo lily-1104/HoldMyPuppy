@@ -51,5 +51,31 @@ public class AdNoticeBO {
 	}
 	
 	
+	
+	// 공지사항 수정
+	public int updateNotice(
+			int noticeId
+			, String title
+			, String content) {
+		
+		return noticeDAO.updateNotice(noticeId, title, content);
+				
+	}
+	
+	
+	
+	// 공지사항 삭제
+	public int deleteNotice(int noticeId) {
+		
+		AdNotice notice = noticeDAO.selectNotice(noticeId);
+		
+		// 파일 삭제
+		String imagePath = notice.getFile();
+		FileManagerService.removeFile(imagePath);
+		
+		return noticeDAO.deleteNotice(noticeId);
+		
+	}
+	
 
 }

@@ -38,7 +38,7 @@
 					<div class="mt-3">
 						
 						<label class="mt-2"><b>제목</b></label>
-						<input type="text" id="titleInput" class="form-control mt-2">
+						<input type="text" id="titleInput" class="form-control mt-2" placeholder="제목을 입력해주세요">
 						
 						
 						<div class="d-flex mt-5"> 
@@ -49,7 +49,7 @@
 						
 						
 						<label class="mt-5"><b>내용</b></label>
-						<textarea rows="15" id="contentInput" class="form-control mt-2"></textarea>
+						<textarea rows="15" id="contentInput" class="form-control mt-2" placeholder="내용을 입력해주세요"></textarea>
 						
 						
 						<div>

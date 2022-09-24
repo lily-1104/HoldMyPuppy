@@ -77,7 +77,40 @@
 			`id` = #{id}
 	
 	</select>
-
+	
+	
+	
+		<!-- 공지사항 수정 -->
+	
+	<update id="updateNotice" parameterType="map">
+	
+		UPDATE
+			`notice`
+		
+		SET
+			`title` = #{title}
+			, `content` = #{content}
+			, `updatedAt` = now()
+		
+		WHERE
+			`id` = #{noticeId}
+	
+	</update>
+	
+	
+	
+		<!-- 공지사항 삭제 -->
+	
+	<delete id="deleteNotice" parameterType="int">
+	
+		DELETE FROM
+			`notice`
+		
+		WHERE
+			`id` = #{noticeId}
+	
+	</delete>
+	
 
 
 </mapper>

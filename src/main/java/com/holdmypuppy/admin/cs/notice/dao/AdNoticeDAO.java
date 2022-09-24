@@ -27,4 +27,17 @@ public interface AdNoticeDAO {
 	// 공지사항 보기
 	public AdNotice selectNotice(@Param("id") int id);
 	
+	
+	
+	// 공지사항 수정
+	public int updateNotice(
+			@Param("noticeId") int noticeId
+			, @Param("title") String title
+			, @Param("content") String content);
+	
+	
+	
+	// 공지사항 삭제
+	public int deleteNotice(@Param("noticeId") int noticeId);
+	
 }

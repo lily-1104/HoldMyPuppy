@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.admin.cs.notice.bo.AdNoticeBO;
 import com.holdmypuppy.admin.cs.notice.model.AdNotice;
-import com.holdmypuppy.member.cs.notice.model.Notice;
 
 @Controller
 @RequestMapping("/admin/notice")
@@ -53,5 +52,18 @@ public class NoticeControllerAdmin {
 		
 		return "/admin/cs/notice/noticeDetailA";
 	}
-
+	
+	
+	
+	// 공지사항 수정
+	@GetMapping("/modify")
+	public String noticeModify(@RequestParam("id") int id, Model model) {
+		
+		AdNotice notice = noticeBO.getNotice(id);
+		
+		model.addAttribute("notice", notice);
+		
+		return "/admin/cs/notice/noticeModifyA";
+	}
+	
 }
