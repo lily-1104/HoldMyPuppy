@@ -100,4 +100,30 @@
 	</select>
 	
 	
+	
+		<!-- id로 사용자 정보 조회 (댓글) -->
+		
+	<select id="selectMemberById" parameterType="int"
+		resultType="com.holdmypuppy.member.login.model.Member">
+		
+		SELECT
+			`id`
+			, `loginId`
+			, `password`
+			, `name`
+			, `phoneNumber`
+			, `nickname`
+			, `memberCode`
+			, `createdAt`
+			, `updatedAt`
+			
+		FROM
+			`member`
+			
+		WHERE
+			`id` = #{id}
+	
+	</select>
+	
+	
 </mapper>

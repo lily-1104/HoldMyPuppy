@@ -72,4 +72,12 @@ public class MemberBO {
 	}
 	
 	
+	
+	// id로 사용자 정보 조회 (댓글)
+	public Member getMemberById(int id) {
+		
+		return memberDAO.selectMemberById(id);
+	}
+	
+	
 }

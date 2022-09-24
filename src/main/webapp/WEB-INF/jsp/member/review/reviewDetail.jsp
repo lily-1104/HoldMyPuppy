@@ -36,7 +36,8 @@
 		    	</div>
 		    </div>
 		    
-		    	
+		    
+		    <%-- 후기 내용 --%>
 		    <div class="mt-5 ml-5 mr-5">
 		    	<b class="ml-2">${review.title }</b>
 		    	
@@ -55,6 +56,7 @@
 		    	<hr>
 		    </div>
 		    
+		    
 		    <div class="mt-5 d-flex justify-content-center">
 		    	<img width="500" alt="강아지 입양 후기 사진" src="${review.file }">
 		    </div>
@@ -63,12 +65,43 @@
 		    	${review.content }
 		    </div>
 		    
+		    
 		    <hr class="mt-5 ml-5 mr-5">
+		    
+		    
+		    <%-- 댓글 --%>
+		    <div class="mt-4 ml-5 mr-5">
+		    	<div class="ml-5 mr-5">
+		    		<c:forEach var="rvCommentDetail" items="${reviewDetail.commentList }">
+		    		<b class="ml-5">${rvCommentDetail.member.nicknamme }</b>
+		    		<small class="ml-4 text-secondary">
+		    			<fmt:formatDate value="${rvCommentDetail.rvcomment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+                	</small>
+		    		
+		    		<div class="mt-3 ml-5">( 댓글 )</div>
+		    		</c:forEach>
+		    		
+		    		<div class="d-flex mr-3 mt-3 justify-content-end">
+		    			<b class="mr-4"><a href="#">수정</a></b>
+					    <b><a href="#">삭제</a></b>
+		    		</div>
+		    		
+		    		<hr class="ml-4s mr-2">
+		    	</div>
+		    </div>
+		    
+		    
+		    
+		    
+		    
+		    
 		    
 		    <div class="mt-4 ml-5 mr-5">
 		    	<div class="ml-5 mr-5">
 		    		<b class="ml-5">앙꼬</b>
-		    		<small class="ml-4 text-secondary">2022-08-25  09:11</small>
+		    		<small class="ml-4 text-secondary">
+		    			<fmt:formatDate value="${reviewComment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+                	</small>
 		    		
 		    		<div class="mt-3 ml-5">( 댓글 )</div>
 		    		
@@ -95,18 +128,20 @@
 		    	</div>
 		    </div>
 		    
-		    <div class="d-flex justify-content-center">
-		    	<textarea rows="5" class="form-control col-10 mt-5" placeholder="댓글을 남겨주세요 / 로그인이 필요합니다."></textarea>
-	    	</div>
 		    
-		    <div class="mr-5 mt-2 d-flex justify-content-end">
-		    	<button type="button" class="btn mr-5">작성</button>
-	    	</div>
-	    	
-	    	<div class="ml-5 mt-4 d-flex justify-content-start">
-		    	<button type="button" onclick="location.href='/review'" class="btn btn-info ml-5">목록</button>
-	    	</div>
-	    
+		    <%-- 댓글 입력 --%>
+		    <div class="d-flex justify-content-center">
+             	<textarea rows="5" id="commentInput${review.id }" class="form-control col-10 mt-5" placeholder="댓글을 남겨주세요 / 로그인이 필요합니다."></textarea>
+          	</div>
+          	
+          	<div class="mr-5 mt-2 d-flex justify-content-end">
+             	<button type="button" data-post-id="${review.id }" class="btn mr-5 comment-btn">작성</button>
+          	</div>
+          
+          	<div class="ml-5 mt-4 d-flex justify-content-start">
+             	<button type="button" onclick="location.href='/review'" class="btn btn-info ml-5">목록</button>
+          	</div>
+		    
 	    </section>
       
       
@@ -118,6 +153,39 @@
 	<script>
 	
 		$(document).ready(function() {
+			
+			// 댓글 입력
+			$(".comment-btn").on("click", function() {
+				
+				// reviewId 얻어오기
+				let reviewId = $(this).data("post-id");
+				
+				// 작성한 댓글 가져오기
+				let content = $("#commentInput" + reviewId).val();
+				
+				alert(reviewId);
+				$.ajax({
+					type:"post",
+					url:"/review/comment/create",
+					data:{"reviewId":reviewId, "content":content},
+					success:function(data) {
+						if(data.result == "success") {
+							alert("댓글이 등록되었습니다");
+							location.reload();
+							
+						} else {
+							alert("댓글 작성을 실패했습니다");
+						}
+						
+					},
+					error:function() {
+						alert("댓글 작성 에러");
+					}
+				});
+				
+			});
+			
+			
 			
 			// 입양 후기 삭제
 			$("#deleteBtn").on("click", function() {

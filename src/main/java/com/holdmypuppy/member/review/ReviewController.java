@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.holdmypuppy.member.review.bo.ReviewBO;
+import com.holdmypuppy.member.review.comment.bo.RvCommentBO;
+import com.holdmypuppy.member.review.comment.model.RvComment;
+import com.holdmypuppy.member.review.comment.model.RvCommentDetail;
 import com.holdmypuppy.member.review.model.Review;
 
 @Controller
@@ -19,6 +22,9 @@ public class ReviewController {
 	
 	@Autowired
 	private ReviewBO reviewBO;
+	
+	@Autowired
+	private RvCommentBO rvCommentBO;
 	
 	
 	// 입양 후기 리스트
@@ -61,7 +67,11 @@ public class ReviewController {
 		
 		Review review = reviewBO.getReview(id);
 		
-		model.addAttribute("review", review);
+		model.addAttribute("review", review);	// "review", "reviewList"가 jsp에서 쓰임 ex) ${review.id }
+		
+		// 댓글 조회
+		List<RvCommentDetail> reviewCommentList = rvCommentBO.getCommentListByReviewId(id);
+		model.addAttribute("reviewList", reviewCommentList);
 		
 		return "/member/review/reviewDetail";
 	}
