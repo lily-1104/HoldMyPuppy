@@ -118,7 +118,7 @@
                		success:function(data) {
                   		if(data.result == "success") {
                      		alert("후기가 수정되었습니다.");
-                     		location.href= "/review";
+                     		location.href= "/review/detail?id=${review.id}";
                      		
                   		} else {
                      		alert("후기 수정을 실패하였습니다.");
