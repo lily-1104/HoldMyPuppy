@@ -65,13 +65,13 @@ public class ReviewController {
 	@GetMapping("/detail")
 	public String reviewDetail(@RequestParam("id") int id, Model model) {
 		
+		// 입양 후기 게시글 조회
 		Review review = reviewBO.getReview(id);
-		
 		model.addAttribute("review", review);	// "review", "reviewList"가 jsp에서 쓰임 ex) ${review.id }
 		
 		// 댓글 조회
-		List<RvCommentDetail> reviewCommentList = rvCommentBO.getCommentListByReviewId(id);
-		model.addAttribute("reviewList", reviewCommentList);
+		List<RvCommentDetail> reviewComment = rvCommentBO.getCommentListByReviewId(id);
+		model.addAttribute("reviewCommentList", reviewComment);
 		
 		return "/member/review/reviewDetail";
 	}
