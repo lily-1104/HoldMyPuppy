@@ -31,5 +31,16 @@ public class AdQnaBO {
 		
 		return qnaDAO.selectQna(id);
 	}
+	
+	
+	
+	// 1:1 문의 삭제
+	public int deleteQna(int qnaId) {
+		
+		AdQna qna = qnaDAO.selectQna(qnaId);
+		
+		return qnaDAO.deleteQna(qnaId);
+				
+	}
 
 }

@@ -18,5 +18,10 @@ public interface AdQnaDAO {
 	
 	// 1:1 문의 상세 조회
 	public AdQna selectQna(@Param("id") int id);
+	
+	
+	
+	// 1:1 문의 삭제
+	public int deleteQna(@Param("qnaId") int qndId);
 
 }

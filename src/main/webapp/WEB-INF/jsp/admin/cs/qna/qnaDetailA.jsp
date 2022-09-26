@@ -99,6 +99,42 @@
         <c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
       	
 	</div>
+	
+	
+	<script>
+		
+		$(document).ready(function() {
+			
+			// 1:1 문의 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				let qnaId = $(this).data("post-id");
+				
+				
+				$.ajax({
+					type:"get",
+					url:"/qna/post/delete",
+					data:{"qnaId":qnaId},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("문의가 삭제되었습니다.");
+							location.href="/admin/qna"
+							
+						} else {
+							alert("삭제를 실패했습니다");
+						}
+						
+					},
+					error:function() {
+						alert("삭제 에러");
+					} 
+				});
+			});
+			
+		});
+	
+	</script>
 
 </body>
 </html>
