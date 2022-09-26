@@ -86,6 +86,35 @@
 	
 	<script>
 	
+		$(document).ready(function() {
+			
+			// 공지사항 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				let noticeId = $(this).data("post-id");
+				
+				
+				$.ajax({
+					type:"get",
+					url:"/notice/post/delete",
+					data:{"noticeId":noticeId},
+					success:function(data) {
+						if(data.result == "success") {
+							alert("삭제되었습니다");
+							location.href="/admin/notice"
+							
+						} else {
+							alert("삭제를 실패했습니다");
+							
+						}
+					},
+					error:function() {
+						alert("삭제 에러");
+					}
+				});
+			});
+			
+		});
 	
 	</script>
 	    
