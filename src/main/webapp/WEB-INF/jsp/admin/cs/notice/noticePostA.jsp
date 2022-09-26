@@ -118,7 +118,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("등록되었습니다.");
-							location.href= "/admin/notice/detail";
+							location.href= "/admin/notice";
 						} else {
 							alert("등록을 실패하였습니다.");
 						}
