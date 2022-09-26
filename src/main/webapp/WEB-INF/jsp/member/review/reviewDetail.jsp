@@ -72,10 +72,13 @@
 		    <%-- 댓글 --%>
 		    <div class="mt-4 ml-5 mr-5">
 		    	<div class="ml-5 mr-5">
-		    		<c:forEach var="rvCommentDetail" items="${reviewDetail.commentList }">
-		    		<b class="ml-5">${rvCommentDetail.member.nicknamme }</b>
+		    		<c:forEach var="rvCommentList" items="${reviewCommentList }">
+		    		<%--<b class="ml-5">${reviewCommentList.nickname }</b>--%>
 		    		<small class="ml-4 text-secondary">
-		    			<fmt:formatDate value="${rvCommentDetail.rvcomment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+		    			<fmt:formatDate value="${rvCommentList.rvComment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
+		    				<%-- ${rvCommentList.rvComment.createdAt }
+		    						=> 위에서 정의한 <var="rvCommentList">의 rvComment(comment 패키지의 model)의 createdAt임
+		    							(중간에 rvComment를 넣지 않으면 createdAt 값 출력 안됨) --%>
                 	</small>
 		    		
 		    		<div class="mt-3 ml-5">( 댓글 )</div>
