@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.holdmypuppy.admin.review.dao.AdReviewDAO">
+
+	
+		<!-- 입양 후기 리스트 -->
+
+	<select id="selectReviewList" parameterType="int"
+		resultType="com.holdmypuppy.admin.review.model.AdReview">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		
+		FROM
+			`review`
+		
+		ORDER BY
+			`id` DESC
+	
+	</select>
+	
+	
+	
+		<!-- 입양 후기 조회 (detail) -->
+	
+	<select id="selectReview" parameterType="int"
+		resultType="com.holdmypuppy.admin.review.model.AdReview">
+	
+		SELECT
+			`id`
+			, `memberId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `file`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+			
+		FROM
+			`review`
+	
+		WHERE
+			`id` = #{id}
+	
+	</select>
+	
+	
+	
+		<!-- 입양 후기 삭제 -->
+	
+	<delete id="deleteReview" parameterType="int">
+	
+		DELETE FROM
+			`review`
+		
+		WHERE
+			`id` = #{reviewId}
+		
+	</delete>
+
+
+</mapper>
