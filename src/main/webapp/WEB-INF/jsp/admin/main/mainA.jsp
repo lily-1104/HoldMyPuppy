@@ -33,69 +33,36 @@
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
 				<img width="90" height="70" src="/static/css/image/main/family.jpg">
-				<h4 class="main-text ml-2s">새로운 가족을 찾습니다!</h4>
+				<h3 class="text-info font-weight-bold ml-2 mt-2">새로운 가족을 찾습니다 !</h3>
 			</div>
 			
 			<br>
 			
-			<div class="dogs mt-5">
+			<%-- 보호 중인 아이들 리스트 일부 --%>
+			<div class="dogs mt-3">
+				<div class="grid">
 			
-				<div class="d-flex justify-content-between">
+	              	<c:forEach var="puppies" items="${puppiesList }">    
+	                <div class="puppy border rounded mt-5">
+	                   	<a href="/admin/adoption/puppyDetail?id=${puppies.id }">
+	                      	<img height="250" width="250" alt="유기견 사진" src="${puppies.file }">
+	                   	</a>
+	                   
+	                   	<a href="/admin/adoption/puppyDetail?id=${puppies.id }">
+	                     	<div class="mt-4 mb-5 text-center text-dark">
+	                        	<b class="reviewTitle">${puppies.title }</b>
+	                     	</div>
+	                  	</a>
+	                </div>
+	             	</c:forEach>
+          		</div>
 				
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-				
-				</div>
-				
-				
-				
-				<div class="mt-4 d-flex justify-content-between">
-				
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-				
-				</div>
 				
 				<div class="d-flex justify-content-center mt-4 mb-5">
 					<button type="button" onclick="location.href='/admin/adoption'" class="btn col-4 mt-5 mb-5">더보기</button>
 				</div>
 			
 			</div>
-		
 		
 		</section>
 		
