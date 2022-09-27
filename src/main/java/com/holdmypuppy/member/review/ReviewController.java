@@ -67,7 +67,8 @@ public class ReviewController {
 		
 		// 입양 후기 게시글 조회
 		Review review = reviewBO.getReview(id);
-		model.addAttribute("review", review);	// "review", "reviewList"가 jsp에서 쓰임 ex) ${review.id }
+		model.addAttribute("review", review);	// "review", "reviewCommentList"가 jsp에서 쓰임 ex) ${review.id }
+												// or jsp 반복문 <c:forEach var="review" ~ > 에서 var 값
 		
 		// 댓글 조회
 		List<RvCommentDetail> reviewComment = rvCommentBO.getCommentListByReviewId(id);

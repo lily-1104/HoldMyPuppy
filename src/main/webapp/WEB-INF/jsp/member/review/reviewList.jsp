@@ -42,7 +42,7 @@
           
           
            	<div class="grid mt-3">
-              	<c:forEach var="review" items="${reviewList }">    
+              	<c:forEach var="review" items="${reviewList }">    <%-- ${reviewList } : ReviewController 에서 (입양 후기 리스트)의 메소드 (맨 첫줄 => reviewList(Model model)) --%>
                 <div class="puppy border rounded mt-5">
                    	<a href="/review/detail?id=${review.id }">
                       	<img height="250" width="250" alt="강아지 입양 후기 사진" src="${review.file }">
@@ -57,7 +57,7 @@
              	</c:forEach>
           	</div>
           
-         
+         	
          	<div class="mt-5">　</div>
          	<br>
          	

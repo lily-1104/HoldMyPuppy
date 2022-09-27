@@ -61,19 +61,21 @@
 		    	<img width="500" alt="강아지 입양 후기 사진" src="${review.file }">
 		    </div>
 		    
-		    <div class="mt-5 d-flex justify-content-center">
+		    <div class="contentText mt-5 d-flex justify-content-center">
 		    	${review.content }
 		    </div>
 		    
 		    
-		    <hr class="mt-5 ml-5 mr-5">
-		    
+		    <div class="mt-5 ml-5 mr-5">
+			    <b class="text-secondary ml-5 mr-5">댓글</b>
+			    <hr class="mt-2 ml-5 mr-5">
+		    </div>
 		    
 		    <%-- 댓글 --%>
+		    <c:forEach var="rvCommentList" items="${reviewCommentList }">
 		    <div class="mt-4 ml-5 mr-5">
 		    	<div class="ml-5 mr-5">
-		    		<c:forEach var="rvCommentList" items="${reviewCommentList }">
-		    		<%--<b class="ml-5">${reviewCommentList.nickname }</b>--%>
+		    		<b class="ml-3">${rvCommentList.member.nickname }</b>
 		    		<small class="ml-4 text-secondary">
 		    			<fmt:formatDate value="${rvCommentList.rvComment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
 		    				<%-- ${rvCommentList.rvComment.createdAt }
@@ -81,8 +83,7 @@
 		    							(중간에 rvComment를 넣지 않으면 createdAt 값 출력 안됨) --%>
                 	</small>
 		    		
-		    		<div class="mt-3 ml-5">( 댓글 )</div>
-		    		</c:forEach>
+		    		<div class="mt-3 ml-4 mb-3">${rvCommentList.rvComment.content }</div>
 		    		
 		    		<div class="d-flex mr-3 mt-3 justify-content-end">
 		    			<b class="mr-4"><a href="#">수정</a></b>
@@ -92,44 +93,8 @@
 		    		<hr class="ml-4s mr-2">
 		    	</div>
 		    </div>
+		    </c:forEach>
 		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    <div class="mt-4 ml-5 mr-5">
-		    	<div class="ml-5 mr-5">
-		    		<b class="ml-5">앙꼬</b>
-		    		<small class="ml-4 text-secondary">
-		    			<fmt:formatDate value="${reviewComment.createdAt }" pattern="yyyy-MM-dd HH:mm" />
-                	</small>
-		    		
-		    		<div class="mt-3 ml-5">( 댓글 )</div>
-		    		
-		    		<div class="d-flex mr-3 mt-3 justify-content-end">
-		    			<b class="mr-4"><a href="#">수정</a></b>
-					    <b><a href="#">삭제</a></b>
-		    		</div>
-		    		
-		    		<hr class="ml-4s mr-2">
-		    	</div>
-		    </div>
-		    
-		    <div class="mt-4 ml-5 mr-5">
-		    	<div class="ml-5 mr-5">
-		    		<b class="ml-5">춘식이</b>
-		    		<small class="ml-4 text-secondary">2022-08-25  09:11</small>
-		    		
-		    		<div class="mt-3 ml-5">( 댓글 )</div>
-		    		
-		    		<div class="d-flex mr-3 mt-3 justify-content-end">
-		    			<b class="mr-4"><a href="#">수정</a></b>
-					    <b><a href="#">삭제</a></b>
-		    		</div>
-		    	</div>
-		    </div>
 		    
 		    
 		    <%-- 댓글 입력 --%>
@@ -166,7 +131,9 @@
 				// 작성한 댓글 가져오기
 				let content = $("#commentInput" + reviewId).val();
 				
-				alert(reviewId);
+				
+				// alert(reviewId);
+				
 				$.ajax({
 					type:"post",
 					url:"/review/comment/create",
@@ -190,7 +157,7 @@
 			
 			
 			
-			// 입양 후기 삭제
+			// 입양 후기 게시글 삭제
 			$("#deleteBtn").on("click", function() {
 				
 				let reviewId = $(this).data("post-id");
