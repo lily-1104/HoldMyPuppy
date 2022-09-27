@@ -34,14 +34,15 @@
              	</div>
           	</div>
           
+          
           	<br>
           
+          
+          	<%-- 유기견 정보 --%>
           	<div class="mt-5 ml-5 mr-5">
-          	
-          		<%-- 유기견 정보 --%>
              	<div class="d-flex justify-content-around">
+             	
                 	<img width="500" alt="유기견" src="${abandonedDog.file }">  
-                
                 
                 	<div class="w-50 ml-3">
                    		<table class="table border text-center">
@@ -77,8 +78,31 @@
 	                         	</tr>
 	                      	</tbody>
 	                   	</table>
-                   
-	                   	<span class="text-danger ml-3"><i class="bi bi-heart" ></i></span>
+                   		
+                   		
+                   		<%-- 좋아요 --%>
+						<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
+							<span class="heart-size text-danger ml-3"><i class="bi bi-heart-fill"></i></span>
+						</a>
+						
+						
+						
+						<%-- 
+                   		<c:choose>
+							<c:when test="${postDetail.like }">
+								<a href="#" class="unlike-btn decoration-none" data-post-id="${postDetail.post.id }">
+									<span class="heart-size text-danger"><i class="bi bi-heart-fill"></i> </span>
+								</a>
+							</c:when>
+							<c:otherwise>
+								<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
+									<span class="heart-size"><i class="bi bi-heart"></i> </span>
+								</a>
+							</c:otherwise>
+						
+						</c:choose>
+						--%>
+						
 	                   	<small class="ml-2"><b>30개</b></small>
                    
                 	</div>
@@ -122,6 +146,50 @@
         <c:import url="/WEB-INF/jsp/admin/include/footerA.jsp" />
          
    	</div>
+   	
+   	
+   	<script>
+   	
+   		$(document).ready(function() {
+   			
+   			
+   			// 좋아요 추가
+   			$(".like-btn").on("click", function(e) {
+   				
+   				e.preventDefault();
+   				
+   				// 현재 클릭된 태그 객체를 얻어 와서 좋아요를 얻어옴
+   				let like = $(this).data("post-id");
+   				
+   				
+   				alert(like);	// "post-id" 값이 들어있는지 확인용
+   				
+   				
+   				$.ajax({
+   					type:"get",
+   					url:"/puppy/like",
+   					data:{"abandonedDogId":like},
+   					success:function(data) {
+   						if(data.result == "success") {
+   							alert("좋아요 성공");
+   							location.reload();
+   							
+   						} else {
+   							alert("좋아요 실패");
+   						}
+   						
+   					},
+   					error:function() {
+   						alert("좋아요 에러");
+   					}
+   				});
+   				
+   			});
+   			
+   			
+   		});
+   	
+   	</script>
    
 </body>
 </html>
