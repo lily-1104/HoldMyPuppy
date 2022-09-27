@@ -8,7 +8,7 @@ public class AdAbandonedDog {
 	private String title;
 	private String dogName;
 	private String breed;
-	private int age;
+	private String age;
 	private String gender;
 	private String vaccination;
 	private String neutering;
@@ -41,10 +41,10 @@ public class AdAbandonedDog {
 	public void setBreed(String breed) {
 		this.breed = breed;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public String getGender() {

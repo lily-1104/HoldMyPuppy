@@ -19,12 +19,12 @@ public class AbandonedDogRestControllerA {
 	
 	
 	// 유기견 등록 API
-	@PostMapping("/admin/puppyPost")
+	@PostMapping("/adoption/post_admin")
 	public Map<String, String> postCreate(
 	        @RequestParam("title") String title
 	        , @RequestParam("dogName") String dogName
 	        , @RequestParam("breed") String breed
-	        , @RequestParam("age") int age
+	        , @RequestParam("age") String age
 	        , @RequestParam("gender") String gender
 	        , @RequestParam("vaccination") String vaccination
 	        , @RequestParam("neutering") String neutering
@@ -43,13 +43,7 @@ public class AbandonedDogRestControllerA {
 		}
 		
 		return result;
-		
 	}
 	
 	
-	
-	
-	
-	
-	      
 }

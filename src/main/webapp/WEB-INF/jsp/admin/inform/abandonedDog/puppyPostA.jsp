@@ -53,11 +53,11 @@
 						<label class="mt-5"><b>강아지 성별</b></label>
                   		<div class="d-flex align-items-center mt-3 ml-2">
 	                     	<div>
-	                        	<input type="checkbox" name="gender" id="male" onclick='checkOnlyOne(this)'><label class="ml-3">남아</label>
+	                        	<label class="mr-4"><input type="radio" name="gender" value="남아" checked class="mr-3">남아</label>
 	                     	</div>
 	                     
 	                     	<div class="ml-5">
-	                        	<input type="checkbox" name="gender" id="female" onclick='checkOnlyOne(this)'><label class="ml-3">여아</label>
+	                        	<label class="ml-4"><input type="radio" name="gender" value="여아" class="mr-3">여아</label>
 	                     	</div>
 	                  	</div>
                   
@@ -65,11 +65,11 @@
                   		<label class="mt-5"><b>예방 접종 유무</b></label>
                   		<div class="d-flex align-items-center mt-3 ml-2">
                      		<div>
-                        		<input type="checkbox" name="vaccination" id="y" onclick='checkOnlyOne(this)'><label class="ml-3">접종 완료</label>
+                        		<label><input type="radio" name="vaccination" value="접종 완료" checked class="mr-3">접종 완료</label>
                      		</div>
                      
                      		<div class="ml-5">
-                        		<input type="checkbox" name="vaccination" id="n" onclick='checkOnlyOne(this)'><label class="ml-3">미접종</label>
+                        		<label class="ml-3"><input type="radio" name="vaccination" value="미접종" class="mr-3">미접종</label>
                      		</div>
                   		</div>
                   
@@ -77,11 +77,11 @@
                   		<label class="mt-5"><b>중성화 유무</b></label>
                   		<div class="d-flex align-items-center mt-3 ml-2">
                      		<div>
-                        		<input type="checkbox" name="neutering" id="yes" onclick='checkOnlyOne(this)'><label class="ml-3">완료</label>
+                        		<label><input type="radio" name="neutering" value="완료" checked class="mr-3">완료</label>
                      		</div>
                      
                      		<div class="ml-5">
-                        		<input type="checkbox" name="neutering" id="no" onclick='checkOnlyOne(this)'><label class="ml-3">미완료</label>
+                        		<label class="ml-5"><input type="radio" name="neutering" value="미완료" class="mr-3">미완료</label>
                      		</div>
                   		</div>
 						
@@ -117,22 +117,6 @@
 		
 		$(document).ready(function() {
 			
-			// 체크박스 한개만 선택 가능하도록 설정
-	        $(document).on('click', "input[type='checkbox']", function(){
-	        	
-	            if(this.checked) {
-	                const checkboxes = $("input[type='checkbox']");
-	                for(let ind = 0; ind < checkboxes.length; ind++){
-	                    checkboxes[ind].checked = false;
-	                }
-	                this.checked = true;
-	            } else {
-	               this.checked = false;
-	            }
-	        });
-			
-			
-			
 			// 파일 업로드
 			$("#imageIcon").on("click", function(e) {
 				// fileInput을 클릭한 효과를 만들어야 한다
@@ -146,12 +130,12 @@
 			$("#saveBtn").on("click", function() {
 				
 				let title = $("#titleInput").val();
-				let dogname = $("#dogNameInput").val();
+				let dogName = $("#dogNameInput").val();
 				let breed = $("#breedInput").val();
 				let age = $("#ageInput").val();
-				let gender = $("#genderInput").val();
-				let vaccination = $("#vaccinationInput").val();
-				let neutering = $("#neuteringInput").val();
+				let gender = $("input[name='gender']").val();	// radio box의 value 값을 가져오려면 value 값 둘 중 하나를 가져와야하기때문에 name에서 꺼내와야함
+				let vaccination = $("input[name='vaccination']").val();
+				let neutering = $("input[name='neutering']").val();
 				let image = $("#fileInput").val();
 				let content = $("#contentInput").val();
 				
@@ -174,22 +158,14 @@
 					alert("강아지 나이를 입력해주세요")
 				}
 				
-				if(gender == "") {
-					alert("강아지 성별을 입력해주세요")
-				}
-				
-				if(vaccination == "") {
-					alert("예방 접종 유무를 입력해주세요")
-				}
-				
-				if(neutering == "") {
-					alert("중성화 유무를 입력해주세요")
-				}
-				
 				if(image == "") {
 					alert("사진을 업로드해주세요");
 					return;
 				}
+				
+				
+				// alert(gender);	=> 위 gender의 radio box에서 value 값 가져와지는지 테스트
+				
 				
 				// 파일
 				var formData = new FormData();
@@ -221,18 +197,16 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("등록되었습니다.");
-							location.href= "/admin/puppy/detail";
+							location.href= "/admin/adoption";
 						} else {
 							alert("등록을 실패하였습니다.");
 						}
 						
 					},
 					error:function() {
-						alert("관리자만 작성 가능합니다. 로그인 해주세요");
+						alert("등록 에러");
 					}
-					
 				});
-				
 			});
 	
 		});

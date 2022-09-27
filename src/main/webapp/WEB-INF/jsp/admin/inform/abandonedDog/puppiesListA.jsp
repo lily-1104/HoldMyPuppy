@@ -39,40 +39,33 @@
 		    	</div>
 		    </div>
 	    	
+	    	
 	    	<br> <br>
 			
-			<div class="puppies mt-5">
 			
-				<div class="d-flex justify-content-between">
-				
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-						
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-						
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-					
-					<div class="border rounded">
-						<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-						<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-					</div>
-				</div>
-			</div>
+			<%-- 게시글 리스트 --%>
+			<div class="grid">
 			
+              	<c:forEach var="puppies" items="${puppiesList }">    
+                <div class="puppy border rounded mt-5">
+                   	<a href="/admin/adoption/puppyDetail?id=${puppies.id }">
+                      	<img height="250" width="250" alt="유기견 사진" src="${puppies.file }">
+                   	</a>
+                   
+                   	<a href="/admin/adoption/puppyDetail?id=${puppies.id }">
+                     	<div class="mt-4 mb-5 text-center text-dark">
+                        	<b class="reviewTitle">${puppies.title }</b>
+                     	</div>
+                  	</a>
+                </div>
+             	</c:forEach>
+          	</div>
+          	
 			
 			<div class="d-flex justify-content-end mr-3 mt-5">
 				<a href="/admin/adoption/puppyPost" class="btn btn-info mt-5">글쓰기</a>
 			</div>
 			
-		
 		</section>
 		
 		
