@@ -33,7 +33,7 @@
 		
 			<div class="mt-5 d-flex align-items-center justify-content-center">
 				<img width="90" height="70" src="/static/css/image/main/family.jpg">
-				<h4 class="main-text ml-2s">새로운 가족을 찾습니다!</h4>
+				<h3 class="text-info font-weight-bold ml-2 mt-2">새로운 가족을 찾습니다 !</h3>
 			</div>
 			
 			<br>
