@@ -66,12 +66,13 @@
 		    </div>
 		    
 		    
-		    <div class="mt-5 ml-5 mr-5">
-			    <b class="text-secondary ml-5 mr-5">댓글</b>
-			    <hr class="mt-2 ml-5 mr-5">
-		    </div>
 		    
 		    <%-- 댓글 --%>
+		    <div class="mt-5 ml-5 mr-5">
+			    <b class="text-secondary ml-5 mr-5">댓글</b>
+			    <hr class="mt-2 ml-4 mr-5">
+		    </div>
+		    
 		    <c:forEach var="rvCommentList" items="${reviewCommentList }">
 		    <div class="mt-4 ml-5 mr-5">
 		    	<div class="ml-5 mr-5">
@@ -87,24 +88,29 @@
 		    		
 		    		<div class="d-flex mr-3 mt-3 justify-content-end">
 		    			<b class="mr-4"><a href="#">수정</a></b>
-					    <b><a href="#">삭제</a></b>
+		    			<b><a href="#" class="commentDeleteBtn text-dark" data-post-id="${rvCommentList.rvComment.id }">삭제</a></b>
 		    		</div>
 		    		
 		    		<hr class="ml-4s mr-2">
+		    		
 		    	</div>
 		    </div>
 		    </c:forEach>
 		    
 		    
 		    
-		    <%-- 댓글 입력 --%>
-		    <div class="d-flex justify-content-center">
-             	<textarea rows="5" id="commentInput${review.id }" class="form-control col-10 mt-5" placeholder="댓글을 남겨주세요 / 로그인이 필요합니다."></textarea>
-          	</div>
-          	
-          	<div class="mr-5 mt-2 d-flex justify-content-end">
-             	<button type="button" data-post-id="${review.id }" class="btn mr-5 comment-btn">작성</button>
-          	</div>
+		    <%-- 회원만 댓글 입력창 노출 --%>
+		    <c:if test="${not empty memberId }">
+			    <div class="d-flex justify-content-center">
+	             	<textarea rows="5" id="commentInput${review.id }" class="form-control col-10 mt-5" placeholder="댓글을 남겨주세요"></textarea>
+	          	</div>
+	          	
+	          	<div class="mr-5 mt-2 d-flex justify-content-end">
+	             	<button type="button" data-post-id="${review.id }" class="comment-btn btn mr-5">작성</button>
+	          	</div>
+          	</c:if>
+            
+            
           
           	<div class="ml-5 mt-4 d-flex justify-content-start">
              	<button type="button" onclick="location.href='/review'" class="btn btn-info ml-5">목록</button>
@@ -153,6 +159,35 @@
 					}
 				});
 				
+			});
+			
+			
+			
+			// 댓글 삭제 (댓글 삭제는 버튼이 여러개라서 id가 아닌 class로 설정)
+			$(".commentDeleteBtn").on("click", function() {
+				
+				let commentId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/review/comment/delete",
+					data:{"commentId":commentId},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("삭제되었습니다")
+							location.reload();
+							
+						} else {
+							alert("삭제를 실패했습니다")
+						}
+						
+					},
+					error:function() {
+						alert("삭제 에러");
+					}
+					
+				});
 			});
 			
 			

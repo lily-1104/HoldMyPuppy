@@ -39,8 +39,8 @@
    		
    		SELECT
    			`id`
-   			, `reviewId`
    			, `memberId`
+   			, `reviewId`
    			, `content`
    			, `createdAt`
    			, `updatedAt`
@@ -52,6 +52,20 @@
    			`reviewId` = #{reviewId}
    	
    	</select>
+   	
+   	
+   	
+   		<!-- 댓글 삭제 -->
+   	
+   	<delete id="deleteComment" parameterType="int">
+   	
+   		DELETE FROM
+   			`reviewComment`
+   		
+   		WHERE
+   			`id` = #{commentId}
+   			
+   	</delete>
 
 
 </mapper>

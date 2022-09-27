@@ -53,5 +53,14 @@ public class RvCommentBO {
 		return commentDetailList;
 		
 	}
+	
+	
+	
+	// 댓글 삭제
+	public int deleteComment(int commentId) {
+		
+		return rvCommentDAO.deleteComment(commentId);
+		
+	}
 
 }

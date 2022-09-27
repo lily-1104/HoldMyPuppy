@@ -22,5 +22,9 @@ public interface RvCommentDAO {
 	// 댓글 조회 기능
 	public List<RvComment> selectCommentListByReviewId(@Param("reviewId") int reviewId);
 	
+	
+	
+	// 댓글 삭제
+	public int deleteComment(@Param("commentId") int commentId);
 
 }
