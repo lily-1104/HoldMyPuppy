@@ -40,7 +40,7 @@
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
 				    	<small class="ml-3 text-secondary">
-				    		공지사항   
+				    		공지사항 　
 				    		<fmt:formatDate value="${notice.createdAt }" pattern="yyyy-MM-dd HH:mm" />
 				    	</small>
 				    	
@@ -58,7 +58,7 @@
 		    <%-- image file이 있을 경우에만 보이도록 설정 --%>
 		    <c:if test="${not empty notice.file}">
 				<div class="mt-5 ml-5">
-		    		<img width="300" alt="공지사항 사진" src="${notice.file }" class="mt-5 ml-5 mb-5">
+		    		<img width="300" alt="공지사항 사진" src="${notice.file }" class="mt-5 ml-3 mb-5">
 				</div>
             </c:if>
             
