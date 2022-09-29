@@ -167,7 +167,7 @@
    				
    				$.ajax({
    					type:"get",
-   					url:"/puppy/like",
+   					url:"/admin/puppy/like",
    					data:{"abandonedDogId":like},
    					success:function(data) {
    						if(data.result == "success") {

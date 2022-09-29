@@ -22,7 +22,7 @@ public class LikeRestControllerA {
 	
 	
 	// 유기견 좋아요 
-	@GetMapping("puppy/like")
+	@GetMapping("/admin/puppy/like")
 	public Map<String, String> puppyLike(
 			@RequestParam("abandonedDogId") int abandonedDogId
 			, HttpServletRequest request) {
