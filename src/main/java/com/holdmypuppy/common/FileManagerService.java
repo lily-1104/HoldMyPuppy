@@ -14,14 +14,10 @@ public class FileManagerService {
 	
 	
 	// 멤버 변수로 밖으로 빼기
-//	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/";  
+	public static final String FILE_UPLOAD_PATH = "C:\\Users\\User\\Desktop\\개발\\Spring\\Project\\image file\\HoldMyPuppy\\upload/";  
 //	public static final String FILE_UPLOAD_PATH = System.getenv("USERPROFILE")
 //			+ File.separator + "Desktop"
 //			+ File.separator + "개발/Spring/Project/image_file/HoldMyPuppy/upload/";
-	
-	
-	// AWS Linux directory
-	public static final String FILE_UPLOAD_PATH = "/home/ec2-user/holdmypuppy/upload/";  
 	
 	// 파일을 저장하고 외부에서 접근 가능한 경로로 리턴하는 기능
 	public static String saveFile(int memberId, MultipartFile file) {	
