@@ -43,7 +43,7 @@
 		    	
 		    		<div class="mt-3 d-flex justify-content-between">
 				    	<small class="ml-3 text-secondary">
-				    		입양 후기   
+				    		입양 후기 　  
 				    		<fmt:formatDate value="${review.createdAt }" pattern="yyyy-MM-dd HH:mm" />
 				    	</small>
 				    	
@@ -62,7 +62,7 @@
 		    </div>
 		    
 		    <div class="contentText mt-5 d-flex justify-content-center">
-		    	${review.content }
+		    	<div class="mt-5">${review.content }</div>
 		    </div>
 		    
 		    
