@@ -2,9 +2,10 @@ package com.holdmypuppy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class HoldMyPuppyApplication {
+public class HoldMyPuppyApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HoldMyPuppyApplication.class, args);
