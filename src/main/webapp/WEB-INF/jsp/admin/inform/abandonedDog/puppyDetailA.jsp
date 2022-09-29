@@ -30,7 +30,7 @@
        
           	<div class="text-center d-flex align-items-center justify-content-center">
              	<div class="intro">
-                	<h3 class="text-info font-weight-bold mt-4">유기견 정보</h3>
+                	<h3 class="text-info font-weight-bold mt-4">유기견 정보 22</h3>
              	</div>
           	</div>
           
