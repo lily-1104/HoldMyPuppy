@@ -40,7 +40,7 @@
              
                 <div class="mt-3 d-flex justify-content-between">
                    	<small class="ml-3 text-secondary">
-                   		1:1 문의   
+                   		1:1 문의  　  
                    		<fmt:formatDate value="${qna.createdAt }" pattern="yyyy-MM-dd HH:mm" />
                    	</small>
                    	
@@ -52,7 +52,7 @@
                 
             <hr class="ml-5 mr-5">
           
-          	<div class="mt-5 ml-5 p-4 d-flex justify-content-start">
+          	<div class="contentText ml-5 p-4 d-flex justify-content-start">
              	${qna.content }
           	</div>
           	
