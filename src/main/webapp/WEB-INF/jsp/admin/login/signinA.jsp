@@ -45,7 +45,7 @@
 					
 					<div>
 						<button type="submit" id="loginBtn" class="btn btn-info btn-block mt-5">관리자 로그인</button>
-						<button type="button" class="btn btn-block mt-4 mb-5">관리자 계정 생성하기</button>
+						<button type="button" onclick="location.href='/admin/signup'" class="btn btn-block mt-4 mb-5">관리자 계정 생성하기</button>
 					</div>
 				</form>
 				
