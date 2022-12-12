@@ -45,5 +45,34 @@ public class LikeRestControllerA {
 		
 	}
 	
+	
+	
+	// 좋아요 취소
+	@GetMapping("/admin/puppy/unlike")
+	public Map<String, String> unlike(
+			@RequestParam("abandonedDogId") int abandonedDogId
+			, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		int memberId = (Integer)session.getAttribute("memberId");
+		
+		int count = adLikeBO.unlike(abandonedDogId, memberId);
+		
+		Map<String, String> map = new HashMap<>();
+		
+		if (count == 1) {
+			map.put("result", "success");
+			
+		} else {
+			map.put("result", "fail");
+		}
+		
+		return map;
+		
+	}
+	
+	
+	
 
 }

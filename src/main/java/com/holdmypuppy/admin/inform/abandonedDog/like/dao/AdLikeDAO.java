@@ -11,5 +11,12 @@ public interface AdLikeDAO {
 	public int insertLike(
 			@Param("abandonedDogId") int abandonedDogId
 			, @Param("memberId") int memberId);
+	
+	
+	
+	// 좋아요 취소
+	public int deleteLike(
+			@Param("abandonedDogId") int abandonedDogId
+			, @Param("memberId") int memberId);
 
 }

@@ -1,5 +1,6 @@
 package com.holdmypuppy.admin.inform.abandonedDog.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.holdmypuppy.admin.inform.abandonedDog.dao.AdAbandonedDogDAO;
+import com.holdmypuppy.admin.inform.abandonedDog.like.bo.AdLikeBO;
 import com.holdmypuppy.admin.inform.abandonedDog.model.AdAbandonedDog;
+import com.holdmypuppy.admin.inform.abandonedDog.model.AdAbandonedDogDetail;
+import com.holdmypuppy.admin.login.bo.AdminBO;
+import com.holdmypuppy.admin.login.model.Admin;
 import com.holdmypuppy.common.FileManagerService;
 
 @Service
@@ -16,6 +21,14 @@ public class AdAbandonedDogBO {
    
    @Autowired
    private AdAbandonedDogDAO adAbandonedDogDAO;
+   
+   
+   @Autowired
+   private AdminBO adminBO;
+   
+   
+   @Autowired
+   private AdLikeBO adLikeBO;
    
    
    // 유기견 등록 API
@@ -41,7 +54,19 @@ public class AdAbandonedDogBO {
    // 보호 중인 아이들 리스트
    public List<AdAbandonedDog> getPuppiesList() {
 	   
+//	   List<AdAbandonedDogDetail> abandonedDogDetailList = new ArrayList<>();
+//	   
+//	   List<AdAbandonedDog> dogList = adAbandonedDogDAO.selectPuppiesList();
+//	   
+//	   for(AdAbandonedDog abandonedDog : dogList) {
+//		   
+//		   int abandonedDogId = abandonedDog.getId();
+//		   
+//		   
+//	   }
+	   
 	   return adAbandonedDogDAO.selectPuppiesList();
+	   
    }
    
    

@@ -30,7 +30,7 @@
        
           	<div class="text-center d-flex align-items-center justify-content-center">
              	<div class="intro">
-                	<h3 class="text-info font-weight-bold mt-4">유기견 정보 22</h3>
+                	<h3 class="text-info font-weight-bold mt-4">유기견 정보</h3>
              	</div>
           	</div>
           
@@ -81,29 +81,23 @@
                    		
                    		
                    		<%-- 좋아요 --%>
-						<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
-							<span class="heart-size text-danger ml-3"><i class="bi bi-heart-fill"></i></span>
-						</a>
-						
-						
-						
-						<%-- 
                    		<c:choose>
-							<c:when test="${postDetail.like }">
-								<a href="#" class="unlike-btn decoration-none" data-post-id="${postDetail.post.id }">
-									<span class="heart-size text-danger"><i class="bi bi-heart-fill"></i> </span>
+                   			<c:when test="${adAbandonedDogDetail.like }">
+								<a href="#" class="unlike-btn decoration-none" data-post-id="${abandonedDog.id }">
+									<span class="heart-size text-danger ml-3"><i class="bi bi-heart-fill"></i></span>
 								</a>
 							</c:when>
+							
 							<c:otherwise>
-								<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
-									<span class="heart-size"><i class="bi bi-heart"></i> </span>
+								<a href="#" class="like-btn decoration-none" data-post-id="${abandonedDog.id }">
+									<span class="heart-size text-danger ml-3"><i class="bi bi-heart"></i></span>
 								</a>
 							</c:otherwise>
 						
 						</c:choose>
-						--%>
 						
-	                   	<small class="ml-2"><b>30개</b></small>
+						
+	                   	<small class="ml-2"><b> ${adAbandonedDogDetail.like }개</b></small>
                    
                 	</div>
              	</div>

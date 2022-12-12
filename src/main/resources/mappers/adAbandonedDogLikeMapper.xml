@@ -27,8 +27,21 @@
 		)
 		
 	</insert>
+	
+	
+	
+		<!-- 좋아요 취소 -->
 
-
+	<delete id="deleteLike" parameterType="map">
+	
+			DELETE FROM
+				`abandonedDogLike`
+			
+			WHERE
+				`abandonedDogId` = #{abandonedDogId}
+				AND `memberId` = #{memberId}
+	
+	</delete>
 
 
 

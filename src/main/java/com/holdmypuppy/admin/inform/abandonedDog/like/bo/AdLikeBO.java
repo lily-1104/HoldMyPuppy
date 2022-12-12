@@ -19,6 +19,14 @@ public class AdLikeBO {
 		return adLikeDAO.insertLike(abandonedDogId, memberId);
 		
 	}
+	
+	
+	
+	// 좋아요 취소
+	public int unlike(int abandonedDogId, int memberId) {
+		
+		return adLikeDAO.deleteLike(abandonedDogId, memberId);
+	}
 
 
 }
