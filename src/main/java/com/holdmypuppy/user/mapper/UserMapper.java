@@ -1,4 +1,4 @@
-package com.holdmypuppy.user;
+package com.holdmypuppy.user.mapper;
 
 import java.util.List;
 import java.util.Map;
