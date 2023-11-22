@@ -57,7 +57,7 @@
 						
 						
 					<div>
-						<button type="button" id="signUpBtn" class="btn btn-info btn-block mt-5">가입하기</button>
+						<button type="submit" id="signUpBtn" class="btn btn-info btn-block mt-5">가입하기</button>
 					</div>
 				</div>
 			</form>	
@@ -248,7 +248,7 @@
 				$.post(url, params)
 				.done(function(data) {
 					
-					if(data.code == 200) {
+					if (data.code == 200) {
 						
 						alert("회원가입 되셨습니다. 로그인 해주세요");
 						location.href = "/user/signin";
@@ -260,11 +260,8 @@
 				});
 				
 			});
-			
 		});
 		
-	
-	
 	</script>
 
 </body>
