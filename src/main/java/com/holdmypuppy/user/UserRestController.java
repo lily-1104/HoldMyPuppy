@@ -3,6 +3,9 @@ package com.holdmypuppy.user;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,6 +56,7 @@ public class UserRestController {
 		return result;
 		
 	}
+	
 	
 	
 	// 회원가입 - 아이디 중복 확인 API
@@ -110,11 +114,44 @@ public class UserRestController {
 	
 	
 	
+	// 로그인 API
+	@PostMapping("/sign_in")
+	public Map<String, Object> signIn(
+			@RequestParam("loginId") String loginId,
+			@RequestParam("password") String password,
+			HttpServletRequest request) {
+		
+		// 비밀번호 hashing
+		String hashedPassword = EncryptUtils.md5(password);
+		
+		// db 조회
+		UserEntity user = userBO.getUserEntityByLoginIdPassword(loginId, hashedPassword);
+		
+		// 응답값
+		Map<String, Object> result = new HashMap<>();
+		
+		if (user != null) {
+			
+			// 로그인 처리
+			HttpSession session = request.getSession();
+			session.setAttribute("userId", user.getId());
+			session.setAttribute("userLoginId", user.getLoginId());
+			session.setAttribute("userName", user.getName());
+			
+			result.put("code", 200);
+			result.put("result", "성공");
+			
+		} else {
+			
+			// 로그인 불가
+			result.put("code", 500);
+			result.put("errorMessage", "성공");
+			
+		} 
+			
+		return result;
+		
+	}
 	
 	
-	
-	
-	
-	
-
 }

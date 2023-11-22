@@ -20,8 +20,8 @@
 			<h4 class="text-center text-info font-weight-bold mt-4">로그인</h4>
 				
 			<form id="loginForm">
-				<input type="text" id="loginIdInput" class="form-control mt-5" placeholder="아이디">
-				<input type="password" id="passwordInput" class="form-control mt-4" placeholder="비밀번호">
+				<input type="text" id="loginId" class="form-control mt-5" placeholder="아이디">
+				<input type="password" id="password" class="form-control mt-4" placeholder="비밀번호">
 				
 				<div>
 					<button type="submit" id="loginBtn" class="btn btn-info btn-block mt-5">로그인</button>
@@ -41,6 +41,55 @@
 		</div>
 			
 	</section>
+	
+	
+	<script>
+	
+		$(document).ready(function() {
+			
+			// 로그인
+			$('#loginBtn').on('submit', function(e) {
+				
+				e.preventDefault();
+				
+				let loginId = $('#loginId').val().trim();
+				let password = $('#password').val();
+				
+				if (!loginId) {
+					
+					alert("아이디를 입력해주세요");
+					return false;
+				}
+				
+				if (!password) {
+					
+					alert("비밀번호를 입력해주세요");
+					return false;
+				}
+				
+				// ajax
+				let url = $(this).attr('action');
+				console.log(url);
+				
+				let params = $(this).serialize();
+				console.log(params);
+				
+				$.post(url,params)
+				.done(function(data) {
+					
+					if (data.code == 200) {
+						
+						location.href = "/main";
+						
+					} else {
+						
+						alert(data.errorMessage);
+					}
+				});
+			});
+		});
+	
+	</script>
 
 </body>
 </html>

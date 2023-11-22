@@ -46,14 +46,11 @@ public class UserBO {
 	
 	
 	
+	// 로그인 API
+	public UserEntity getUserEntityByLoginIdPassword(String loginId, String password) {
+		
+		return userRepository.findByLoginIdAndPassword(loginId, password);
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-
 }

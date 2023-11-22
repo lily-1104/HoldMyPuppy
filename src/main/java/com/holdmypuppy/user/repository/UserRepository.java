@@ -16,4 +16,9 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 	// 회원가입 - 닉네임 중복 확인 API
 	public UserEntity findByNickname(String nickname);
 	
+	
+	// 로그인 API
+	public UserEntity findByLoginIdAndPassword(String loginId, String password);
+	
+	
 }
