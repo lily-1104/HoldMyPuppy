@@ -20,6 +20,7 @@ import com.holdmypuppy.user.entity.UserEntity;
 @RestController
 public class UserRestController {
 	
+	
 	@Autowired
 	private UserBO userBO;
 
@@ -31,13 +32,14 @@ public class UserRestController {
 			@RequestParam("password") String password,
 			@RequestParam("name") String name,
 			@RequestParam("email") String email,
-			@RequestParam("nickname") String nickname) {
+			@RequestParam("nickname") String nickname,
+			@RequestParam("memberCode") char memberCode) {
 		
 		// password 해싱
 		String hashedPassword = EncryptUtils.md5(password);
 		
 		// DB insert
-		Integer id = userBO.addUser(loginId, hashedPassword, name, email, nickname);
+		Integer id = userBO.addUser(loginId, hashedPassword, name, email, nickname, memberCode);
 		
 		// 응답값
 		Map<String, Object> result = new HashMap<>();

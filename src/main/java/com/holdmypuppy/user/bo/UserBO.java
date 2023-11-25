@@ -14,7 +14,7 @@ public class UserBO {
 	
 	
 	// 회원가입 API
-	public Integer addUser(String loginId, String password, String name, String email, String nickname) {
+	public Integer addUser(String loginId, String password, String name, String email, String nickname, char memberCode) {
 		
 		UserEntity userEntity = userRepository.save(
 				UserEntity.builder()
@@ -23,6 +23,7 @@ public class UserBO {
 				.name(name)
 				.email(email)
 				.nickname(nickname)
+				.memberCode(memberCode)
 				.build());
 		
 		return userEntity == null ? null : userEntity.getId();

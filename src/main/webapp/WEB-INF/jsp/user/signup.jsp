@@ -237,6 +237,39 @@
 					return false;
 				}
 				
+				
+				$.ajax({
+					
+					type:"post",
+					url:"/user/sign_up",
+					data:{"loginId":loginId, "password":password, "name":name, "email":email, "nickname":nickname},
+					success:function(data) {
+						
+						if (data.code == 200 ) {
+							
+							alert("회원가입 되셨습니다. 로그인 해주세요");
+							location.href = "/user/signin";
+							
+						} else {
+							
+							alert(data.errorMessage);
+							
+						}
+					}
+					
+				});
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<%--
+				
 				// 서버로 보내기
 				let url = $(this).attr('action');
 				
@@ -256,8 +289,11 @@
 					} else {
 						
 						alert(data.errorMessage);
+						
 					}
-				});
+				}); 
+				
+				--%>
 				
 			});
 		});

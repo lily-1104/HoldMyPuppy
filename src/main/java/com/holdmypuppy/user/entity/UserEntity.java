@@ -44,7 +44,7 @@ public class UserEntity {
 	
 	private String petPartner;
 	
-	private String memberCode;
+	private char memberCode;
 	
 	@UpdateTimestamp
 	@Column(name = "createdAt", updatable = false)
