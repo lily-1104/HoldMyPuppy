@@ -8,7 +8,7 @@ import com.holdmypuppy.user.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-	
+			
 	// 회원가입 - 아이디 중복 확인 API
 	public UserEntity findByLoginId(String loginId);
 	

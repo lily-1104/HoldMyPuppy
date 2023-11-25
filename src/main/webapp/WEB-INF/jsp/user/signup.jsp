@@ -242,7 +242,14 @@
 					
 					type:"post",
 					url:"/user/sign_up",
-					data:{"loginId":loginId, "password":password, "name":name, "email":email, "nickname":nickname},
+					data:{
+						"loginId":loginId, 
+						"password":password, 
+						"name":name, 
+						"email":email, 
+						"nickname":nickname,
+						"memberCode":'M'
+						},
 					success:function(data) {
 						
 						if (data.code == 200 ) {
@@ -258,42 +265,6 @@
 					}
 					
 				});
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<%--
-				
-				// 서버로 보내기
-				let url = $(this).attr('action');
-				
-				// alert(url);
-				
-				let params = $(this).serialize();
-				console.log(params);
-				
-				$.post(url, params)
-				.done(function(data) {
-					
-					if (data.code == 200) {
-						
-						alert("회원가입 되셨습니다. 로그인 해주세요");
-						location.href = "/user/signin";
-						
-					} else {
-						
-						alert(data.errorMessage);
-						
-					}
-				}); 
-				
-				--%>
 				
 			});
 		});

@@ -33,7 +33,7 @@ public class UserRestController {
 			@RequestParam("name") String name,
 			@RequestParam("email") String email,
 			@RequestParam("nickname") String nickname,
-			@RequestParam("memberCode") char memberCode) {
+			@RequestParam(value="memberCode",defaultValue="M") String memberCode) {
 		
 		// password 해싱
 		String hashedPassword = EncryptUtils.md5(password);
