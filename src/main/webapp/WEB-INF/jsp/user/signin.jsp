@@ -67,25 +67,27 @@
 					return false;
 				}
 				
+				
 				// ajax
-				let url = $(this).attr('action');
-				console.log(url);
-				
-				let params = $(this).serialize();
-				console.log(params);
-				
-				$.post(url,params)
-				.done(function(data) {
+				$.ajax({
 					
-					if (data.code == 200) {
+					type:"post",
+					url:"/user/sign_in",
+					data:{"loginId":loginId, "password":password},
+					success:function(data) {
 						
-						location.href = "/main";
-						
-					} else {
-						
-						alert(data.errorMessage);
+						if (data.code == 200) {
+							
+							location.href = "/main";
+							
+						} else {
+							
+							alert(data.errorMessage);
+						}
 					}
+					
 				});
+				
 			});
 		});
 	
