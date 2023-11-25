@@ -20,7 +20,8 @@
 	               	</a>
 	            </div>
 	        </div>
-      	
+      		
+      		
 	        <%-- 로그인 여부 --%>
 	        <div class="login d-flex justify-content-end ml-5">
 		        <div class="d-flex ml-5">
@@ -34,12 +35,13 @@
 		            <c:if test="${not empty userId }">
 		                <ul class="nav">
 		                    <div class="d-flex align-items-center">
-		                     	<b><div class="mr-1">${userNickname }</b></div>님 
-				                    <li class="nav-item"><a href="#" class="nav-link ml-3 text-dark">MY PAGE</a></li>
-				                    <li class="nav-item"><a href="#" class="nav-link text-dark">LOGOUT</a></li>
+		                     	<b><div class="mr-1">${userNickname }</div></b>님 
+				                <li class="nav-item"><a href="#" class="nav-link ml-3 text-dark">MY PAGE</a></li>
+				                <li class="nav-item"><a href="/user/signout" class="nav-link text-dark">LOGOUT</a></li>
 		                  	</div>
 		               	</ul>
 		            </c:if>
+		            
 		        </div>
 	        </div>
 	        
@@ -60,7 +62,7 @@
             <li><a>입양 안내</a>
              	<ul>
 	                <li><a href="#">보호 중인 아이들</a></li>
-	                <li><a href="#">입양 혜택</a></li>
+	                <li><a href="/adoption/benefit">입양 혜택</a></li>
              	</ul>
           	</li>
        

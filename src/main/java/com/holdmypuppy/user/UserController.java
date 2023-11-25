@@ -1,5 +1,7 @@
 package com.holdmypuppy.user;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +35,28 @@ public class UserController {
 		return "template/layout";
 			
 	}
+	
+	
+	
+	// 로그아웃
+	@RequestMapping("/signout")
+	public String signOut(HttpSession session) {
+		
+		session.removeAttribute("userId");
+		session.removeAttribute("userNickname");
+		session.removeAttribute("userLoginId");
+		
+		// 로그인 화면으로 이동
+		return "redirect:/user/signin";
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
