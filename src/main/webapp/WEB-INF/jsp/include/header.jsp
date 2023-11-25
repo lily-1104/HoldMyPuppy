@@ -50,12 +50,12 @@
 
 
 
-
+	<%-- 메뉴바 --%>
  	<nav id="menu" class="mt-5">
     	
         <ul class="border rounded">
         	
-            <li><a href="#" class="text-dark">ABOUT</a></li>
+            <li><a href="/shelter" class="text-dark">ABOUT</a></li>
           
             <li><a>입양 안내</a>
              	<ul>
@@ -80,6 +80,7 @@
     <div class="border rounded"></div>
     
     
+    <%-- 배너 --%>
     <div class="banner my-2">
     	<img width="1203" height="250" alt="메인배너" src="/static/img/include/header/main banner.png">
 	</div>
