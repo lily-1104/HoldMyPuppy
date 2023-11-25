@@ -48,20 +48,20 @@
 		$(document).ready(function() {
 			
 			// 로그인
-			$('#loginBtn').on('submit', function(e) {
+			$('#loginBtn').on('click', function(e) {
 				
 				e.preventDefault();
 				
 				let loginId = $('#loginId').val().trim();
 				let password = $('#password').val();
 				
-				if (!loginId) {
+				if (loginId == "") {
 					
 					alert("아이디를 입력해주세요");
 					return false;
 				}
 				
-				if (!password) {
+				if (password == "") {
 					
 					alert("비밀번호를 입력해주세요");
 					return false;
