@@ -61,7 +61,7 @@
           
             <li><a>입양 안내</a>
              	<ul>
-	                <li><a href="#">보호 중인 아이들</a></li>
+	                <li><a href="/abandoned_dog">보호 중인 아이들</a></li>
 	                <li><a href="/adoption/benefit">입양 혜택</a></li>
              	</ul>
           	</li>
