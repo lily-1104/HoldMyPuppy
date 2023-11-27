@@ -19,6 +19,7 @@
 			, `gender`
 			, `neutralization`
 			, `mbti`
+			, `imagePath`
 			, `content`
 			, `createdAt`
 			, `updatedAt`
@@ -30,6 +31,47 @@
 			`id` DESC
 	
 	</select>
+	
+	
+	
+	<!-- 유기견 등록 API -->
+	<insert id="postDog" parameterType="map">
+	
+		INSERT INTO `abandoned_dog`
+		(
+			`userId`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `age`
+			, `gender`
+			, `neutralization`
+			, `mbti`
+			, `imagePath`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		)
+		
+		
+		VALUES
+		(
+			#{userId}
+			, #{title}
+			, #{dogName}
+			, #{breed}
+			, #{age}
+			, #{gender}
+			, #{neutralization}
+			, #{mbti}
+			, #{imagePath}
+			, #{content}
+			, NOW()
+			, NOW()
+		
+		)
+	
+	</insert>
 	
 
 
