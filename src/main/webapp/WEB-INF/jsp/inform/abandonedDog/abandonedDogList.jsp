@@ -10,10 +10,10 @@
 <title>보호 중인 아이들 | 안아줄개</title>
 </head>
 <body>
+
+	<div class="h-50"></div>
 	
 	<section class="mt-5">
-		
-		<div class="h-50"></div>
 			
 		<div class="text-center d-flex align-items-center justify-content-center">
 			

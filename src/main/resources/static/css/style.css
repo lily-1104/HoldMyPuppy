@@ -87,6 +87,11 @@ transition 속성으로 부드러운 각 서브 메뉴에 마우스를 올릴 �
 }
 
 
+.post-box {
+	width: 800px;
+}
+
+
 .moreBtn {
 	background-color: #d9dbde;
 }
