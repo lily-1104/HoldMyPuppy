@@ -100,6 +100,29 @@ transition 속성으로 부드러운 각 서브 메뉴에 마우스를 올릴 �
 
 
 
+/* 보호 중인 아이들 게시글 리스트 */
+.puppy  {
+   width : 252px;
+   height : 350px;
+   object-fit: contain;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(4 , 1fr );
+    gap: 28px;
+}
+
+
+
+/* 게시글 높이 지정 */
+.contentText {
+	height: 500px;
+}
+
+
+
+
 /* footer */
 footer {
 	height:250px;
