@@ -13,6 +13,15 @@ public class UserBO {
 	private UserRepository userRepository;
 	
 	
+	// 보호 중인 아이들 조회 (상세 정보) - 글쓴이 닉네임
+	public UserEntity getUserEntityById(int userId) {
+		
+		return userRepository.findById(userId).orElse(null);
+		
+	}
+	
+	
+	
 	// 회원가입 API
 	public Integer addUser(String loginId, String password, String name, String email, String nickname, String memberCode) {
 		

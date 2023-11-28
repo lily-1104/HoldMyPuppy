@@ -73,6 +73,32 @@
 	
 	</insert>
 	
+	
+	
+	<!-- 보호 중인 아이들 조회 (상세 정보) -->
+	<select id="selectDogByPostId" parameterType="int" resultType="com.holdmypuppy.inform.abandonedDog.domain.AbandonedDog">
+	
+		SELECT
+			`id`
+			, `title`
+			, `dogName`
+			, `breed`
+			, `age`
+			, `gender`
+			, `neutralization`
+			, `mbti`
+			, `imagePath`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+	
+		FROM
+			`abandoned_dog`
+		
+		WHERE
+			`id` = #{id}
+	
+	</select>
 
 
 

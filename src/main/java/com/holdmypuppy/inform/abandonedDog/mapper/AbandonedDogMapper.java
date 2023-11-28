@@ -23,12 +23,17 @@ public interface AbandonedDogMapper {
 			@Param("title") String title,
 			@Param("dogName") String dogName,
 			@Param("breed") String breed,
-			@Param("age") int age,
+			@Param("age") String age,
 			@Param("gender") String gender,
 			@Param("neutralization") String neutralization,
 			@Param("mbti") String mbti,
 			@Param("content") String content,
 			@Param("imagePath") String imagePath);
+	
+	
+	
+	// 보호 중인 아이들 조회 (상세 정보)
+	public AbandonedDog selectDogByPostId(@Param("id") int id);
 	
 	
 	
