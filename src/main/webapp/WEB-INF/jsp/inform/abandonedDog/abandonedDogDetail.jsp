@@ -69,29 +69,31 @@
                    		
                    		
                    	<%-- 좋아요 --%>
+                   	<div class="like ml-3">
+                   	
+                   		<%-- 빈하트: 1) 비로그인 2) 로그인 상태에서 좋아요를 누르지 않았을 때 --%>
+                   		<a href="#" class="like-btn" data-post-id="${abandonedDog.id }">
+							<img src="https://www.iconninja.com/files/214/518/441/heart-icon.png" width="18" height="18" alt="empty heart">
+						</a>
+                   		
+                   		
+                   		<%-- 채워진 하트: 로그인 && 좋아요 눌렀을 때 --%>
+                   		
+                   		
+                   		
+	                	<small class="ml-2"><b>30개</b></small>
+                   	</div>
+                   	
+                   	
+                   	<%-- 
+                   	</div>
 					<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
 						<span class="heart-size text-danger ml-3"><i class="bi bi-heart-fill"></i></span>
 					</a>
+						--%>
 						
 						
 						
-					<%-- 
-                   	<c:choose>
-						<c:when test="${postDetail.like }">
-							<a href="#" class="unlike-btn decoration-none" data-post-id="${postDetail.post.id }">
-								<span class="heart-size text-danger"><i class="bi bi-heart-fill"></i> </span>
-							</a>
-						</c:when>
-						<c:otherwise>
-							<a href="#" class="like-btn decoration-none" data-post-id="${postDetail.post.id }">
-								<span class="heart-size"><i class="bi bi-heart"></i> </span>
-							</a>
-						</c:otherwise>
-						
-					</c:choose>
-					--%>
-						
-	                <small class="ml-2"><b>30개</b></small>
                    
                 </div>
              </div>
@@ -137,7 +139,77 @@
 	</section>
 	
 	
+	<%-- 모달창 (좋아요) --%>
+	<div class="modal fade" id="modal">
 	
+		<%-- modal-sm:작은 모달, modal-dialog-centered:수직 기준 가운데 --%>
+		<div class="modal-dialog modal-dialog-centered modal-sm">
+		
+			<div class="modal-content text-center">
+	      		<div class="py-3 border-bottom">
+	      			<a href="#" id="deletePostLink">삭제하기</a>
+	      		</div>
+	      		<div class="py-3">
+	      			<a href="#" data-dismiss="modal">취소하기</a>
+	      		</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<script>
+	
+		$(document).ready(function() {
+			
+			// 좋아요 & 좋아요 해제
+			$('.like-btn').on('click', function(e) {
+				
+				e.preventDefault();
+				
+				// alert("관심 등록");
+				
+				let abandonedDogId = $(this).data("post-id");
+				alert(abandonedDogId);
+				
+				$.ajax({
+					
+					// request
+					url: "/like/" + abandonedDogId
+					
+					// response
+					, success: function(data) {
+						
+						if (data.code == 200) {
+							
+							location.reload(true);	// 새로고침 => 하트 채워지거나 or 비워지거나
+							
+						} else if (data.code == 500) {
+							
+							// 비로그인 상태
+							alert(data.errorMessage);
+							location.href = "/user/signin";
+						}
+					}
+					, error:function(request, status, error) {
+						
+						alert("관심 등록에 실패했습니다");
+					} 
+				});
+			});
+			
+			
+		});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
 	
 	
 	

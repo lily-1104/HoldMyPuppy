@@ -59,16 +59,20 @@ public class AbandonedDogController {
 	// 보호 중인 아이들 조회 (상세 정보)
 	// http://localhost:8080/abandoned_dog/dog_detail
 	@GetMapping("/dog_detail")
-	public String abandonedDogDetailView(@RequestParam("id") int id, Model model) {
+	public String abandonedDogDetailView(@RequestParam("id") int id, Model model, String userNickname) {
 		
-		AbandonedDog dog = abandonedDogBO.getDogByPostId(id);
-		UserEntity user = userBO.getUserEntityById(id);	  // 닉네임 불러오기
+		AbandonedDog dog = abandonedDogBO.getDogByPostId(id, userNickname);
+//		UserEntity user = userBO.getUserEntityById(id);	  // 닉네임 불러오기
+		UserEntity user = userBO.getUserEntityByNick(userNickname);
+//		List<DogDetail> abandonedDogDetail = 
 		
 		model.addAttribute("abandonedDog", dog);
 		model.addAttribute("user", user);	// 닉네임 불러오기
+//		model.addAttribute("like", like)
 		model.addAttribute("viewName", "inform/abandonedDog/abandonedDogDetail");
 		
 		return "template/layout";
+		
 	}
 		
 
