@@ -205,10 +205,11 @@
 	    			// response
 	    			, success:function(data) {
 	    				
+	    				//data.newId
 	    				if (data.result == "성공") {
 	    					
 	    					alert("유기견 정보가 등록되었습니다");
-	    					location.href = "/abandoned_dog/puppy_detail";
+	    					location.href = '/abandoned_dog/dog_detail?id='+data.newId;	  // 저장된 게시글 상세정보 페이지로 이동
 	    					
 	    				} else {
 	    					

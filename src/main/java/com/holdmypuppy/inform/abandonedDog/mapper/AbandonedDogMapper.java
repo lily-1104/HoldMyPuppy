@@ -18,17 +18,19 @@ public interface AbandonedDogMapper {
 	
 	// 유기견 등록 API
 	public void postDog(
-			@Param("userId") int userId,
-			@Param("userLoginId") String userLoginId,
-			@Param("title") String title,
-			@Param("dogName") String dogName,
-			@Param("breed") String breed,
-			@Param("age") String age,
-			@Param("gender") String gender,
-			@Param("neutralization") String neutralization,
-			@Param("mbti") String mbti,
-			@Param("content") String content,
-			@Param("imagePath") String imagePath);
+//			@Param("userId") int userId,
+//			@Param("userLoginId") String userLoginId,
+//			@Param("title") String title,
+//			@Param("dogName") String dogName,
+//			@Param("breed") String breed,
+//			@Param("age") String age,
+//			@Param("gender") String gender,
+//			@Param("neutralization") String neutralization,
+//			@Param("mbti") String mbti,
+//			@Param("content") String content,
+//			@Param("imagePath") String imagePath
+			AbandonedDog abandonedDog
+		);
 	
 	
 	
@@ -36,8 +38,4 @@ public interface AbandonedDogMapper {
 	public AbandonedDog selectDogByPostId(@Param("id") int id);
 	
 	
-	
-	
-	
-
 }

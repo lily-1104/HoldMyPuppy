@@ -41,9 +41,9 @@ public class AbandonedDogBO {
 	
 	
 	// 유기견 등록 API
-	public void addDog(
-			int userId, String userLoginId, String title, String dogName, String breed, String age,
-			 String gender, String neutralization, String mbti, String content, MultipartFile file) {
+	public int addDog(
+			int userId, String userLoginId, String title, String dogName, String breed, int age,
+			String gender, String neutralization, String mbti, String content, MultipartFile file) {
 		
 		String imagePath = null;
 		
@@ -52,7 +52,21 @@ public class AbandonedDogBO {
 			imagePath = fileManager.saveFile(userLoginId, file);
 		}
 		
-		abandonedDogMapper.postDog(userId, userLoginId, title, dogName, breed, age, gender, neutralization, mbti, content, imagePath);
+		AbandonedDog abandonedDog = new AbandonedDog();
+		abandonedDog.setUserId(userId);
+		abandonedDog.setTitle(title);
+		abandonedDog.setDogName(dogName);
+		abandonedDog.setBreed(breed);
+		abandonedDog.setAge(age);
+		abandonedDog.setGender(gender);
+		abandonedDog.setNeutralization(neutralization);
+		abandonedDog.setMbti(mbti);
+		abandonedDog.setImagePath(imagePath);
+		abandonedDog.setContent(content);
+		
+		abandonedDogMapper.postDog(abandonedDog);
+		
+		return abandonedDog.getId();
 		
 	}
 	
@@ -65,15 +79,8 @@ public class AbandonedDogBO {
 		UserEntity user = userBO.getUserEntityById(id);
 		
 		return abandonedDogMapper.selectDogByPostId(id);
-				
+		
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-
 }

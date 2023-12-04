@@ -11,18 +11,7 @@
 	<select id="selectDogsList" parameterType="int" resultType="com.holdmypuppy.inform.abandonedDog.domain.AbandonedDog">
 	
 		SELECT
-			`id`
-			, `title`
-			, `dogName`
-			, `breed`
-			, `age`
-			, `gender`
-			, `neutralization`
-			, `mbti`
-			, `imagePath`
-			, `content`
-			, `createdAt`
-			, `updatedAt`
+			*
 	
 		FROM
 			`abandoned_dog`
@@ -35,7 +24,7 @@
 	
 	
 	<!-- 유기견 등록 API -->
-	<insert id="postDog" parameterType="map">
+	<insert id="postDog" parameterType="map" useGeneratedKeys="true" keyProperty="id">
 	
 		INSERT INTO `abandoned_dog`
 		(
@@ -79,18 +68,7 @@
 	<select id="selectDogByPostId" parameterType="int" resultType="com.holdmypuppy.inform.abandonedDog.domain.AbandonedDog">
 	
 		SELECT
-			`id`
-			, `title`
-			, `dogName`
-			, `breed`
-			, `age`
-			, `gender`
-			, `neutralization`
-			, `mbti`
-			, `imagePath`
-			, `content`
-			, `createdAt`
-			, `updatedAt`
+			*
 	
 		FROM
 			`abandoned_dog`
@@ -99,11 +77,6 @@
 			`id` = #{id}
 	
 	</select>
-
-
-
-
-
 
 
 </mapper>

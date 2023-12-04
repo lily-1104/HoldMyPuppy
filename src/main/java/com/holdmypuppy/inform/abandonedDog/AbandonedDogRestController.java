@@ -54,7 +54,10 @@ public class AbandonedDogRestController {
 		result.put("result", "성공");
 		
 		// DB insert
-		abandonedDogBO.addDog(userId, userLoginId, title, dogName, breed, age, gender, neutralization, mbti, content, file);
+		// newId로 게시글 작성 시 게시글 id는 Auto increment를 통해 1씩 증가 => 게시글 등록 시 작성 게시물 디테일 화면으로 이동
+		int newId = abandonedDogBO.addDog(userId, userLoginId, title, dogName, breed, age, gender, neutralization, mbti, content, file);
+		
+		result.put("newId", newId);
 		
 		return result;
 		
