@@ -32,13 +32,13 @@
 			
 			
 		<%-- 보호 중인 아이들 --%>
-		<div class="dogs my-5">
+		<div class="grid my-5">
 			
 			<c:forEach items="${abandonedDogsList }" var="dogs">
-			<div class="d-flex ">
+			<div class="puppy d-flex">
 				
+				<%-- 유기견 카드 --%>
 				<div class="border rounded">
-				
 					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
 						<img height="250" width="250" alt="유기견 사진" src="${dogs.imagePath }">
 					</a>
@@ -48,83 +48,24 @@
                         	<b class="reviewTitle">${dogs.title }</b>
                      	</div>
                   	</a>
-				
 				</div>
-				
-				<div class="border rounded">
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-						<img height="250" width="250" alt="유기견 사진" src="${dogs.imagePath }">
-					</a>
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-                     	<div class="mt-4 mb-5 text-center text-dark">
-                        	<b class="reviewTitle">${dogs.title }</b>
-                     	</div>
-                  	</a>
-				
-				</div>
-				
-				<div class="border rounded">
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-						<img height="250" width="250" alt="유기견 사진" src="${dogs.imagePath }">
-					</a>
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-                     	<div class="mt-4 mb-5 text-center text-dark">
-                        	<b class="reviewTitle">${dogs.title }</b>
-                     	</div>
-                  	</a>
-				
-				</div>
-				
-				<div class="border rounded">
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-						<img height="250" width="250" alt="유기견 사진" src="${dogs.imagePath }">
-					</a>
-				
-					<a href="/abandoned_dog/dog_detail?id=${dogs.id }">
-                     	<div class="mt-4 mb-5 text-center text-dark">
-                        	<b class="reviewTitle">${dogs.title }</b>
-                     	</div>
-                  	</a>
-				
-				</div>
-				
-				<%-- 
-				<div class="border rounded">
-					<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-					<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-				</div>
-					
-				<div class="border rounded">
-					<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-					<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-				</div>
-					
-				<div class="border rounded">
-					<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-					<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-				</div>
-					
-				<div class="border rounded">
-					<img width="250" alt="사진" src="https://images.mypetlife.co.kr/content/uploads/2019/09/09152937/blind-dog-2-1024x683.jpg">
-					<div class="mt-4 mb-5 text-center">말티즈 흰둥이</div>
-				</div>
-				--%>
 				
 			</div> 
 			</c:forEach>
 				
 		</div>
           	
-		
-		<%-- 글쓰기 버튼은 관리자에게만 공개 --%>
+          	
 		<div class="d-flex justify-content-end mr-3 mt-5">
 			<a href="/abandoned_dog/create" class="btn btn-info mt-5">글쓰기</a>
 		</div>
+		
+		<%-- 글쓰기 버튼은 관리자에게만 공개 
+		<c:if test="${userMemberCode eq 'A' }">
+		<div class="d-flex justify-content-end mr-3 mt-5">
+			<a href="/abandoned_dog/create" class="btn btn-info mt-5">글쓰기</a>
+		</div>
+		</c:if>--%>
 		
 	</section>
 
