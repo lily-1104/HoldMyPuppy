@@ -6,8 +6,8 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.holdmypuppy.inform.abandonedDog.like.bo.LikeBO;
@@ -21,9 +21,9 @@ public class LikeRestController {
 	
 	
 	// 좋아요 
-	@RequestMapping("/like/{postId}")
+	@RequestMapping("/like")
 	public Map<String, Object> likeToggle(
-			@PathVariable int abandonedDogId,
+			@RequestParam(value="dog_id") int abandonedDogId,
 			HttpSession session) {
 		
 		// 로그인 여부 확인

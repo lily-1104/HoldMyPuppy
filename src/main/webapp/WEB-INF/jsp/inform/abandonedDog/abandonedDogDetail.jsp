@@ -106,8 +106,8 @@
              <div class="mt-5 ml-3">
                 <h4 class="ml-2 mb-3">Detail View</h4>
                 
-                <small class="text-secondary ml-4">
-                	${user.nickname }
+                <small class="text-secondary ml-3">
+                	${user.nickname}
                 	<fmt:formatDate value="${abandonedDog.createdAt }" pattern="yyyy-MM-dd HH:mm" />
                 </small>
                 
@@ -169,18 +169,23 @@
 				// alert("관심 등록");
 				
 				let abandonedDogId = $(this).data("post-id");
-				alert(abandonedDogId);
+				// alert(abandonedDogId);
 				
 				$.ajax({
 					
 					// request
-					url: "/like/" + abandonedDogId
+					url: "/like",
+					type:'get',
+					data:{
+						dog_id:abandonedDogId
+					}
 					
 					// response
 					, success: function(data) {
 						
 						if (data.code == 200) {
 							
+							alert("관심 등록 성공");
 							location.reload(true);	// 새로고침 => 하트 채워지거나 or 비워지거나
 							
 						} else if (data.code == 500) {
@@ -190,9 +195,10 @@
 							location.href = "/user/signin";
 						}
 					}
-					, error:function(request, status, error) {
+					, error:function(error) {
 						
-						alert("관심 등록에 실패했습니다");
+						console.log(error);
+						alert("관심 등록에 실패했습니다1111");
 					} 
 				});
 			});

@@ -13,8 +13,4 @@ public interface LikeMapper {
 			@Param("userId") int userId);
 	
 	
-	
-	
-	
-	
 }
